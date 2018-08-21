@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Asset List
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Asset Type</td>
+                <td>Asset Value</td>
+            </tr>
+            </thead>"
+            <tbody>
+            <tr ng-repeat="asset in vm.assets">
+                <td>
+                    <a ui-sref="assetDetail({assetId: asset.assetId})">
+                       {{ asset.assetName }}</a>
+                    </td>
+                <!-- <td>{{ asset.assetAmount | currency }}</td> -->
+                <td>
+      "             <td class="listtext">$&nbsp;<input type="text" ng-model="checking" name="checking" value="" size="8"><br></td>
+                   <a class="btn btn-primary"
+                       ui-sref="assetsAddData.info({assetId: asset.assetId})">
+                        Edit
+                    </a>
+                    <a>
+                        <input type="text"
+                               class="form-control"
+                               id="inputChecking"
+                               ng-model="vm.asset.assetName"
+                               name="checking"
+                               />
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

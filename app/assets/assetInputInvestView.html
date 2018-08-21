@@ -1,0 +1,371 @@
+<form class="form-horizontal" name="assetInvestForm" novalidate>
+    <fieldset>
+        <legend>Invested Assets</legend>
+        <h3>Taxable accounts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputBrokerage.$invalid &&
+                                    assetInvestForm.inputBrokerage.$dirty}">
+            <label for="inputBrokerage" class="col-sm-4 control-label">Brokerage</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputBrokerage"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.brokerage"
+                       name="vm.brokerage"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputBrokerage.$invalid &&
+                           assetInvestForm.inputBrokerage.$dirty">
+                Brokerage must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputTaOther.$invalid &&
+                                    assetInvestForm.inputTaOther.$dirty}">
+            <label for="inputTaOther" class="col-sm-4 control-label">Taxable Other</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputTaOther"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.taOther"
+                       name="vm.taOther"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputTaOther.$invalid &&
+                           assetInvestForm.inputTaOther.$dirty">
+                Taxable Other must be a valid number or empty.
+            </span>
+        </div>
+
+        <h3>Retirement accounts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputIra.$invalid &&
+                                    assetInvestForm.inputIra.$dirty}">
+            <label for="inputIra" class="col-sm-4 control-label">IRA</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputIra"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.ira"
+                       name="vm.ira"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputIra.$invalid &&
+                           assetInvestForm.inputIra.$dirty">
+                IRA must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputRothIra.$invalid &&
+                                    assetInvestForm.inputRothIra.$dirty}">
+            <label for="inputRothIra" class="col-sm-4 control-label">Roth IRA</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputRothIra"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.rothIra"
+                       name="vm.rothIra"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputRothIra.$invalid &&
+                           assetInvestForm.inputRothIra.$dirty">
+                Roth Ira must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.input401k403b.$invalid &&
+                                    assetInvestForm.input401k403b.$dirty}">
+            <label for="input401k403b" class="col-sm-4 control-label">401(k) or 403(b)</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="input401k403b"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.kb"
+                       name="vm.kb"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.input401k403b.$invalid &&
+                           assetInvestForm.input401k403b.$dirty">
+                Roth Ira must be a valid number or empty.
+            </span>
+        </div>
+
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputSepIra.$invalid &&
+                                    assetInvestForm.inputSepIra.$dirty}">
+            <label for="inputSepIra" class="col-sm-4 control-label">SEPIRA)</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSepIra"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.sepIra"
+                       name="vm.sepIra"
+                       ng-blur="vm.vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputSepIra.$invalid &&
+                           assetInvestForm.inputSepIra.$dirty">
+                SEPIRA must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputKeogh.$invalid &&
+                                    assetInvestForm.inputKeogh.$dirty}">
+            <label for="inputKeogh" class="col-sm-4 control-label">Keogh</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputKeogh"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.keogh"
+                       name="vm.keogh"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputKeogh.$invalid &&
+                           assetInvestForm.inputKeogh.$dirty">
+                Keogh must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputPension.$invalid &&
+                                    assetInvestForm.inputPension.$dirty}">
+            <label for="inputPension" class="col-sm-4 control-label">Pension</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputPension"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.pension"
+                       name="vm.pension"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputPension.$invalid &&
+                           assetInvestForm.inputPension.$dirty">
+                Pension must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputAnnuity.$invalid &&
+                                    assetInvestForm.inputAnnuity.$dirty}">
+            <label for="inputAnnuity" class="col-sm-4 control-label">Annuity</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputAnnuity"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.annuity"
+                       name="vm.annuity"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputAnnuity.$invalid &&
+                           assetInvestForm.inputAnnuity.$dirty">
+                Annuity must be a valid number or empty.
+            </span>
+        </div>
+
+        <h3>Business ownership Interests</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputRealEstate.$invalid &&
+                                    assetInvestForm.inputRealEstate.$dirty}">
+            <label for="inputRealEstate" class="col-sm-4 control-label">Real Estate</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputRealEstate"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.realEstate"
+                       name="vm.realEstate"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputRealEstate.$invalid &&
+                           assetInvestForm.inputRealEstate.$dirty">
+                Real Estate must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputSolePro.$invalid &&
+                                    assetInvestForm.inputSolePro.$dirty}">
+            <label for="inputSolePro" class="col-sm-4 control-label">Sole Proprietorship</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSolePro"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.solePro"
+                       name="vm.solePro"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputSolePro.$invalid &&
+                           assetInvestForm.inputSolePro.$dirty">
+                Sole Proprietorship must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputPartnership.$invalid &&
+                                    assetInvestForm.inputPartnership.$dirty}">
+            <label for="inputPartnership" class="col-sm-4 control-label">Partnership</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputPartnership"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.partnership"
+                       name="vm.partnership"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputPartnership.$invalid &&
+                           assetInvestForm.inputPartnership.$dirty">
+                Partnership must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputCCorporation.$invalid &&
+                                    assetInvestForm.inputCCorporation.$dirty}">
+            <label for="inputCCorporation" class="col-sm-4 control-label">C Corporation</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCCorporation"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.cCorporation"
+                       name="vm.cCorporation"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputCCorporation.$invalid &&
+                           assetInvestForm.inputCCorporation.$dirty">
+                C Corporation must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputSCorporation.$invalid &&
+                                    assetInvestForm.inputSCorporation.$dirty}">
+            <label for="inputSCorporation" class="col-sm-4 control-label">S Corporation</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSCorporation"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.sCorporation"
+                       name="vm.sCorporation"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputSCorporation.$invalid &&
+                           assetInvestForm.inputSCorporation.$dirty">
+                S Corporation must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputLLC.$invalid &&
+                                    assetInvestForm.inputLLC.$dirty}">
+            <label for="inputLLC" class="col-sm-4 control-label">LLC</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputLLC"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.limitedLC"
+                       name="vm.limitedLC"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputLLC.$invalid &&
+                           assetInvestForm.inputLLC.$dirty">
+                LLC must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetInvestForm.inputBoOther.$invalid &&
+                                    assetInvestForm.inputBoOther.$dirty}">
+            <label for="inputBoOther" class="col-sm-4 control-label">Business Ownership Other</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputBoOther"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.boOther"
+                       name="vm.boOther"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetInvestForm.inputBoOther.$invalid &&
+                           assetInvestForm.inputBoOther.$dirty">
+                Business Owner Other must be a valid number or empty.
+            </span>
+        </div>
+        <!-- <div class="col-md-2">
+             <button type="button"
+                     class="btn btn-default"
+                     title="Invested Subtotal"
+                     ng-click="vm.calculateCashSubTotal()">
+                 Calculate Business subtotal
+             </button>
+         </div><br ><br > -->
+        <div class="form-group row">
+            <label for="calcInvestSubtotal" class="col-sm-4 control-label">Invested Assets Subtotal</label>
+            <div class="col-sm-4" id="calcInvestSubtotal">{{ vm.calcInvestSubtotal() | currency}}</div>
+            <!-- <div class="col-sm-4" id="calcSubTotal">
+
+                <input type="number"
+                       ng-model=" vm.brokerage -- vm.taOther -- vm.ira -- vm.rothira -- vm.kb -- vm.sepira --
+                            vm.keogh -- vm.pension -- vm.annuity -- vm.realEstate -- vm.solePro -- vm.partnership --
+                             vm.cCorporation -- vm.sCorporation -- vm.limitedLC -- vm.boOther | currency"
+                    />
+                }
+            </div> -->
+        </div>
+
+        <!-- <div class="form-group">
+             <div class="col-md-4 col-md-offset-2">
+                     <span>
+                         <button class="btn btn-primary"
+                                 style="width:80px;margin-right:10px"
+                                 ng-click="vm.submit()">
+                             Save
+                         </button>
+                     </span>
+                 <span>
+                         <button class="btn btn-default"
+                                 style="width:70px"
+                                 ng-click="vm.cancel()">
+                             Cancel
+                         </button>
+                     </span>
+             </div>
+         </div> -->
+    </fieldset>
+</form>

@@ -1,0 +1,252 @@
+<form class="form-horizontal" name="allLiabilities" novalidate>
+    <fieldset>
+        <legend>Debts</legend>
+        <h3>Current Debts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputCreditCards.$invalid &&
+                                    allLiabilities.inputCreditCards.$dirty}">
+            <label for="inputCreditCards" class="col-sm-4 control-label">Credit Cards</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCreditCards"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.creditCards"
+                       name="vm.creditCards"
+                       ng-pattern="[0-9]+([\.,][0-9]+)*"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputCreditCards.$invalid &&
+                           allLiabilities.inputCreditCards.$dirty">
+                Credit Cards must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputEstIncomeTaxOwed.$invalid &&
+                                    allLiabilities.inputEstIncomeTaxOwed.$dirty}">
+            <label for="inputEstIncomeTaxOwed" class="col-sm-4 control-label">Estimated Income Tax Owed</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputEstIncomeTaxOwed"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.incomeTaxOwed"
+                       name="vm.incomeTaxOwed"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputEstIncomeTaxOwed.$invalid &&
+                           allLiabilities.inputEstIncomeTaxOwed.$dirty">
+                Estimated Income Tax Owed must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputOutstandingBills.$invalid &&
+                                    allLiabilities.inputOutstandingBills.$dirty}">
+            <label for="inputOutstandingBills" class="col-sm-4 control-label">Outstanding Bills</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputOutstandingBills"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.outstandingBills"
+                       name="vm.outstandingBills"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputOutstandingBills.$invalid &&
+                           allLiabilities.inputOutstandingBills.$dirty">
+                OutStanding Bills must be a valid number or empty.
+            </span>
+        </div>
+
+        <div class="form-group row">
+            <label for="calcCurrentDebts" class="col-sm-4 control-label">Sub-Total Cash</label>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCurrentDebtsSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcCurrentDebts">{{
+                vm.subtotalCurrentDebts = vm.creditCards +
+                vm.incomeTaxOwed +
+                vm.outstandingBills | currency;}}</div>
+        </div>
+
+
+        <h3>Long-term Debts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputHomeMortgage.$invalid &&
+                                    allLiabilities.inputHomeMortgage.$dirty}">
+            <label for="inputHomeMortgage" class="col-sm-4 control-label">Home Mortgage</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputHomeMortgage"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.homeMortgage"
+                       name="vm.homeMortgage"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputHomeMortgage.$invalid &&
+                           allLiabilities.inputHomeMortgage.$dirty">
+                Brokerage must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputHomeEquity.$invalid &&
+                                    allLiabilities.inputHomeEquity.$dirty}">
+            <label for="inputHomeEquity" class="col-sm-4 control-label">Home Equity Line</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputHomeEquity"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.homeEquity"
+                       name="vm.homeEquity"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputHomeEquity.$invalid &&
+                           allLiabilities.inputHomeEquity.$dirty">
+                Home Equity Line must be a valid number or empty.
+            </span>
+        </div>
+
+        <h3>Retirement accounts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputMortgagesRentalProperty.$invalid &&
+                                    allLiabilities.inputMortgagesRentalProperty.$dirty}">
+            <label for="inputMortgagesRentalProperty" class="col-sm-4 control-label">Mortgages on Rental Properties</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputMortgagesRentalProperty"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.mortgagesRental"
+                       name="vm.mortgagesRental"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputMortgagesRentalProperty.$invalid &&
+                           allLiabilities.inputMortgagesRentalProperty.$dirty">
+                Mortgages on Rental Properties must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputVehicleLoans.$invalid &&
+                                    allLiabilities.inputVehicleLoans.$dirty}">
+            <label for="inputVehicleLoans" class="col-sm-4 control-label">Vehicle Loans</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputVehicleLoans"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.vehiclesLoans"
+                       name="vm.vehiclesLoans"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputVehicleLoans.$invalid &&
+                           allLiabilities.inputVehicleLoans.$dirty">
+                Vehicle Loans must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputStudentLoans.$invalid &&
+                                    allLiabilities.inputStudentLoans.$dirty}">
+            <label for="inputStudentLoans" class="col-sm-4 control-label">Student Loans</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputStudentLoans"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.studentLoans"
+                       name="vm.studentLoans"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputStudentLoans.$invalid &&
+                           allLiabilities.inputStudentLoans.$dirty">
+                Student Loans must be a valid number or empty.
+            </span>
+        </div>
+
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputLifeInsuranceLoans.$invalid &&
+                                    allLiabilities.inputLifeInsuranceLoans.$dirty}">
+            <label for="inputLifeInsuranceLoans" class="col-sm-4 control-label">Life Insurance Loans</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputLifeInsuranceLoans"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.lifeInsuranceLoan"
+                       name="vm.lifeInsuranceLoan"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputLifeInsuranceLoans.$invalid &&
+                           allLiabilities.inputLifeInsuranceLoans.$dirty">
+                Life Insurance Loans must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputOtherLongtermDebt.$invalid &&
+                                    allLiabilities.inputOtherLongtermDebt.$dirty}">
+            <label for="inputOtherLongtermDebt" class="col-sm-4 control-label">Other Long-term Debt</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputOtherLongtermDebt"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.otherLongtermDebt"
+                       name="vm.otherLongtermDebt"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputOtherLongtermDebt.$invalid &&
+                           allLiabilities.inputOtherLongtermDebt.$dirty">
+                Other Long-term Debt must be a valid number or empty.
+            </span>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal</label>
+            <!-- <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.calcLongtermDebtSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.subtotalLongtermDebt = vm.homeMortgage +
+                vm.homeEquity +
+                vm.mortgagesRental +
+                vm.vehicles +
+                vm.studentLoans +
+                vm.lifeInsuranceLoan +
+                vm.otherLongtermDebt | currency;}}
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="calcTotalDebts" class="col-sm-4 control-label">Total Debts</label>
+            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
+            <div class="col-sm-4" id="calcTotalDebts">{{ totalDebts = vm.subtotalCurrentDebts --
+                vm.subtotalLongtermDebt | currency;}}</div>
+        </div>
+
+        <legend>Net Worth</legend>
+        <div class="form-group row">
+            <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth</label>
+            <!-- <div class="col-sm-4" id="calcNetWorth">{{ vm.calcNetWorth() | currency}}</div> -->
+            <div class="col-sm-4" id="calcNetWorth">{{ netWorth = vm.totalAssets -
+                vm.totalDedts | currency;}}</div>
+        </div>
+    </fieldset>
+</form>

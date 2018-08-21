@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Net Worth Calculator</title>
+
+    <!-- Style Sheets -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/toastr.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+
+    <!-- Library Scripts -->
+    <script src="js/jquery-3.0.0.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/angular-mocks.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ui-utils.js"></script>
+    <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="js/toastr.js"></script>
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <script src="common/services/common.services.js"></script>
+    <script src="common/services/assetResource.js"></script>
+    <script src="common/services/assetResourceMock.js"></script>
+    <script src="common/services/assetCalculateService.js"></script>
+    <script src="common/services/debtResource.js"></script>
+    <script src="common/services/debtResourceMock.js"></script>
+    <script src="common/services/debtCalculateService.js"></script>
+
+    <!-- Asset Controller -->
+    <script src="app/assets/assetNetWorthCtrl.js"></script>
+    <script src="app/assets/assetInputCashCtrl.js"></script>
+    <script src="app/assets/assetInputInvestCtrl.js"></script>
+    <script src="app/assets/assetInputUseCtrl.js"></script>
+    <script src="app/liabilities/liabilityAllCtrl.js"></script>
+    <script src="app/backup/assetListCtrl.js"></script>
+
+</head>
+<body ng-app="netWorthCalculator">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <a class="navbar-brand"
+            ui-sref="home">Net Worth Calculation</a>
+        <div class="navbar-header">
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="assetList">Assets List</a></li>
+                <li><a ui-sref="allAssets">All Assets</a></li>
+                <li><a ui-sref="assetsCashData">Cash Assets</a></li>
+                <li><a ui-sref="assetsInvestedData">Invested Assets</a></li>
+                <li><a ui-sref="assetsUseData">Use Assets</a></li>
+                <li><a ui-sref="allLiabilities">All Liabilities</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container">
+        <div ui-view></div>  <!-- routing will display all templates in this area. -->
+    </div>
+</body>
+</html>

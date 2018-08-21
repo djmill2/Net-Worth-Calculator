@@ -1,0 +1,44 @@
+<form class="form-horizontal" name="assetForm">
+    <fieldset>
+        <legend>Basic Asset Information</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputAssetName">Asset Name</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputAssetName"
+                       type="text"
+                       placeholder="Asset Name"
+                       ng-model="vm.asset.assetName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="inputAssetAmt">Asset Amount</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputAssetAmt"
+                       ng-model="vm.asset.assetAmount">
+            </div>
+        </div>
+       <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit()">
+                            Save
+                        </button>
+                    </span>
+                <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+

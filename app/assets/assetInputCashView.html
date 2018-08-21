@@ -1,0 +1,156 @@
+<form class="form-horizontal" name="assetCashForm" novalidate>
+    <fieldset>
+        <legend>Cash</legend>
+        <div class="form-group row"
+             ng-class="{'has-error':assetCashForm.inputChecking.$invalid &&
+                                    assetCashForm.inputChecking.$dirty}">
+            <label for="inputChecking" class="col-sm-4 control-label">Checking</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputChecking"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.checking"
+                       name="vm.checking"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetCashForm.inputChecking.$invalid &&
+                           assetCashForm.inputChecking.$dirty">
+                Checking must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetCashForm.inputSavings.$invalid &&
+                                    assetCashForm.inputSavings.$dirty}">
+            <label for="inputSavings" class="col-sm-4 control-label">Savings</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSavings"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.savings"
+                       name="vm.savings"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetCashForm.inputSavings.$invalid &&
+                           assetCashForm.inputSavings.$dirty">
+                Savings must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetCashForm.inputMoneyMarket.$invalid &&
+                                    assetCashForm.inputMoneyMarket.$dirty}">
+            <label for="inputMoneyMarket" class="col-sm-4 control-label">Money Market</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputMoneyMarket"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.moneyMarket"
+                       name="vm.moneyMarket"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetCashForm.inputMoneyMarket.$invalid &&
+                           assetCashForm.inputMoneyMarket.$dirty">
+                MoneyMarket must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetCashForm.inputSavingsBonds.$invalid &&
+                                    assetCashForm.inputSavingsBonds.$dirty}">
+            <label for="inputSavingsBonds" class="col-sm-4 control-label">Savings bonds</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSavingsBonds"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.savingsBond"
+                       name="vm.savingsBond"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetCashForm.inputSavingsBonds.$invalid &&
+                           assetCashForm.inputSavingsBonds.$dirty">
+                Savings Bond must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetCashForm.inputCDs.$invalid &&
+                                    assetCashForm.inputCDs.$dirty}">
+            <label for="inputCDs" class="col-sm-4 control-label">Certificate of Deposit (CD's)</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCDs"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.cds"
+                       name="vm.cds"
+                       ng-blur="vm.vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetCashForm.inputCDs.$invalid &&
+                           assetCashForm.inputCDs.$dirty">
+                CD's must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':assetCashForm.inputCashValLifeIns.$invalid &&
+                                    assetCashForm.inputCashValLifeIns.$dirty}">
+            <label for="inputCashValLifeIns" class="col-sm-4 control-label">Cash value of life insurance</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCashValLifeIns"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.cashValLifeIns"
+                       name="vm.cashValLifeIns"
+                       ng-blur="vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="assetCashForm.inputCashValLifeIns.$invalid &&
+                           assetCashForm.inputCashValLifeIns.$dirty">
+                Cash value of Life insurance must be a valid number or empty.
+            </span>
+        </div>
+       <!-- <div class="col-md-2">
+            <button type="button"
+                    class="btn btn-default"
+                    title="Calculate Cash Subtotal"
+                    ng-click="vm.calculateCashSubTotal()">
+                Calculate Cash subtotal
+            </button>
+        </div><br ><br > -->
+        <div class="form-group row">
+            <label for="calcSubTotal" class="col-sm-4 control-label">Sub-Total Cash</label>
+            <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div>
+        </div>
+
+       <!-- <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit()">
+                            Save
+                        </button>
+                    </span>
+                <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div> -->
+    </fieldset>
+</form>
