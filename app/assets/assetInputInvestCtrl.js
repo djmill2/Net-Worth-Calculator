@@ -14,39 +14,44 @@
     function AssetInputInvestCtrl(assetResource, $state, assetCalculateService) {
         var vm = this;
 
-        // Invested View
-        vm.brokerage = 0.00;
-        vm.taOther = 0.00;
-        vm.ira = 0.00;
-        vm.rothIra = 0.00;
-        vm.kb = 0.00;
-        vm.sepIra = 0.00;
-        vm.keogh = 0.00;
-        vm.pension = 0.00;
-        vm.annuity = 0.00;
-        vm.realEstate = 0.00;
-        vm.solePro = 0.00;
-        vm.partnership = 0.00;
-        vm.cCorporation = 0.00;
-        vm.sCorporation = 0.00;
-        vm.limitedLC = 0.00;
-        vm.boOther = 0.00;
+        vm.assetCalculateService = assetCalculateService;
+        // Get our Invested data object from the service
+        vm.investData = assetCalculateService.getInvest();
 
         //vm.assetResource = assetResource;
         assetResource.query(function(data) {
             vm.assets = data;
         });
 
-        vm.assetCalculateService = assetCalculateService;
-
         /* Calculate the INVESTED assets subtotal */
         vm.calcInvestSubtotal = function() {
-            return assetCalculateService.calculateInvestedSubtotal(vm.brokerage,
-                vm.taOther, vm.ira, vm.rothIra, vm.kb, vm.sepIra, vm.keogh, vm.pension,
-                vm.annuity, vm.realEstate, vm.solePro, vm.partnership, vm.cCorporation,
-                vm.sCorporation, vm.limitedLC, vm.boOther);
+            assetCalculateService.setInvest({
+                brokerage: vm.investData.brokerage,
+                taOther: vm.investData.taOther,
+                ira: vm.investData.ira,
+                rothIra: vm.investData.rothIra,
+                kb: vm.investData.kb,
+                sepIra: vm.investData.sepIra,
+                keogh: vm.investData.keogh,
+                pension: vm.investData.pension,
+                annuity: vm.investData.annuity,
+                realEstate: vm.investData.realEstate,
+                solePro: vm.investData.solePro,
+                partnership: vm.investData.partnership,
+                cCorporation: vm.investData.cCorporation,
+                sCorporation: vm.investData.sCorporation,
+                limitedLC: vm.investData.limitedLC,
+                boOther: vm.investData.boOther
+            });
+            return assetCalculateService.calculateInvestedSubtotal(vm.investData.brokerage,
+                vm.investData.taOther, vm.investData.ira, vm.investData.rothIra, vm.investData.kb,
+                vm.investData.sepIra, vm.investData.keogh, vm.investData.pension, vm.investData.annuity,
+                vm.investData.realEstate, vm.investData.solePro, vm.investData.partnership,
+                vm.investData.cCorporation, vm.investData.sCorporation, vm.investData.limitedLC,
+                vm.investData.boOther);
         };
 
     }
 
 }());
+
