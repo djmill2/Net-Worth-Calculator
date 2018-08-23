@@ -164,9 +164,10 @@
 
         <div class="form-group row">
             <label for="calcTotalDebts" class="col-sm-4 control-label">Total Debts</label>
-            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
-            <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalDebts = vm.currentDebtsData.subtotalCurrentDebts --
-                vm.longTermDebtData.subtotalLongtermDebt | currency;}}</div>
+            <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div>
+            <!--<div class="col-sm-4" id="calcTotalDebts">{{ vm.totalDebts = vm.currentDebtsData.subtotalCurrentDebts --
+                vm.longTermDebtData.subtotalLongtermDebt | currency;}}
+            </div> -->
         </div>
 
         <legend>Net Worth</legend>
