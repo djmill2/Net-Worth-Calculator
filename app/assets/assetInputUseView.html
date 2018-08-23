@@ -151,7 +151,16 @@
          </div><br ><br > -->
         <div class="form-group row">
             <label for="calcUseSubtotal" class="col-sm-4 control-label">Use Assets Subtotal</label>
-            <div class="col-sm-4" id="calcUseSubtotal">{{ vm.calcUseSubtotal() | currency}}</div>
+            <!-- <div class="col-sm-4" id="calcUseSubtotal">{{ vm.calcUseSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcUseSubtotal">{{
+                vm.useData.subtotalUsed = vm.useData.principleHome +
+                vm.useData.vacationHome +
+                vm.useData.vehicles +
+                vm.useData.homeFurnish +
+                vm.useData.art +
+                vm.useData.jewelry +
+                vm.useData.uaOther | currency;}}
+            </div>
             <!-- <div class="col-sm-4" id="calcUseSubtotal">
 
                 <input type="number"
@@ -162,8 +171,13 @@
         </div>
 
         <div class="form-group row">
-            <label for="calcUseSubtotal" class="col-sm-4 control-label">Total Assets</label>
-            <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div>
+            <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets</label>
+            <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div> -->
+            <div class="col-sm-4" id="calcTotalAssets">{{
+                vm.useData.totalAsset = vm.cashData.subtotalCas +
+                vm.investData.subtotalInvest +
+                vm.useData.subtotalUsed  | currency;}}
+            </div>
         </div>
 
         <!-- <div class="form-group">

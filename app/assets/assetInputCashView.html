@@ -131,7 +131,15 @@
         </div><br ><br > -->
         <div class="form-group row">
             <label for="calcSubTotal" class="col-sm-4 control-label">Sub-Total Cash</label>
-            <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcSubTotal">{{
+                vm.cashData.subtotalCas = vm.cashData.checking +
+                vm.cashData.savings +
+                vm.cashData.moneyMarket +
+                vm.cashData.savingsBond +
+                vm.cashData.cds +
+                vm.cashData.cashValLifeIns | currency;}}
+            </div>
         </div>
 
        <!-- <div class="form-group">

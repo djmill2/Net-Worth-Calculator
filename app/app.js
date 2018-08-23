@@ -87,10 +87,20 @@
                         }
                     }
                 })
-                .state("allLiabilities", {
+                .state("debtCurrent", {
+                    url: "/liabilities",
+                    templateUrl: "app/liabilities/currentDebts.html",
+                    controller: "CurrentDebtsCtrl as vm"
+                })
+                .state("debtLongTerm", {
+                    url: "/liabilities",
+                    templateUrl: "app/liabilities/longTermDebts.html",
+                    controller: "LongTermDebtsCtrl as vm"
+                })
+                .state("allDebts", {
                     url: "/liabilities",
                     templateUrl: "app/liabilities/allLiabilities.html",
-                    controller: "LiabilityAllCtrl as vm"
+                    controller: "LiabilitiesAllCtrl as vm"
                 })
         }]
     );

@@ -16,6 +16,8 @@
 
         vm.assetCalculateService = assetCalculateService;
         // Get our Use data object from the service
+        vm.cashData = assetCalculateService.getCash();
+        vm.investData = assetCalculateService.getInvest();
         vm.useData = assetCalculateService.getUse();
 
         // Get our Cash Total data object from the service
@@ -42,15 +44,15 @@
                 vm.useData.art, vm.useData.jewelry, vm.useData.uaOther);
         };
 
-        /* Calculate the Cash Total assets  */
+        /* Calculate the Total assets  */
        vm.calcTotalAssets = function() {
             assetCalculateService.setCashTotal({
-                subtotalCas: vm.cashTotalData.subtotalCas,
-                subtotalInvest: vm.cashTotalData.subtotalInvest,
-                subtotalUsed: vm.cashTotalData.subtotalUsed
+                subtotalCas: vm.cashData.subtotalCas,
+                subtotalInvest: vm.investData.subtotalInvest,
+                subtotalUsed: vm.useData.subtotalUsed
             });
-            return assetCalculateService.calculatedTotalAssets(vm.cashTotalData.subtotalCas,
-                vm.cashTotalData.subtotalInvest, vm.cashTotalData.subtotalUsed);
+            return assetCalculateService.calculatedTotalAssets(vm.cashData.subtotalCas,
+                vm.investData.subtotalInvest, vm.useData.subtotalUsed);
         };
 
     }

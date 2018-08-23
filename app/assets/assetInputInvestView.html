@@ -337,16 +337,25 @@
          </div><br ><br > -->
         <div class="form-group row">
             <label for="calcInvestSubtotal" class="col-sm-4 control-label">Invested Assets Subtotal</label>
-            <div class="col-sm-4" id="calcInvestSubtotal">{{ vm.calcInvestSubtotal() | currency}}</div>
-            <!-- <div class="col-sm-4" id="calcSubTotal">
-
-                <input type="number"
-                       ng-model=" vm.brokerage -- vm.taOther -- vm.ira -- vm.rothira -- vm.kb -- vm.sepira --
-                            vm.keogh -- vm.pension -- vm.annuity -- vm.realEstate -- vm.solePro -- vm.partnership --
-                             vm.cCorporation -- vm.sCorporation -- vm.limitedLC -- vm.boOther | currency"
-                    />
-                }
-            </div> -->
+            <!-- <div class="col-sm-4" id="calcInvestSubtotal">{{ vm.calcInvestSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcInvestSubtotal">{{
+                vm.investData.subtotalInvest = vm.investData.brokerage +
+                vm.investData.taOther +
+                vm.investData.ira +
+                vm.investData.rothIra +
+                vm.investData.kb +
+                vm.investData.sepIra +
+                vm.investData.keogh +
+                vm.investData.pension +
+                vm.investData.annuity +
+                vm.investData.realEstate +
+                vm.investData.solePro +
+                vm.investData.partnership +
+                vm.investData.cCorporation +
+                vm.investData.sCorporation +
+                vm.investData.limitedLC +
+                vm.investData.boOther | currency;}}
+            </div>
         </div>
 
         <!-- <div class="form-group">

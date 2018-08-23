@@ -10,21 +10,55 @@
             debtCalculateService);
 
     function debtCalculateService() {
+        var dataObj = {
+            currentDebtsData: {
+                creditCards: 0.00,
+                incomeTaxOwed: 0.00,
+                outstandingBills: 0.00
+            },
+            longTermDebtData: {
+                homeMortgage: 0.00,
+                homeEquity: 0.00,
+                mortgagesRental: 0.00,
+                vehiclesLoans: 0.00,
+                studentLoans: 0.00,
+                lifeInsuranceLoan: 0.00,
+                otherLongtermDebt: 0.00
+            }
+        };
+        function setCurrentDebt(data) {
+            dataObj.currentDebtsData = data;
+        }
+        function getCurrentDebt() {
+            return dataObj.currentDebtsData;
+        }
+        function setLongTermDebt(data) {
+            dataObj.longTermDebtData = data;
+        }
+        function getLongTermDebt() {
+            return dataObj.longTermDebtData;
+        }
+        function get() {
+            return dataObj;
+        }
+
         // Current Debts
-        function subtotalCurrent(creditCards, incomeTaxOwed, outstandingBills) {
-            subtotalCurrent = creditCards +
+        function subtotalCurrentDebt(creditCards, incomeTaxOwed, outstandingBills) {
+            subtotalCurrentDebt = creditCards +
                 incomeTaxOwed +
                 outstandingBills;
 
-            return subtotalCurrent;
+            return subtotalCurrentDebt;
         }
 
         // Long-term Debts
-        function subtotalLongterm(homeMortgage, homeEquity, mortgagesRental, vehiclesLoans, lifeInsuranceLoan, otherLongtermDebt) {
+        function subtotalLongterm(homeMortgage, homeEquity, mortgagesRental, vehiclesLoans,
+                                  studentLoans, lifeInsuranceLoan, otherLongtermDebt) {
             subtotalLongterm = homeMortgage +
                 homeEquity +
                 mortgagesRental +
                 vehiclesLoans +
+                studentLoans +
                 lifeInsuranceLoan +
                 otherLongtermDebt;
 
@@ -32,9 +66,9 @@
         }
 
         // Total Debts
-        function totalDebts(subtotalCurrent, subtotalLongterm) {
+        function totalDebts(subtotalCurrentDebt, subtotalLongterm) {
 
-            totalDebts = subtotalCurrent + subtotalLongterm;
+            totalDebts = subtotalCurrentDebt + subtotalLongterm;
 
             return totalDebts;
         }
@@ -48,10 +82,15 @@
         }
         // public API
         return {
-            calculateCurrentDebtsSubtotal: subtotalCurrent,
+            calculateCurrentDebtsSubtotal: subtotalCurrentDebt,
             calculateLongtermDebtSubtotal: subtotalLongterm,
             calculatedTotalDebts: totalDebts,
-            calculatedNetWorth: netWorth
+            calculatedNetWorth: netWorth,
+            setCurrentDebt: setCurrentDebt,
+            getCurrentDebt: getCurrentDebt,
+            setLongTermDebt: setLongTermDebt,
+            getLongTermDebt: getLongTermDebt,
+            get: get
         }
 
     }

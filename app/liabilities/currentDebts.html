@@ -1,10 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<form class="form-horizontal" name="allLiabilities" novalidate>
+    <fieldset>
+        <legend>Debts</legend>
+        <h3>Current Debts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputCreditCards.$invalid &&
+                                    allLiabilities.inputCreditCards.$dirty}">
+            <label for="inputCreditCards" class="col-sm-4 control-label">Credit Cards</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCreditCards"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.currentDebtsData.creditCards"
+                       name="vm.creditCards"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputCreditCards.$invalid &&
+                           allLiabilities.inputCreditCards.$dirty">
+                Credit Cards must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputEstIncomeTaxOwed.$invalid &&
+                                    allLiabilities.inputEstIncomeTaxOwed.$dirty}">
+            <label for="inputEstIncomeTaxOwed" class="col-sm-4 control-label">Estimated Income Tax Owed</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputEstIncomeTaxOwed"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.currentDebtsData.incomeTaxOwed"
+                       name="vm.incomeTaxOwed"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputEstIncomeTaxOwed.$invalid &&
+                           allLiabilities.inputEstIncomeTaxOwed.$dirty">
+                Estimated Income Tax Owed must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allLiabilities.inputOutstandingBills.$invalid &&
+                                    allLiabilities.inputOutstandingBills.$dirty}">
+            <label for="inputOutstandingBills" class="col-sm-4 control-label">Outstanding Bills</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputOutstandingBills"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.currentDebtsData.outstandingBills"
+                       name="vm.outstandingBills"
+                />
+            </div>
+            <span class="help-block "
+                  ng-show="allLiabilities.inputOutstandingBills.$invalid &&
+                           allLiabilities.inputOutstandingBills.$dirty">
+                OutStanding Bills must be a valid number or empty.
+            </span>
+        </div>
+
+        <div class="form-group row">
+            <label for="calcCurrentDebts" class="col-sm-4 control-label">Sub-Total Cash</label>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCurrentDebtsSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcCurrentDebts">{{
+                vm.currentDebtsData.subtotalCurrentDebts = vm.currentDebtsData.creditCards +
+                vm.currentDebtsData.incomeTaxOwed +
+                vm.currentDebtsData.outstandingBills | currency;}}</div>
+        </div>
+    </fieldset>
+</form>
