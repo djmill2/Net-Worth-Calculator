@@ -14,30 +14,24 @@
     function AssetInputUseCtrl(assetResource, $state, assetCalculateService) {
         var vm = this;
 
-        // Use View
-        vm.principleHome = 0.00;
-        vm.vacationHome = 0.00;
-        vm.vehicles = 0.00;
-        vm.homeFurnish = 0.00;
-        vm.art = 0.00;
-        vm.jewelry = 0.00;
-        vm.uaOther = 0.00;
-        vm.subtotalCas = 0.00;
-        vm.subtotalInvest = 0.00;
-        vm.subtotalUsed = 0.00;
+        vm.assetCalculateService = assetCalculateService;
+        // Get our Use data object from the service
+        vm.cashData = assetCalculateService.getCash();
+        vm.investData = assetCalculateService.getInvest();
+        vm.useData = assetCalculateService.getUse();
 
-
+        // Get our Cash Total data object from the service
+        vm.cashTotalData = assetCalculateService.getCashTotal();
 
         //vm.assetResource = assetResource;
         assetResource.query(function(data) {
             vm.assets = data;
         });
 
-        vm.assetCalculateService = assetCalculateService;
-
         // Calculate the USE assets subtotal */
         vm.calcUseSubtotal = function() {
             assetCalculateService.setUse({
+<<<<<<< HEAD
                     principleHome: vm.principleHome,
                     vacationHome: vm.vacationHome,
                     vehicles: vm.vehicles,
@@ -51,12 +45,30 @@
             });
             return assetCalculateService.calculateUseSubtotal(vm.principleHome,
                 vm.vacationHome, vm.vehicles, vm.homeFurnish, vm.art, vm.jewelry, vm.uaOther);
+=======
+                principleHome: vm.useData.principleHome,
+                vacationHome: vm.useData.vacationHome,
+                vehicles: vm.useData.vehicles,
+                homeFurnish: vm.useData.homeFurnish,
+                art: vm.useData.art,
+                jewelry: vm.useData.jewelry,
+                uaOther: vm.useData.uaOther,
+            });
+            return assetCalculateService.calculateUseSubtotal(vm.useData.principleHome,
+                vm.useData.vacationHome, vm.useData.vehicles, vm.useData.homeFurnish,
+                vm.useData.art, vm.useData.jewelry, vm.useData.uaOther);
+>>>>>>> master
         };
 
-        /* Calculate the USE assets subtotal */
-        vm.calcTotalAssets = function() {
-            return assetCalculateService.calculatedTotalAssets(vm.subtotalCas,
-                vm.subtotalInvest, vm.subtotalUsed)
+        /* Calculate the Total assets  */
+       vm.calcTotalAssets = function() {
+            assetCalculateService.setCashTotal({
+                subtotalCas: vm.cashData.subtotalCas,
+                subtotalInvest: vm.investData.subtotalInvest,
+                subtotalUsed: vm.useData.subtotalUsed
+            });
+            return assetCalculateService.calculatedTotalAssets(vm.cashData.subtotalCas,
+                vm.investData.subtotalInvest, vm.useData.subtotalUsed);
         };
 
     }

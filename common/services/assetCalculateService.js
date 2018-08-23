@@ -19,6 +19,7 @@
                 cds: 0.00,
                 cashValLifeIns: 0.00
             },
+<<<<<<< HEAD
             investData: {},
             useData: {}
         };
@@ -39,6 +40,65 @@
             return dataObj.useData;
         }
 
+=======
+            investData: {
+                brokerage: 0.00,
+                taOther: 0.00,
+                ira: 0.00,
+                rothIra: 0.00,
+                kb: 0.00,
+                sepIra: 0.00,
+                keogh: 0.00,
+                pension: 0.00,
+                annuity: 0.00,
+                realEstate: 0.00,
+                solePro: 0.00,
+                partnership: 0.00,
+                cCorporation: 0.00,
+                sCorporation: 0.00,
+                limitedLC: 0.00,
+                boOther: 0.00
+            },
+            useData: {
+                principleHome: 0.00,
+                vacationHome: 0.00,
+                vehicles: 0.00,
+                homeFurnish: 0.00,
+                art: 0.00,
+                jewelry: 0.00,
+                uaOther: 0.00
+            },
+            cashTotalData: {
+                subtotalCas: 0.00,
+                subtotalInvest: 0.00,
+                subtotalUsed: 0.00
+            }
+        };
+        function setCash(data) {
+            dataObj.cashData = data;
+        }
+        function getCash() {
+            return dataObj.cashData;
+        }
+        function setInvest(data) {
+            dataObj.investData = data;
+        }
+        function getInvest() {
+            return dataObj.investData;
+        }
+        function setUse(data) {
+            dataObj.useData = data;
+        }
+        function getUse() {
+            return dataObj.useData;
+        }
+        function setCashTotal(data) {
+            dataObj.cashTotalData = data;
+        }
+        function getCashTotal() {
+            return dataObj.cashTotalData;
+        }
+>>>>>>> master
         function get() {
             return dataObj;
         }
@@ -57,9 +117,15 @@
         }
 
 
+<<<<<<< HEAD
         function subtotalInvested(brokerage, taOther, ira, rothIra, kb, sepIra, keogh, pension, annuity,
             realEstate, solePro, partnership, cCorporation, sCorporation, limitedLC,
             boOther) {
+=======
+        function subtotalInvested(brokerage, taOther, ira, rothIra, kb, sepIra, keogh,
+            pension, annuity, realEstate, solePro, partnership, cCorporation,
+            sCorporation, limitedLC, boOther) {
+>>>>>>> master
             // Invested Assets
 
             var subtotalInvest = 0;
@@ -115,8 +181,17 @@
             calculatedTotalAssets: totalAssets,
             setCash: setCash,
             getCash: getCash,
+<<<<<<< HEAD
             setUse: setUse,
             getUse: getUse,
+=======
+            setInvest: setInvest,
+            getInvest: getInvest,
+            setUse: setUse,
+            getUse: getUse,
+            setCashTotal: setCashTotal,
+            getCashTotal: getCashTotal,
+>>>>>>> master
             get: get
         }
 

@@ -14,7 +14,11 @@
     function AssetNetWorthCtrl(assetResource, $state, assetCalculateService) {
         var vm = this;
 
+<<<<<<< HEAD
         vm.testPersist = assetCalculateService.get();
+=======
+        vm.formPersist = assetCalculateService.get();
+>>>>>>> master
 
         // Cash View
         vm.checking = 0.00;vm.savings = 0.00;vm.moneyMarket = 0.00;

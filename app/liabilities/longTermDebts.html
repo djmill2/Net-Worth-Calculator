@@ -1,78 +1,6 @@
 <form class="form-horizontal" name="allLiabilities" novalidate>
     <fieldset>
         <legend>Debts</legend>
-        <h3>Current Debts</h3>
-        <div class="form-group row"
-             ng-class="{'has-error':allLiabilities.inputCreditCards.$invalid &&
-                                    allLiabilities.inputCreditCards.$dirty}">
-            <label for="inputCreditCards" class="col-sm-4 control-label">Credit Cards</label>
-            <div class="col-sm-2">
-                <input type="number"
-                       class="form-control"
-                       id="inputCreditCards"
-                       min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.creditCards"
-                       name="vm.creditCards"
-                />
-            </div>
-            <span class="help-block "
-                  ng-show="allLiabilities.inputCreditCards.$invalid &&
-                           allLiabilities.inputCreditCards.$dirty">
-                Credit Cards must be a valid number or empty.
-            </span>
-        </div>
-        <div class="form-group row"
-             ng-class="{'has-error':allLiabilities.inputEstIncomeTaxOwed.$invalid &&
-                                    allLiabilities.inputEstIncomeTaxOwed.$dirty}">
-            <label for="inputEstIncomeTaxOwed" class="col-sm-4 control-label">Estimated Income Tax Owed</label>
-            <div class="col-sm-2">
-                <input type="number"
-                       class="form-control"
-                       id="inputEstIncomeTaxOwed"
-                       min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.incomeTaxOwed"
-                       name="vm.incomeTaxOwed"
-                />
-            </div>
-            <span class="help-block "
-                  ng-show="allLiabilities.inputEstIncomeTaxOwed.$invalid &&
-                           allLiabilities.inputEstIncomeTaxOwed.$dirty">
-                Estimated Income Tax Owed must be a valid number or empty.
-            </span>
-        </div>
-        <div class="form-group row"
-             ng-class="{'has-error':allLiabilities.inputOutstandingBills.$invalid &&
-                                    allLiabilities.inputOutstandingBills.$dirty}">
-            <label for="inputOutstandingBills" class="col-sm-4 control-label">Outstanding Bills</label>
-            <div class="col-sm-2">
-                <input type="number"
-                       class="form-control"
-                       id="inputOutstandingBills"
-                       min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.outstandingBills"
-                       name="vm.outstandingBills"
-                />
-            </div>
-            <span class="help-block "
-                  ng-show="allLiabilities.inputOutstandingBills.$invalid &&
-                           allLiabilities.inputOutstandingBills.$dirty">
-                OutStanding Bills must be a valid number or empty.
-            </span>
-        </div>
-
-        <div class="form-group row">
-            <label for="calcCurrentDebts" class="col-sm-4 control-label">Sub-Total Cash</label>
-            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCurrentDebtsSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcCurrentDebts">{{
-                vm.subtotalCurrentDebts = vm.creditCards +
-                vm.incomeTaxOwed +
-                vm.outstandingBills | currency;}}</div>
-        </div>
-
-
         <h3>Long-term Debts</h3>
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputHomeMortgage.$invalid &&
@@ -84,7 +12,7 @@
                        id="inputHomeMortgage"
                        min="0"
                        max="9999999999999999999999999999999"
-                       ng-model="vm.homeMortgage"
+                       ng-model="vm.longTermDebtData.homeMortgage"
                        name="vm.homeMortgage"
                 />
             </div>
@@ -104,7 +32,7 @@
                        id="inputHomeEquity"
                        min="0"
                        max="9999999999999999999999999999999"
-                       ng-model="vm.homeEquity"
+                       ng-model="vm.longTermDebtData.homeEquity"
                        name="vm.homeEquity"
                 />
             </div>
@@ -126,7 +54,7 @@
                        id="inputMortgagesRentalProperty"
                        min="0"
                        max="9999999999999999999999999999999"
-                       ng-model="vm.mortgagesRental"
+                       ng-model="vm.longTermDebtData.mortgagesRental"
                        name="vm.mortgagesRental"
                 />
             </div>
@@ -146,7 +74,7 @@
                        id="inputVehicleLoans"
                        min="0"
                        max="9999999999999999999999999999999"
-                       ng-model="vm.vehiclesLoans"
+                       ng-model="vm.longTermDebtData.vehiclesLoans"
                        name="vm.vehiclesLoans"
                 />
             </div>
@@ -166,7 +94,7 @@
                        id="inputStudentLoans"
                        min="0"
                        max="9999999999999999999999999999999"
-                       ng-model="vm.studentLoans"
+                       ng-model="vm.longTermDebtData.studentLoans"
                        name="vm.studentLoans"
                 />
             </div>
@@ -187,7 +115,7 @@
                        id="inputLifeInsuranceLoans"
                        min="0"
                        max="9999999999999999999999999999999"
-                       ng-model="vm.lifeInsuranceLoan"
+                       ng-model="vm.longTermDebtData.lifeInsuranceLoan"
                        name="vm.lifeInsuranceLoan"
                        ng-blur="vm.validate_input(this)" />
             </div>
@@ -207,7 +135,7 @@
                        id="inputOtherLongtermDebt"
                        min="0"
                        max="9999999999999999999999999999999"
-                       ng-model="vm.otherLongtermDebt"
+                       ng-model="vm.longTermDebtData.otherLongtermDebt"
                        name="vm.otherLongtermDebt"
                 />
             </div>
@@ -222,13 +150,14 @@
         <div class="form-group row">
             <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal</label>
             <!-- <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.calcLongtermDebtSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.subtotalLongtermDebt = vm.homeMortgage +
-                vm.homeEquity +
-                vm.mortgagesRental +
-                vm.vehicles +
-                vm.studentLoans +
-                vm.lifeInsuranceLoan +
-                vm.otherLongtermDebt | currency;}}
+            <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{
+                vm.longTermDebtData.subtotalLongtermDebt = vm.longTermDebtData.homeMortgage +
+                vm.longTermDebtData.homeEquity +
+                vm.longTermDebtData.mortgagesRental +
+                vm.longTermDebtData.vehiclesLoans +
+                vm.longTermDebtData.studentLoans +
+                vm.longTermDebtData.lifeInsuranceLoan +
+                vm.longTermDebtData.otherLongtermDebt | currency;}}
             </div>
         </div>
 
@@ -236,16 +165,17 @@
         <div class="form-group row">
             <label for="calcTotalDebts" class="col-sm-4 control-label">Total Debts</label>
             <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
-            <div class="col-sm-4" id="calcTotalDebts">{{ totalDebts = vm.subtotalCurrentDebts --
-                vm.subtotalLongtermDebt | currency;}}</div>
+            <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalDebts = vm.currentDebtsData.subtotalCurrentDebts --
+                vm.longTermDebtData.subtotalLongtermDebt | currency;}}</div>
         </div>
 
         <legend>Net Worth</legend>
         <div class="form-group row">
             <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth</label>
             <!-- <div class="col-sm-4" id="calcNetWorth">{{ vm.calcNetWorth() | currency}}</div> -->
-            <div class="col-sm-4" id="calcNetWorth">{{ netWorth = vm.totalAssets -
-                vm.totalDedts | currency;}}</div>
+            <div class="col-sm-4" id="calcNetWorth">{{ netWorth = vm.useData.totalAsset -
+                vm.totalDebts | currency;}}
+            </div>
         </div>
     </fieldset>
 </form>
