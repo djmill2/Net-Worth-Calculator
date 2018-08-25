@@ -32,7 +32,7 @@
                 incomeTaxOwed: vm.currentDebtsData.incomeTaxOwed,
                 outstandingBills: vm.currentDebtsData.outstandingBills
             });
-            return debtCalculateService.calculateCurrentDebtsSubtotal(vm.currentDebtsData.creditCards,
+            return debtCalculateService.calcCurrentDebtsSubtotal(vm.currentDebtsData.creditCards,
                 vm.currentDebtsData.incomeTaxOwed, vm.currentDebtsData.outstandingBills);
         };
 

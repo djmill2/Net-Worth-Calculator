@@ -174,7 +174,7 @@
             <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets</label>
             <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div> -->
             <div class="col-sm-4" id="calcTotalAssets">{{
-                vm.useData.totalAsset = vm.cashData.subtotalCas +
+                vm.cashTotalData.totalAsset = vm.cashData.subtotalCas +
                 vm.investData.subtotalInvest +
                 vm.useData.subtotalUsed  | currency;}}
             </div>
@@ -198,5 +198,9 @@
                      </span>
              </div>
          </div> -->
+        <div id="footer">
+            <li><a ui-sref="debtCurrent">Current Debts - Next</a></li>
+            <li><a ui-sref="assetsInvestedData">Invested Assets - Previous</a></li>
+        </div>
     </fieldset>
 </form>

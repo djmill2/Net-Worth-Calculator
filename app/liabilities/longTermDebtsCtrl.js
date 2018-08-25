@@ -6,31 +6,27 @@
 
     angular
         .module("netWorthCalculator")
-        /*.controller("LongTermDebtsCtrl",
+        .controller("LongTermDebtsCtrl",
             ["assetResource",
                 "debtResource",
                 "$state",
                 "assetCalculateService",
                 "debtCalculateService",
-                LongTermDebtsCtrl]);*/
-        .controller("LongTermDebtsCtrl",
-            ["debtResource",
-                "$state",
-                "debtCalculateService",
                 LongTermDebtsCtrl]);
 
-    function LongTermDebtsCtrl(debtResource, $state, debtCalculateService) {
+    function LongTermDebtsCtrl(assetResource, debtResource, $state, assetCalculateService, debtCalculateService) {
         var vm = this;
 
-       // vm.assetCalculateService = assetCalculateService;
-        // vm.useData = assetCalculateService.getUse();
+        vm.assetCalculateService = assetCalculateService;
+
 
         vm.debtCalculateService = debtCalculateService;
         // Get our Current Debts data object from the service
+        vm.cashTotalData = assetCalculateService.getCashTotal();
         vm.currentDebtsData = debtCalculateService.getCurrentDebt();
         vm.longTermDebtData = debtCalculateService.getLongTermDebt();
 
-       // vm.assetResource = assetResource;
+        vm.assetResource = assetResource;
         /*assetResource.query(function(data) {
             vm.assets = data;
         });*/
@@ -63,7 +59,7 @@
 
         /* Calculate Net Worth */
         vm.calcNetWorth = function() {
-            return debtCalculateService.calculatedNetWorth(vm.useData.totalAsset,
+            return debtCalculateService.calculatedNetWorth(vm.cashTotalData.totalAsset,
                 vm.totalDebts)
         };
     }

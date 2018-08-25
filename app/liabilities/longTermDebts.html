@@ -164,18 +164,23 @@
 
         <div class="form-group row">
             <label for="calcTotalDebts" class="col-sm-4 control-label">Total Debts</label>
-            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
-            <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalDebts = vm.currentDebtsData.subtotalCurrentDebts --
-                vm.longTermDebtData.subtotalLongtermDebt | currency;}}</div>
+           <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
+            <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalDebts = vm.currentDebtsData.subtotalCurrentDebts +
+                vm.longTermDebtData.subtotalLongtermDebt | currency;}}
+            </div>
         </div>
 
         <legend>Net Worth</legend>
         <div class="form-group row">
             <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth</label>
             <!-- <div class="col-sm-4" id="calcNetWorth">{{ vm.calcNetWorth() | currency}}</div> -->
-            <div class="col-sm-4" id="calcNetWorth">{{ netWorth = vm.useData.totalAsset -
+            <div class="col-sm-4" id="calcNetWorth">{{ netWorth = vm.cashTotalData.totalAsset -
                 vm.totalDebts | currency;}}
             </div>
+        </div>
+
+        <div id="footer">
+            <li><a ui-sref="debtCurrent">Current Debts -  Previous</a></li>
         </div>
     </fieldset>
 </form>
