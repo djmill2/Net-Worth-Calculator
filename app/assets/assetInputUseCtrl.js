@@ -31,21 +31,6 @@
         // Calculate the USE assets subtotal */
         vm.calcUseSubtotal = function() {
             assetCalculateService.setUse({
-<<<<<<< HEAD
-                    principleHome: vm.principleHome,
-                    vacationHome: vm.vacationHome,
-                    vehicles: vm.vehicles,
-                    homeFurnish: vm.homeFurnish,
-                    art: vm.art,
-                    jewelry: vm.jewelry,
-                    uaOther: vm.uaOther,
-                    subtotalCas: vm.subtotalCas,
-                    subtotalInvest: vm.subtotalInvest,
-                    subtotalUsed: vm.subtotalUsed
-            });
-            return assetCalculateService.calculateUseSubtotal(vm.principleHome,
-                vm.vacationHome, vm.vehicles, vm.homeFurnish, vm.art, vm.jewelry, vm.uaOther);
-=======
                 principleHome: vm.useData.principleHome,
                 vacationHome: vm.useData.vacationHome,
                 vehicles: vm.useData.vehicles,
@@ -57,7 +42,6 @@
             return assetCalculateService.calculateUseSubtotal(vm.useData.principleHome,
                 vm.useData.vacationHome, vm.useData.vehicles, vm.useData.homeFurnish,
                 vm.useData.art, vm.useData.jewelry, vm.useData.uaOther);
->>>>>>> master
         };
 
         /* Calculate the Total assets  */

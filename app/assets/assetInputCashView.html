@@ -141,7 +141,15 @@
                 vm.cashData.cashValLifeIns | currency;}}
             </div>
         </div>
+        <div class="form-group row">
+            <label for="calcSubTotal2" class="col-sm-4 control-label">Sub-Total Cash</label>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcSubTotalw">{{
+                vm.sumStuff | currency;}}
+            </div>
+        </div>
 
+        <div> Subtotal: {{}}</div>
        <!-- <div class="form-group">
             <div class="col-md-4 col-md-offset-2">
                     <span>

@@ -19,28 +19,6 @@
                 cds: 0.00,
                 cashValLifeIns: 0.00
             },
-<<<<<<< HEAD
-            investData: {},
-            useData: {}
-        };
-
-        function setCash(data) {
-            dataObj.cashData = data;
-        }
-
-        function getCash() {
-            return dataObj.cashData;
-        }
-
-        function setUse(data) {
-            dataObj.useData = data;
-        }
-
-        function getUse() {
-            return dataObj.useData;
-        }
-
-=======
             investData: {
                 brokerage: 0.00,
                 taOther: 0.00,
@@ -98,7 +76,6 @@
         function getCashTotal() {
             return dataObj.cashTotalData;
         }
->>>>>>> master
         function get() {
             return dataObj;
         }
@@ -117,15 +94,9 @@
         }
 
 
-<<<<<<< HEAD
-        function subtotalInvested(brokerage, taOther, ira, rothIra, kb, sepIra, keogh, pension, annuity,
-            realEstate, solePro, partnership, cCorporation, sCorporation, limitedLC,
-            boOther) {
-=======
         function subtotalInvested(brokerage, taOther, ira, rothIra, kb, sepIra, keogh,
             pension, annuity, realEstate, solePro, partnership, cCorporation,
             sCorporation, limitedLC, boOther) {
->>>>>>> master
             // Invested Assets
 
             var subtotalInvest = 0;
@@ -181,17 +152,12 @@
             calculatedTotalAssets: totalAssets,
             setCash: setCash,
             getCash: getCash,
-<<<<<<< HEAD
-            setUse: setUse,
-            getUse: getUse,
-=======
             setInvest: setInvest,
             getInvest: getInvest,
             setUse: setUse,
             getUse: getUse,
             setCashTotal: setCashTotal,
             getCashTotal: getCashTotal,
->>>>>>> master
             get: get
         }
 
