@@ -137,9 +137,9 @@
         function totalAssets(subtotalCas, subtotalInvest, subtotalUsed) {
             // Total Assets
             var totalAsset = 0;
-            totalAssets = subtotalCas +
-                subtotalInvest +
-                subtotalUsed;
+            totalAssets = cashData.subtotalCas +
+                investData.subtotalInvest +
+                useData.subtotalUsed;
 
             return totalAsset;
         }

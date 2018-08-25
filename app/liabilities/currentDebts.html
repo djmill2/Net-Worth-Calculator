@@ -65,11 +65,17 @@
 
         <div class="form-group row">
             <label for="calcCurrentDebts" class="col-sm-4 control-label">Sub-Total Cash</label>
-            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCurrentDebtsSubtotal() | currency}}</div> -->
+            <!-- <div class="col-sm-4" id="calcCurrentDebts">{{ vm.calcCurrentDebtsSubtotal() | currency}}</div> -->
             <div class="col-sm-4" id="calcCurrentDebts">{{
                 vm.currentDebtsData.subtotalCurrentDebts = vm.currentDebtsData.creditCards +
                 vm.currentDebtsData.incomeTaxOwed +
-                vm.currentDebtsData.outstandingBills | currency;}}</div>
+                vm.currentDebtsData.outstandingBills | currency;}}
+            </div>
+        </div>
+
+        <div id="footer">
+            <li><a ui-sref="debtLongTerm">Long-term Debts - Next</a></li>
+            <li><a ui-sref="assetsUseData">Use Assets - Previous</a></li>
         </div>
     </fieldset>
 </form>
