@@ -9,11 +9,14 @@
         .controller("AssetInputCashCtrl",
             ["assetResource",
                 "$state",
+                "$scope",
                 "assetCalculateService",
                 AssetInputCashCtrl]);
 
-    function AssetInputCashCtrl(assetResource, $state, assetCalculateService) {
+    function AssetInputCashCtrl(assetResource, $state, $scope, assetCalculateService) {
         var vm = this;
+		//vm.cashSubtotal = 0;
+        vm.cashSubtotal = 0;
 
         vm.assetCalculateService = assetCalculateService;
         // Get our Cash data object from the service
@@ -24,8 +27,14 @@
             vm.assets = data;
         });
 
+        $scope.$watch("vm.cashData", function handleChange(userInputVal) {
+            vm.cashSubtotal = userInputVal.checking +
+                userInputVal.savings + userInputVal.moneyMarket +
+                userInputVal.savingsBond + userInputVal.cds + userInputVal.cashValLifeIns;
+        }, true);
+
         /* Calculate the CASH assets subtotal */
-        vm.calcCashSubtotal = function() {
+        vm.calcCashSubtotal = function () {
             assetCalculateService.setCash({
                 checking: vm.cashData.checking,
                 savings: vm.cashData.savings,
@@ -34,9 +43,17 @@
                 cds: vm.cashData.cds,
                 cashValLifeIns: vm.cashData.cashValLifeIns
             });
+            vm.cashData = {
+                checking: vm.cashData.checking,
+                savings: vm.cashData.savings,
+                moneyMarket: vm.cashData.moneyMarket,
+                savingsBond: vm.cashData.savingsBond,
+                cds: vm.cashData.cds,
+                cashValLifeIns: vm.cashData.cashValLifeIns
+            };
             return assetCalculateService.calculateCashSubtotal(vm.cashData.checking,
                 vm.cashData.savings, vm.cashData.moneyMarket, vm.cashData.savingsBond,
-                vm.cashData.cds, vm.cashData.cashValLifeIns);
+            vm.cashData.cds, vm.cashData.cashValLifeIns);
         };
 
     }

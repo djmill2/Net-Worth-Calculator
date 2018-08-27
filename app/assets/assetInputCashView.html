@@ -1,6 +1,6 @@
 <form class="form-horizontal" name="assetCashForm" novalidate>
     <fieldset>
-        <legend>Cash</legend>
+        <legend class="assetLegend">Cash</legend>
         <div class="form-group row"
              ng-class="{'has-error':assetCashForm.inputChecking.$invalid &&
                                     assetCashForm.inputChecking.$dirty}">
@@ -129,9 +129,8 @@
                 Calculate Cash subtotal
             </button>
         </div><br ><br > -->
-        <div class="form-group row">
-            <label for="calcSubTotal" class="col-sm-4 control-label">Sub-Total Cash</label>
-            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
+       <div class="form-group row">
+            <label for="calcSubTotal" class="col-sm-4 control-label">Sub-Total Cash - html</label>
             <div class="col-sm-4" id="calcSubTotal">{{
                 vm.cashData.subtotalCas = vm.cashData.checking +
                 vm.cashData.savings +
@@ -141,6 +140,14 @@
                 vm.cashData.cashValLifeIns | currency;}}
             </div>
         </div>
+        <div class="form-group row">
+            <label for="calcSubTotal2" class="col-sm-4 control-label">Sub-Total Cash - ctrl service</label>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcSubTotal2">{{
+                vm.cashSubtotal | currency;}}
+            </div>
+        </div>
+       <!-- <div> Subtotal: {{vm.cashSubtotal | currency}}</div> -->
 
        <!-- <div class="form-group">
             <div class="col-md-4 col-md-offset-2">
@@ -161,7 +168,9 @@
             </div>
         </div> -->
         <div id="footer">
-            <li><a ui-sref="assetsInvestedData">Invested Assets - Next</a></li>
+            <ul>
+                <li><a ui-sref="assetsInvestedData">Invested Assets - Next</a></li>
+            </ul>
         </div>
     </fieldset>
 </form>

@@ -1,6 +1,6 @@
 <form class="form-horizontal" name="assetUseForm" novalidate>
     <fieldset>
-        <legend>Use Assets</legend>
+        <legend class="assetLegend">Use Assets</legend>
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputPrincipleHome.$invalid &&
                                     assetUseForm.inputPrincipleHome.$dirty}">
@@ -150,7 +150,7 @@
              </button>
          </div><br ><br > -->
         <div class="form-group row">
-            <label for="calcUseSubtotal" class="col-sm-4 control-label">Use Assets Subtotal</label>
+            <label for="calcUseSubtotal" class="col-sm-4 control-label">Use Assets Subtotal - html</label>
             <!-- <div class="col-sm-4" id="calcUseSubtotal">{{ vm.calcUseSubtotal() | currency}}</div> -->
             <div class="col-sm-4" id="calcUseSubtotal">{{
                 vm.useData.subtotalUsed = vm.useData.principleHome +
@@ -161,22 +161,29 @@
                 vm.useData.jewelry +
                 vm.useData.uaOther | currency;}}
             </div>
-            <!-- <div class="col-sm-4" id="calcUseSubtotal">
-
-                <input type="number"
-                       ng-model="vm.principleHome -- vm.vacationHome -- vm.vehicles -- vm.homeFurnish --
-                            vm.art -- vm.jewelry -- vm.uaOther | currency" />
-
-            </div> -->
+        </div>
+        <div class="form-group row">
+            <label for="calcUseSubTotal2" class="col-sm-4 control-label">Use Assets Subtotal ctrl service</label>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcUseSubTotal2">{{
+                vm.useSubtotal | currency;}}
+            </div>
         </div>
 
         <div class="form-group row">
-            <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets</label>
+            <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets - html</label>
             <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div> -->
             <div class="col-sm-4" id="calcTotalAssets">{{
                 vm.cashTotalData.totalAsset = vm.cashData.subtotalCas +
                 vm.investData.subtotalInvest +
                 vm.useData.subtotalUsed  | currency;}}
+            </div>
+        </div>
+        <div class="form-group row">
+
+            <label for="calcTotalAssets1" class="col-sm-4 control-label">Total Assets - ctrl service</label>
+            <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div> -->
+            <div class="col-sm-4" id="calcTotalAssets1">{{ vm.totalAsset  | currency;}}
             </div>
         </div>
 
@@ -199,8 +206,10 @@
              </div>
          </div> -->
         <div id="footer">
-            <li><a ui-sref="debtCurrent">Current Debts - Next</a></li>
-            <li><a ui-sref="assetsInvestedData">Invested Assets - Previous</a></li>
+            <ul>
+                <li><a ui-sref="debtCurrent">Current Debts - Next</a></li>
+                <li><a ui-sref="assetsInvestedData">Invested Assets - Previous</a></li>
+            </ul>
         </div>
     </fieldset>
 </form>

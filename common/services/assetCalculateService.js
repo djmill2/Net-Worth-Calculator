@@ -47,9 +47,9 @@
                 uaOther: 0.00
             },
             cashTotalData: {
-                subtotalCas: 0.00,
-                subtotalInvest: 0.00,
-                subtotalUsed: 0.00
+                cashSubtotal: 0.00,
+                investSubtotal: 0.00,
+                useSubtotal: 0.00
             }
         };
         function setCash(data) {
@@ -82,7 +82,7 @@
 
         function subtotalCash(checking, savings, moneyMarket, savingsBond, cds, cashValLifeIns) {
             // Cash and Cash Equivalents
-            var subtotalCas = 0;
+            var cashSubtotal = 0;
             subtotalCash = checking +
                 savings +
                 moneyMarket +
@@ -90,7 +90,7 @@
                 cds +
                 cashValLifeIns;
 
-            return subtotalCas;
+            return cashSubtotal;
         }
 
 
@@ -99,7 +99,7 @@
             sCorporation, limitedLC, boOther) {
             // Invested Assets
 
-            var subtotalInvest = 0;
+            var investSubtotal = 0;
             subtotalInvested = brokerage +
                 taOther +
                 ira +
@@ -117,12 +117,12 @@
                 limitedLC +
                 boOther;
 
-            return subtotalInvest;
+            return investSubtotal;
         }
 
         function subtotalUse(principleHome, vacationHome, vehicles, homeFurnish, art, jewelry, uaOther) {
             // Use Assets
-            var subtotalUsed = 0;
+            var useSubtotal = 0;
             subtotalUse = principleHome +
                 vacationHome +
                 vehicles +
@@ -131,15 +131,15 @@
                 jewelry +
                 uaOther;
 
-            return subtotalUsed;
+            return useSubtotal;
         }
 
-        function totalAssets(subtotalCas, subtotalInvest, subtotalUsed) {
+        function totalAssets(cashSubtotal, investSubtotal, useSubtotal) {
             // Total Assets
             var totalAsset = 0;
-            totalAssets = cashData.subtotalCas +
-                investData.subtotalInvest +
-                useData.subtotalUsed;
+            totalAssets = cashSubtotal +
+                investSubtotal +
+                useSubtotal;
 
             return totalAsset;
         }

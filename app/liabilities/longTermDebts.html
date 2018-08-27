@@ -1,7 +1,9 @@
 <form class="form-horizontal" name="allLiabilities" novalidate>
     <fieldset>
-        <legend>Debts</legend>
-        <h3>Long-term Debts</h3>
+        <legend>
+            <div class="debtLegend">Long-Term Debts</div>
+        </legend>
+        <h3 class="category"><u>Long-term Debts</u></h3>
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputHomeMortgage.$invalid &&
                                     allLiabilities.inputHomeMortgage.$dirty}">
@@ -43,7 +45,7 @@
             </span>
         </div>
 
-        <h3>Retirement accounts</h3>
+        <h3><u>Retirement accounts</u></h3>
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputMortgagesRentalProperty.$invalid &&
                                     allLiabilities.inputMortgagesRentalProperty.$dirty}">
@@ -148,7 +150,7 @@
 
 
         <div class="form-group row">
-            <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal</label>
+            <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal - html</label>
             <!-- <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.calcLongtermDebtSubtotal() | currency}}</div> -->
             <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{
                 vm.longTermDebtData.subtotalLongtermDebt = vm.longTermDebtData.homeMortgage +
@@ -161,26 +163,46 @@
             </div>
         </div>
 
+        <div class="form-group row">
+            <label for="calcLongTermDebtSubtotal2" class="col-sm-4 control-label">Long-term Debts Subtotal - ctrl service</label>
+            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
+            <div class="col-sm-4" id="calcLongTermDebtSubtotal2">{{ vm.longtermDebtSubtotal | currency;}}
+            </div>
+        </div>
 
         <div class="form-group row">
-            <label for="calcTotalDebts" class="col-sm-4 control-label">Total Debts</label>
+            <label for="calcTotalDebts" class="col-sm-4 control-label">Total Debts - html</label>
            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
             <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalDebts = vm.currentDebtsData.subtotalCurrentDebts +
                 vm.longTermDebtData.subtotalLongtermDebt | currency;}}
             </div>
         </div>
+        <div class="form-group row">
+            <label for="calcTotalDebts2" class="col-sm-4 control-label">Total Debts - ctrl service</label>
+            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
+            <div class="col-sm-4" id="calcTotalDebts2">{{ vm.totalDebt | currency;}}
+            </div>
+        </div>
 
         <legend>Net Worth</legend>
         <div class="form-group row">
-            <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth</label>
+            <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth - html</label>
             <!-- <div class="col-sm-4" id="calcNetWorth">{{ vm.calcNetWorth() | currency}}</div> -->
             <div class="col-sm-4" id="calcNetWorth">{{ netWorth = vm.cashTotalData.totalAsset -
                 vm.totalDebts | currency;}}
             </div>
         </div>
+        <div class="form-group row">
+            <label for="calcNetWorth2" class="col-sm-4 control-label">Net Worth - ctrl service</label>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcNetWorth2">{{ vm.netWorthT | currency;}}
+            </div>
+        </div>
 
         <div id="footer">
-            <li><a ui-sref="debtCurrent">Current Debts -  Previous</a></li>
+            <ul>
+                <li><a ui-sref="debtCurrent">Current Debts -  Previous</a></li>
+            </ul>
         </div>
     </fieldset>
 </form>

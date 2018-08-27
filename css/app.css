@@ -17,6 +17,21 @@ form legend {
     line-height: 1;
     text-shadow: 0 3px 0 rgba(0,0,0,0.1);
 }
+.assetLegend {
+    color: #25aa35;
+    text-align: center;
+}
+.debtLegend {
+    color: #c7254e;
+    text-align: center;
+}
+h3 {
+    text-indent: 100px;
+}
+/*.category {
+    color: #c7254e;
+    text-align: right 60px;
+}*/
 .wizard a {
     background: #efefef;
     display: inline-block;

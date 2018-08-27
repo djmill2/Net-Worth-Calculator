@@ -24,6 +24,14 @@
                 studentLoans: 0.00,
                 lifeInsuranceLoan: 0.00,
                 otherLongtermDebt: 0.00
+            },
+            totalDebtData: {
+                currentDebtSubtotal: 0.00,
+                longtermDebtSubtotal: 0.00
+            },
+            netWorthData: {
+                totalAsset: 0.00,
+                totalDebt: 0.00
             }
         };
         function setCurrentDebt(data) {
@@ -37,6 +45,18 @@
         }
         function getLongTermDebt() {
             return dataObj.longTermDebtData;
+        }
+        function setTotalDebt(data) {
+            dataObj.totalDebtData = data;
+        }
+        function getTotalDebt() {
+            return dataObj.totalDebtData;
+        }
+        function setNetWorth(data) {
+            dataObj.netWorthData = data;
+        }
+        function getNetWorth() {
+            return dataObj.netWorthData;
         }
         function get() {
             return dataObj;
@@ -90,6 +110,10 @@
             getCurrentDebt: getCurrentDebt,
             setLongTermDebt: setLongTermDebt,
             getLongTermDebt: getLongTermDebt,
+            setTotalDebt: setTotalDebt,
+            getTotalDebt: getTotalDebt,
+            setNetWorth: setNetWorth,
+            getNetWorth: getNetWorth,
             get: get
         }
 
