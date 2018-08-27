@@ -14,6 +14,7 @@
     function AssetNetWorthCtrl(assetResource, $state, assetCalculateService) {
         var vm = this;
 
+
         vm.formPersist = assetCalculateService.get();
 
         // Cash View

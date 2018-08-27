@@ -59,7 +59,7 @@
             return assetCalculateService.calculateUseSubtotal(vm.useData.principleHome,
                 vm.useData.vacationHome, vm.useData.vehicles, vm.useData.homeFurnish,
                 vm.useData.art, vm.useData.jewelry, vm.useData.uaOther);
-        };
+};
 
         $scope.$watch("vm.cashTotalData", function handleChange(cashSubtotal, investSubtotal, useSubtotal) {
             console.log('Name changed to ' + cashSubtotal);

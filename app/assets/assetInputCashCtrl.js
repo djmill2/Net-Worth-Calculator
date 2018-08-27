@@ -19,6 +19,7 @@
         vm.cashSubtotal = 0;
 
         vm.assetCalculateService = assetCalculateService;
+
         // Get our Cash data object from the service
         vm.cashData = assetCalculateService.getCash();
 
@@ -54,6 +55,7 @@
             return assetCalculateService.calculateCashSubtotal(vm.cashData.checking,
                 vm.cashData.savings, vm.cashData.moneyMarket, vm.cashData.savingsBond,
             vm.cashData.cds, vm.cashData.cashValLifeIns);
+
         };
 
     }

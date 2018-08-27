@@ -83,6 +83,7 @@
         function subtotalCash(checking, savings, moneyMarket, savingsBond, cds, cashValLifeIns) {
             // Cash and Cash Equivalents
             var cashSubtotal = 0;
+
             subtotalCash = checking +
                 savings +
                 moneyMarket +
@@ -92,7 +93,6 @@
 
             return cashSubtotal;
         }
-
 
         function subtotalInvested(brokerage, taOther, ira, rothIra, kb, sepIra, keogh,
             pension, annuity, realEstate, solePro, partnership, cCorporation,
@@ -122,7 +122,7 @@
 
         function subtotalUse(principleHome, vacationHome, vehicles, homeFurnish, art, jewelry, uaOther) {
             // Use Assets
-            var useSubtotal = 0;
+        var useSubTotal = 0;
             subtotalUse = principleHome +
                 vacationHome +
                 vehicles +
