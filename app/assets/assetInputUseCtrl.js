@@ -34,6 +34,8 @@
             vm.useSubtotal = userInputVal.principleHome +
                 userInputVal.vacationHome + userInputVal.vehicles + userInputVal.homeFurnish +
                 userInputVal.art + userInputVal.jewelry + userInputVal.uaOther;
+            vm.assetCalculateService.setUse(userInputVal);
+            vm.totalAsset = vm.assetCalculateService.getTotal();
         }, true);
 
         // Calculate the USE assets subtotal */
@@ -61,13 +63,13 @@
                 vm.useData.art, vm.useData.jewelry, vm.useData.uaOther);
 };
 
-        $scope.$watch("vm.cashTotalData", function handleChange(cashSubtotal, investSubtotal, useSubtotal) {
-            console.log('Name changed to ' + cashSubtotal);
-            console.log('Name changed to ' + investSubtotal);
-            console.log('Name changed to ' + useSubtotal);
-            vm.totalAsset = cashSubtotal + investSubtotal + useSubtotal;
-            console.log('Name changed to ' + vm.totalAsset);
-        }, true);
+        // $scope.$watch("vm.cashTotalData", function handleChange(cashSubtotal, investSubtotal, useSubtotal) {
+        //     console.log('Name changed to ' + cashSubtotal);
+        //     console.log('Name changed to ' + investSubtotal);
+        //     console.log('Name changed to ' + useSubtotal);
+        //     vm.totalAsset = cashSubtotal + investSubtotal + useSubtotal;
+        //     console.log('Name changed to ' + vm.totalAsset);
+        // }, true);
 
         /* Calculate the Total assets  */
        vm.calcTotalAssets = function() {

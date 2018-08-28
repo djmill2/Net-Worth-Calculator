@@ -32,6 +32,7 @@
             vm.cashSubtotal = userInputVal.checking +
                 userInputVal.savings + userInputVal.moneyMarket +
                 userInputVal.savingsBond + userInputVal.cds + userInputVal.cashValLifeIns;
+            vm.assetCalculateService.setCash(userInputVal);
         }, true);
 
         /* Calculate the CASH assets subtotal */

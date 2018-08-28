@@ -149,9 +149,8 @@
                  Calculate Cash subtotal
              </button>
          </div><br ><br > -->
-        <div class="form-group row">
+        <!-- <div class="form-group row">
             <label for="calcUseSubtotal" class="col-sm-4 control-label">Use Assets Subtotal - html</label>
-            <!-- <div class="col-sm-4" id="calcUseSubtotal">{{ vm.calcUseSubtotal() | currency}}</div> -->
             <div class="col-sm-4" id="calcUseSubtotal">{{
                 vm.useData.subtotalUsed = vm.useData.principleHome +
                 vm.useData.vacationHome +
@@ -161,7 +160,7 @@
                 vm.useData.jewelry +
                 vm.useData.uaOther | currency;}}
             </div>
-        </div>
+        </div> -->
         <div class="form-group row">
             <label for="calcUseSubTotal2" class="col-sm-4 control-label">Use Assets Subtotal ctrl service</label>
             <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
@@ -170,15 +169,14 @@
             </div>
         </div>
 
-        <div class="form-group row">
+        <!-- <div class="form-group row">
             <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets - html</label>
-            <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div> -->
             <div class="col-sm-4" id="calcTotalAssets">{{
                 vm.cashTotalData.totalAsset = vm.cashData.subtotalCas +
                 vm.investData.subtotalInvest +
                 vm.useData.subtotalUsed  | currency;}}
             </div>
-        </div>
+        </div> -->
         <div class="form-group row">
 
             <label for="calcTotalAssets1" class="col-sm-4 control-label">Total Assets - ctrl service</label>
