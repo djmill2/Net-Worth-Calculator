@@ -29,6 +29,7 @@
         $scope.$watch("vm.currentDebtsData", function handleChange(userInputVal) {
             vm.currentDebtSubtotal = userInputVal.creditCards +
                 userInputVal.incomeTaxOwed + userInputVal.outstandingBills;
+            vm.debtCalculateService.setCurrentDebt(userInputVal);
         }, true);
 
         /* Calculate the Current Debts subtotal */

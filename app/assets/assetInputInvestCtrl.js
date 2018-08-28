@@ -32,6 +32,7 @@
                 userInputVal.annuity + userInputVal.realEstate + userInputVal.solePro +
                 userInputVal.partnership + userInputVal.cCorporation + userInputVal.sCorporation +
                 userInputVal.limitedLC + userInputVal.boOther;
+            vm.assetCalculateService.setInvest(userInputVal);
         }, true);
 
         /* Calculate the INVESTED assets subtotal */

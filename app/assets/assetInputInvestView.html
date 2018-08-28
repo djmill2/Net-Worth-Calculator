@@ -337,10 +337,10 @@
                  Calculate Business subtotal
              </button>
          </div><br ><br > -->
-        <div class="form-group row">
+        <!-- <div class="form-group row">
             <label for="calcInvestSubtotal" class="col-sm-4 control-label">Invested Assets Subtotal</label>
-            <!-- <div class="col-sm-4" id="calcInvestSubtotal">{{ vm.calcInvestSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcInvestSubtotal">{{
+            
+			<div class="col-sm-4" id="calcInvestSubtotal">{{
                 vm.investData.subtotalInvest = vm.investData.brokerage +
                 vm.investData.taOther +
                 vm.investData.ira +
@@ -358,7 +358,7 @@
                 vm.investData.limitedLC +
                 vm.investData.boOther | currency;}}
             </div>
-        </div>
+        </div> -->
         <div class="form-group row">
             <label for="calcInvestSubTotal1" class="col-sm-4 control-label">Invested Assets Subtotal-2</label>
             <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
@@ -386,8 +386,10 @@
          </div> -->
 
         <div id="footer">
-            <li><a ui-sref="assetsUseData">Use Assets - Next</a></li>
-            <li><a ui-sref="assetsCashData">Cash Assets - Previous</a></li>
+			<ul>
+				<li><a ui-sref="assetsUseData">Use Assets - Next</a></li>
+				<li><a ui-sref="assetsCashData">Cash Assets - Previous</a></li>
+			</ul>
         </div>
     </fieldset>
 </form>

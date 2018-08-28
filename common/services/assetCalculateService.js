@@ -49,23 +49,47 @@
             cashTotalData: {
                 cashSubtotal: 0.00,
                 investSubtotal: 0.00,
-                useSubtotal: 0.00
+                useSubtotal: 0.00,
+				assetsTotal: 0.00				 
             }
         };
+		function calcSubTotal(obj) {
+            var assetsSubTotal = 0.00;
+            for (var prop in obj) {
+                assetsSubTotal += obj[prop];
+            }
+            return assetsSubTotal;
+        }
+        function calcTotal(obj) {
+            var assetsTotal = 0.00;
+            for (var prop in obj.cashTotalData) {
+                if (prop.indexOf('assetsTotal') === -1) {
+                    assetsTotal += obj.cashTotalData[prop];
+                }
+            }
+            return assetsTotal;
+        }
+        function getTotal() {
+            dataObj.cashTotalData.assetsTotal = calcTotal(dataObj);
+            return dataObj.cashTotalData.assetsTotal;
+        }
         function setCash(data) {
             dataObj.cashData = data;
+			dataObj.cashTotalData.cashSubtotal = calcSubTotal(data);														
         }
         function getCash() {
             return dataObj.cashData;
         }
         function setInvest(data) {
             dataObj.investData = data;
+			dataObj.cashTotalData.investSubtotal = calcSubTotal(data);														  
         }
         function getInvest() {
             return dataObj.investData;
         }
         function setUse(data) {
             dataObj.useData = data;
+			dataObj.cashTotalData.useSubtotal = calcSubTotal(data);													   
         }
         function getUse() {
             return dataObj.useData;
@@ -122,7 +146,7 @@
 
         function subtotalUse(principleHome, vacationHome, vehicles, homeFurnish, art, jewelry, uaOther) {
             // Use Assets
-        var useSubTotal = 0;
+			var useSubTotal = 0;
             subtotalUse = principleHome +
                 vacationHome +
                 vehicles +
@@ -158,7 +182,8 @@
             getUse: getUse,
             setCashTotal: setCashTotal,
             getCashTotal: getCashTotal,
-            get: get
+            get: get,
+			getTotal: getTotal				  
         }
 
     }

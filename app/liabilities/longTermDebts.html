@@ -148,54 +148,30 @@
             </span>
         </div>
 
-
         <div class="form-group row">
-            <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal - html</label>
-            <!-- <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.calcLongtermDebtSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{
-                vm.longTermDebtData.subtotalLongtermDebt = vm.longTermDebtData.homeMortgage +
-                vm.longTermDebtData.homeEquity +
-                vm.longTermDebtData.mortgagesRental +
-                vm.longTermDebtData.vehiclesLoans +
-                vm.longTermDebtData.studentLoans +
-                vm.longTermDebtData.lifeInsuranceLoan +
-                vm.longTermDebtData.otherLongtermDebt | currency;}}
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="calcLongTermDebtSubtotal2" class="col-sm-4 control-label">Long-term Debts Subtotal - ctrl service</label>
+            <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal</label>
             <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
-            <div class="col-sm-4" id="calcLongTermDebtSubtotal2">{{ vm.longtermDebtSubtotal | currency;}}
+            <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.longtermDebtSubtotal | currency;}}
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="calcTotalDebts" class="col-sm-4 control-label">Total Debts - html</label>
-           <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
-            <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalDebts = vm.currentDebtsData.subtotalCurrentDebts +
-                vm.longTermDebtData.subtotalLongtermDebt | currency;}}
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="calcTotalDebts2" class="col-sm-4 control-label">Total Debts - ctrl service</label>
-            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
-            <div class="col-sm-4" id="calcTotalDebts2">{{ vm.totalDebt | currency;}}
-            </div>
+            <label for="calcTotalDebts" class="col-sm-4 control-label">Total Liabilities</label>
+            <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalLiability | currency;}}</div>
         </div>
 
         <legend>Net Worth</legend>
         <div class="form-group row">
-            <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth - html</label>
-            <!-- <div class="col-sm-4" id="calcNetWorth">{{ vm.calcNetWorth() | currency}}</div> -->
-            <div class="col-sm-4" id="calcNetWorth">{{ netWorth = vm.cashTotalData.totalAsset -
-                vm.totalDebts | currency;}}
-            </div>
+            <label for="calcTotalAssets1" class="col-sm-4 control-label">Total Assets</label>
+            <div class="col-sm-4" id="calcTotalAssets1">{{ vm.totalAsset  | currency;}}</div>
         </div>
         <div class="form-group row">
-            <label for="calcNetWorth2" class="col-sm-4 control-label">Net Worth - ctrl service</label>
-            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcNetWorth2">{{ vm.netWorthT | currency;}}
+            <label for="calcTotalDebts2" class="col-sm-4 control-label">Total Liabilities</label>
+            <div class="col-sm-4" id="calcTotalDebts2">{{ vm.totalLiability | currency;}}</div>
+        </div>
+        <div class="form-group row">
+            <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth</label>
+            <div class="col-sm-4" id="calcNetWorth">{{ vm.netWorth | currency;}}
             </div>
         </div>
 

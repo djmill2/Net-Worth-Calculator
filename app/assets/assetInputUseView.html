@@ -141,70 +141,17 @@
                 Use Assets Other must be a valid number or empty.
             </span>
         </div>
-        <!-- <div class="col-md-2">
-             <button type="button"
-                     class="btn btn-default"
-                     title="Calculate Cash Subtotal"
-                     ng-click="vm.calculateCashSubTotal()">
-                 Calculate Cash subtotal
-             </button>
-         </div><br ><br > -->
+
         <div class="form-group row">
-            <label for="calcUseSubtotal" class="col-sm-4 control-label">Use Assets Subtotal - html</label>
-            <!-- <div class="col-sm-4" id="calcUseSubtotal">{{ vm.calcUseSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcUseSubtotal">{{
-                vm.useData.subtotalUsed = vm.useData.principleHome +
-                vm.useData.vacationHome +
-                vm.useData.vehicles +
-                vm.useData.homeFurnish +
-                vm.useData.art +
-                vm.useData.jewelry +
-                vm.useData.uaOther | currency;}}
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="calcUseSubTotal2" class="col-sm-4 control-label">Use Assets Subtotal ctrl service</label>
+            <label for="calcUseSubTotal2" class="col-sm-4 control-label">Use Assets Subtotal</label>
             <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcUseSubTotal2">{{
-                vm.useSubtotal | currency;}}
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets - html</label>
-            <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div> -->
-            <div class="col-sm-4" id="calcTotalAssets">{{
-                vm.cashTotalData.totalAsset = vm.cashData.subtotalCas +
-                vm.investData.subtotalInvest +
-                vm.useData.subtotalUsed  | currency;}}
+            <div class="col-sm-4" id="calcUseSubTotal2">{{ vm.useSubtotal | currency;}}
             </div>
         </div>
         <div class="form-group row">
-
-            <label for="calcTotalAssets1" class="col-sm-4 control-label">Total Assets - ctrl service</label>
-            <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calcTotalAssets() | currency}}</div> -->
-            <div class="col-sm-4" id="calcTotalAssets1">{{ vm.totalAsset  | currency;}}
-            </div>
+            <label for="calcTotalAssets1" class="col-sm-4 control-label">Total Assets</label>
+            <div class="col-sm-4" id="calcTotalAssets1">{{ vm.totalAsset  | currency;}}</div>
         </div>
-
-        <!-- <div class="form-group">
-             <div class="col-md-4 col-md-offset-2">
-                     <span>
-                         <button class="btn btn-primary"
-                                 style="width:80px;margin-right:10px"
-                                 ng-click="vm.submit()">
-                             Save
-                         </button>
-                     </span>
-                 <span>
-                         <button class="btn btn-default"
-                                 style="width:70px"
-                                 ng-click="vm.cancel()">
-                             Cancel
-                         </button>
-                     </span>
-             </div>
-         </div> -->
         <div id="footer">
             <ul>
                 <li><a ui-sref="debtCurrent">Current Debts - Next</a></li>

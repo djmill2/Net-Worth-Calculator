@@ -15,7 +15,6 @@
 
     function AssetInputCashCtrl(assetResource, $state, $scope, assetCalculateService) {
         var vm = this;
-		//vm.cashSubtotal = 0;
         vm.cashSubtotal = 0;
 
         vm.assetCalculateService = assetCalculateService;
@@ -32,6 +31,7 @@
             vm.cashSubtotal = userInputVal.checking +
                 userInputVal.savings + userInputVal.moneyMarket +
                 userInputVal.savingsBond + userInputVal.cds + userInputVal.cashValLifeIns;
+			vm.assetCalculateService.setCash(userInputVal);											   
         }, true);
 
         /* Calculate the CASH assets subtotal */
