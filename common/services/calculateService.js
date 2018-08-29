@@ -67,42 +67,55 @@
                 otherLongtermDebt: 0.00
             }
         };
+
         function setCash(data) {
             dataObj.cashData = data;
         }
+
         function getCash() {
             return dataObj.cashData;
         }
+
         function setInvest(data) {
             dataObj.investData = data;
         }
+
         function getInvest() {
             return dataObj.investData;
         }
+
         function setUse(data) {
             dataObj.useData = data;
         }
+
         function getUse() {
             return dataObj.useData;
         }
+
         function setCashTotal(data) {
             dataObj.cashTotalData = data;
         }
+
         function getCashTotal() {
             return dataObj.cashTotalData;
         }
+
         function setCurrentDebt(data) {
             dataObj.currentDebtsData = data;
         }
+
         function getCurrentDebt() {
             return dataObj.currentDebtsData;
         }
+
         function setLongTermDebt(data) {
             dataObj.longTermDebtData = data;
         }
+
         function getLongTermDebt() {
             return dataObj.longTermDebtData;
         }
+
         function get() {
             return dataObj;
         }
@@ -179,6 +192,7 @@
 
             return subtotalCurrentDebt;
         }
+
         // Long-term Debts
         function subtotalLongterm(homeMortgage, homeEquity, mortgagesRental, vehiclesLoans,
                                   studentLoans, lifeInsuranceLoan, otherLongtermDebt) {

@@ -9,11 +9,11 @@
                 <input type="number"
                        class="form-control"
                        id="inputPrincipleHome"
-					   min="0"
+                       min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.useData.principleHome"
                        name="vm.principleHome"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetUseForm.inputPrincipleHome.$invalid &&
@@ -29,11 +29,11 @@
                 <input type="number"
                        class="form-control"
                        id="inputVacationHome"
-					   min="0"
+                       min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.useData.vacationHome"
                        name="vm.vacationHome"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetUseForm.inputVacationHome.$invalid &&
@@ -49,11 +49,11 @@
                 <input type="number"
                        class="form-control"
                        id="inputVehicles"
-					   min="0"
+                       min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.useData.vehicles"
                        name="vm.vehicles"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetUseForm.inputVehicles.$invalid &&
@@ -69,11 +69,11 @@
                 <input type="number"
                        class="form-control"
                        id="inputHomeFurnish"
-					   min="0"
+                       min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.useData.homeFurnish"
                        name="vm.homeFurnish"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetUseForm.inputHomeFurnish.$invalid &&
@@ -89,11 +89,11 @@
                 <input type="number"
                        class="form-control"
                        id="inputArt"
-					   min="0"
+                       min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.useData.art"
                        name="vm.art"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetUseForm.inputArt.$invalid &&
@@ -109,11 +109,11 @@
                 <input type="number"
                        class="form-control"
                        id="inputJewelry"
-					   min="0"
+                       min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.useData.jewelry"
                        name="vm.jewelry"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetUseForm.inputJewelry.$invalid &&
@@ -129,11 +129,11 @@
                 <input type="number"
                        class="form-control"
                        id="inputUAOther"
-					   min="0"
+                       min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.useData.uaOther"
                        name="vm.uaOther"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetUseForm.inputUAOther.$invalid &&
@@ -143,11 +143,11 @@
         </div>
         <div class="form-group row">
             <label for="calcUseSubTotal" class="col-sm-4 control-label">Use Assets Subtotal</label>
-            <div class="col-sm-4" id="calcUseSubTotal">{{ vm.useSubtotal | currency;}}
-
+            <div class="col-sm-4" id="calcUseSubTotal">{{ vm.useSubtotal | currency;}}</div>
+        </div>
         <div class="form-group row">
             <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets</label>
-            <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset  | currency;}}</div>
+            <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset | currency;}}</div>
         </div>
         <div id="footer">
             <ul>

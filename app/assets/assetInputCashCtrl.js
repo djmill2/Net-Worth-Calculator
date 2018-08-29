@@ -23,7 +23,7 @@
         vm.cashData = assetCalculateService.getCash();
 
         //vm.assetResource = assetResource;
-        assetResource.query(function(data) {
+        assetResource.query(function (data) {
             vm.assets = data;
         });
 
@@ -31,7 +31,7 @@
             vm.cashSubtotal = userInputVal.checking +
                 userInputVal.savings + userInputVal.moneyMarket +
                 userInputVal.savingsBond + userInputVal.cds + userInputVal.cashValLifeIns;
-			vm.assetCalculateService.setCash(userInputVal);											   
+            vm.assetCalculateService.setCash(userInputVal);
         }, true);
 
         /* Calculate the CASH assets subtotal */
@@ -54,7 +54,7 @@
             };
             return assetCalculateService.calculateCashSubtotal(vm.cashData.checking,
                 vm.cashData.savings, vm.cashData.moneyMarket, vm.cashData.savingsBond,
-            vm.cashData.cds, vm.cashData.cashValLifeIns);
+                vm.cashData.cds, vm.cashData.cashValLifeIns);
 
         };
 

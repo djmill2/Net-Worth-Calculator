@@ -12,6 +12,7 @@
                 "$scope",
                 "assetCalculateService",
                 AssetInputInvestCtrl]);
+
     function AssetInputInvestCtrl(assetResource, $state, $scope, assetCalculateService) {
         var vm = this;
         vm.investSubtotal = 0;
@@ -21,7 +22,7 @@
         vm.investData = assetCalculateService.getInvest();
 
         //vm.assetResource = assetResource;
-        assetResource.query(function(data) {
+        assetResource.query(function (data) {
             vm.assets = data;
         });
 
@@ -36,7 +37,7 @@
         }, true);
 
         /* Calculate the INVESTED assets subtotal */
-        vm.calcInvestSubtotal = function() {
+        vm.calcInvestSubtotal = function () {
             assetCalculateService.setInvest({
                 brokerage: vm.investData.brokerage,
                 taOther: vm.investData.taOther,

@@ -50,16 +50,18 @@
                 cashSubtotal: 0.00,
                 investSubtotal: 0.00,
                 useSubtotal: 0.00,
-				assetsTotal: 0.00				 
+                assetsTotal: 0.00
             }
         };
-		function calcSubTotal(obj) {
+
+        function calcSubTotal(obj) {
             var assetsSubTotal = 0.00;
             for (var prop in obj) {
                 assetsSubTotal += obj[prop];
             }
             return assetsSubTotal;
         }
+
         function calcTotal(obj) {
             var assetsTotal = 0.00;
             for (var prop in obj.cashTotalData) {
@@ -69,37 +71,47 @@
             }
             return assetsTotal;
         }
+
         function getTotal() {
             dataObj.cashTotalData.assetsTotal = calcTotal(dataObj);
             return dataObj.cashTotalData.assetsTotal;
         }
+
         function setCash(data) {
             dataObj.cashData = data;
-			dataObj.cashTotalData.cashSubtotal = calcSubTotal(data);														
+            dataObj.cashTotalData.cashSubtotal = calcSubTotal(data);
         }
+
         function getCash() {
             return dataObj.cashData;
         }
+
         function setInvest(data) {
             dataObj.investData = data;
-			dataObj.cashTotalData.investSubtotal = calcSubTotal(data);														  
+            dataObj.cashTotalData.investSubtotal = calcSubTotal(data);
         }
+
         function getInvest() {
             return dataObj.investData;
         }
+
         function setUse(data) {
             dataObj.useData = data;
-			dataObj.cashTotalData.useSubtotal = calcSubTotal(data);													   
+            dataObj.cashTotalData.useSubtotal = calcSubTotal(data);
         }
+
         function getUse() {
             return dataObj.useData;
         }
+
         function setCashTotal(data) {
             dataObj.cashTotalData = data;
         }
+
         function getCashTotal() {
             return dataObj.cashTotalData;
         }
+
         function get() {
             return dataObj;
         }
@@ -119,8 +131,8 @@
         }
 
         function subtotalInvested(brokerage, taOther, ira, rothIra, kb, sepIra, keogh,
-            pension, annuity, realEstate, solePro, partnership, cCorporation,
-            sCorporation, limitedLC, boOther) {
+                                  pension, annuity, realEstate, solePro, partnership, cCorporation,
+                                  sCorporation, limitedLC, boOther) {
             // Invested Assets
 
             var investSubtotal = 0;
@@ -146,7 +158,7 @@
 
         function subtotalUse(principleHome, vacationHome, vehicles, homeFurnish, art, jewelry, uaOther) {
             // Use Assets
-			var useSubTotal = 0;
+            var useSubTotal = 0;
             subtotalUse = principleHome +
                 vacationHome +
                 vehicles +
@@ -183,7 +195,7 @@
             setCashTotal: setCashTotal,
             getCashTotal: getCashTotal,
             get: get,
-			getTotal: getTotal				  
+            getTotal: getTotal
         }
 
     }

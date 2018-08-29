@@ -9,8 +9,8 @@
         .controller("CurrentDebtsCtrl",
             ["debtResource",
                 "$state",
-               "$scope",
-               "debtCalculateService",
+                "$scope",
+                "debtCalculateService",
                 CurrentDebtsCtrl]);
 
     function CurrentDebtsCtrl(debtResource, $state, $scope, debtCalculateService) {
@@ -21,8 +21,8 @@
         // Get our Current Debts data object from the service
         vm.currentDebtsData = debtCalculateService.getCurrentDebt();
 
-       // vm.debtResource = debtResource;
-        debtResource.query(function(data) {
+        // vm.debtResource = debtResource;
+        debtResource.query(function (data) {
             vm.debts = data;
         });
 
@@ -33,7 +33,7 @@
         }, true);
 
         /* Calculate the Current Debts subtotal */
-        vm.calcCurrentDebtsSubtotal = function() {
+        vm.calcCurrentDebtsSubtotal = function () {
             debtCalculateService.setCurrentDebt({
                 creditCards: vm.currentDebtsData.creditCards,
                 incomeTaxOwed: vm.currentDebtsData.incomeTaxOwed,

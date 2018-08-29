@@ -10,65 +10,79 @@
 
     app.run(function ($httpBackend) {
         var debts = [
-            {"debtId": 1,
+            {
+                "debtId": 1,
                 "debtName": "Credit Cards",
                 "debtAmount": 0.00,
-                "tags": [ "creditCards" ]
+                "tags": ["creditCards"]
             },
-            {"debtId": 2,
+            {
+                "debtId": 2,
                 "debtName": "Estimated Income Tax Owed",
                 "debtAmount": 0.00,
-                "tags": [ "Estimated Income Tax Owed" ]
+                "tags": ["Estimated Income Tax Owed"]
             },
-            {"debtId": 3,
+            {
+                "debtId": 3,
                 "debtName": "Outstanding Bills",
                 "debtAmount": 0.00,
-                "tags": [ "outstanding bills" ]
+                "tags": ["outstanding bills"]
             },
-            {"debtId": 4,
+            {
+                "debtId": 4,
                 "debtName": "Subtotal Current Debts",
                 "debtAmount": 0.00,
                 "tags": ["Subtotal Current Debts"]
             },
-            {"debtId": 5,
+            {
+                "debtId": 5,
                 "debtName": "Home Mortgage",
-                "tags": [ "home mortgage" ]
+                "tags": ["home mortgage"]
             },
-            {"debtId": 6,
+            {
+                "debtId": 6,
                 "debtName": "Home Equity Line",
-                "tags": [ "home equity line" ]
+                "tags": ["home equity line"]
             },
-            {"debtId": 7,
+            {
+                "debtId": 7,
                 "debtName": "Mortgages on rental properties",
-                "tags": [ "mortgages rental" ]
+                "tags": ["mortgages rental"]
             },
-            {"debtId": 8,
+            {
+                "debtId": 8,
                 "debtName": "Vehicle Loans (Cars, Trucks, Boats)",
-                "tags": [ "vehicle" ]
+                "tags": ["vehicle"]
             },
-            {"debtId": 9,
+            {
+                "debtId": 9,
                 "debtName": "Student Loans",
-                "tags": [ "student loans" ]
+                "tags": ["student loans"]
             },
-            {"debtId": 10,
+            {
+                "debtId": 10,
                 "debtName": "Life Insurance policy loans",
-                "tags": [ "life insurance policy loans" ]
+                "tags": ["life insurance policy loans"]
             },
-            {"debtId": 11,
+            {
+                "debtId": 11,
                 "debtName": "Other long-term debt",
-                "tags": [ "other long-term debt" ]
+                "tags": ["other long-term debt"]
             },
-            {"debtId": 12,
+            {
+                "debtId": 12,
                 "debtName": "Subtotal Long-term Debts",
                 "debtAmount": 0.00,
                 "tags": ["subtotal long-term debts"]
             },
-            {"debtId": 13,
+            {
+                "debtId": 13,
                 "debtName": "Total Debts",
                 "debtAmount": 0.00,
                 "tags": ["total debts"]
             },
-            {"debtId": 14,
+            {
+                "debtId": 14,
                 "debtName": "Net Worth",
                 "debtAmount": 0.00,
                 "tags": ["net worth"]

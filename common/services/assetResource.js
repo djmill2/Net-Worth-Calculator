@@ -7,8 +7,8 @@
     angular
         .module("common.services")
         .factory("assetResource",
-                ["$resource",
-                  assetResource]);
+            ["$resource",
+                assetResource]);
 
     function assetResource($resource) {
         return $resource("/api/assets/:assetId")

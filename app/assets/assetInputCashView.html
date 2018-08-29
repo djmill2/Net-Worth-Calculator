@@ -13,7 +13,7 @@
                        max="9999999999999999999999999999999"
                        ng-model="vm.cashData.checking"
                        name="vm.checking"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetCashForm.inputChecking.$invalid &&
@@ -33,7 +33,7 @@
                        max="9999999999999999999999999999999"
                        ng-model="vm.cashData.savings"
                        name="vm.savings"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetCashForm.inputSavings.$invalid &&
@@ -53,7 +53,7 @@
                        max="9999999999999999999999999999999"
                        ng-model="vm.cashData.moneyMarket"
                        name="vm.moneyMarket"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetCashForm.inputMoneyMarket.$invalid &&
@@ -73,7 +73,7 @@
                        max="9999999999999999999999999999999"
                        ng-model="vm.cashData.savingsBond"
                        name="vm.savingsBond"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetCashForm.inputSavingsBonds.$invalid &&
@@ -93,7 +93,7 @@
                        max="9999999999999999999999999999999"
                        ng-model="vm.cashData.cds"
                        name="vm.cds"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetCashForm.inputCDs.$invalid &&
@@ -113,7 +113,7 @@
                        max="9999999999999999999999999999999"
                        ng-model="vm.cashData.cashValLifeIns"
                        name="vm.cashValLifeIns"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="assetCashForm.inputCashValLifeIns.$invalid &&
@@ -121,25 +121,14 @@
                 Cash value of Life insurance must be a valid number or empty.
             </span>
         </div>
-       <!-- <div class="col-md-2">
-            <button type="button"
-                    class="btn btn-default"
-                    title="Calculate Cash Subtotal"
-                    ng-click="vm.calculateCashSubTotal()">
-                Calculate Cash subtotal
-            </button>
-        </div><br ><br > -->
-       <!-- <div class="form-group row">
-            <label for="calcSubTotal" class="col-sm-4 control-label">Sub-Total Cash - html</label>
-            <div class="col-sm-4" id="calcSubTotal">{{
-                vm.cashData.subtotalCas = vm.cashData.checking +
-                vm.cashData.savings +
-                vm.cashData.moneyMarket +
-                vm.cashData.savingsBond +
-                vm.cashData.cds +
-                vm.cashData.cashValLifeIns | currency;}}
-            </div>
-        </div> -->
+        <!-- <div class="col-md-2">
+             <button type="button"
+                     class="btn btn-default"
+                     title="Calculate Cash Subtotal"
+                     ng-click="vm.calculateCashSubTotal()">
+                 Calculate Cash subtotal
+             </button>
+         </div><br ><br > -->
         <div class="form-group row">
             <label for="calcSubTotal2" class="col-sm-4 control-label">Sub-Total Cash - ctrl service</label>
             <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
@@ -147,26 +136,24 @@
                 vm.cashSubtotal | currency;}}
             </div>
         </div>
-       <!-- <div> Subtotal: {{vm.cashSubtotal | currency}}</div> -->
-
-       <!-- <div class="form-group">
-            <div class="col-md-4 col-md-offset-2">
-                    <span>
-                        <button class="btn btn-primary"
-                                style="width:80px;margin-right:10px"
-                                ng-click="vm.submit()">
-                            Save
-                        </button>
-                    </span>
-                <span>
-                        <button class="btn btn-default"
-                                style="width:70px"
-                                ng-click="vm.cancel()">
-                            Cancel
-                        </button>
-                    </span>
-            </div>
-        </div> -->
+        <!-- <div class="form-group">
+             <div class="col-md-4 col-md-offset-2">
+                     <span>
+                         <button class="btn btn-primary"
+                                 style="width:80px;margin-right:10px"
+                                 ng-click="vm.submit()">
+                             Save
+                         </button>
+                     </span>
+                 <span>
+                         <button class="btn btn-default"
+                                 style="width:70px"
+                                 ng-click="vm.cancel()">
+                             Cancel
+                         </button>
+                     </span>
+             </div>
+         </div> -->
         <div id="footer">
             <ul>
                 <li><a ui-sref="assetsInvestedData">Invested Assets - Next</a></li>

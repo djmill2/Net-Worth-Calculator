@@ -1,8 +1,6 @@
 <form class="form-horizontal" name="allLiabilities" novalidate>
     <fieldset>
-        <legend>
-            <div class="debtLegend">Long-Term Debts</div>
-        </legend>
+        <legend class="debtLegend">Long-Term Debts</legend>
         <h3 class="category"><u>Long-term Debts</u></h3>
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputHomeMortgage.$invalid &&
@@ -49,7 +47,8 @@
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputMortgagesRentalProperty.$invalid &&
                                     allLiabilities.inputMortgagesRentalProperty.$dirty}">
-            <label for="inputMortgagesRentalProperty" class="col-sm-4 control-label">Mortgages on Rental Properties</label>
+            <label for="inputMortgagesRentalProperty" class="col-sm-4 control-label">Mortgages on Rental
+                Properties</label>
             <div class="col-sm-2">
                 <input type="number"
                        class="form-control"
@@ -119,7 +118,7 @@
                        max="9999999999999999999999999999999"
                        ng-model="vm.longTermDebtData.lifeInsuranceLoan"
                        name="vm.lifeInsuranceLoan"
-                       ng-blur="vm.validate_input(this)" />
+                       ng-blur="vm.validate_input(this)"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputLifeInsuranceLoans.$invalid &&
@@ -150,7 +149,6 @@
 
         <div class="form-group row">
             <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal</label>
-            <!-- <div class="col-sm-4" id="calcTotalDebts">{{ vm.calcTotalDebts() | currency}}</div> -->
             <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.longtermDebtSubtotal | currency;}}
             </div>
         </div>
@@ -163,7 +161,7 @@
         <legend>Net Worth</legend>
         <div class="form-group row">
             <label for="calcTotalAssets1" class="col-sm-4 control-label">Total Assets</label>
-            <div class="col-sm-4" id="calcTotalAssets1">{{ vm.totalAsset  | currency;}}</div>
+            <div class="col-sm-4" id="calcTotalAssets1">{{ vm.totalAsset | currency;}}</div>
         </div>
         <div class="form-group row">
             <label for="calcTotalDebts2" class="col-sm-4 control-label">Total Liabilities</label>
@@ -177,7 +175,7 @@
 
         <div id="footer">
             <ul>
-                <li><a ui-sref="debtCurrent">Current Debts -  Previous</a></li>
+                <li><a ui-sref="debtCurrent">Current Debts - Previous</a></li>
             </ul>
         </div>
     </fieldset>

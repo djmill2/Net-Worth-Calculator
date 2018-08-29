@@ -5,149 +5,182 @@
     "use strict";
 
     var app = angular
-                .module("assetResourceMock",
-                        ["ngMockE2E"]);
+        .module("assetResourceMock",
+            ["ngMockE2E"]);
 
     app.run(function ($httpBackend) {
         var assets = [
-            {"assetId": 1,
+            {
+                "assetId": 1,
                 "assetName": "Checking",
                 "assetAmount": 0.00,
-                "tags": [ "checking" ]
+                "tags": ["checking"]
             },
-            {"assetId": 2,
+            {
+                "assetId": 2,
                 "assetName": "Savings",
                 "assetAmount": 0.00,
-                "tags": [ "savings" ]
+                "tags": ["savings"]
             },
-            {"assetId": 3,
+            {
+                "assetId": 3,
                 "assetName": "Money Market",
                 "assetAmount": 0.00,
-                "tags": [ "money market" ]
+                "tags": ["money market"]
             },
-            {"assetId": 4,
+            {
+                "assetId": 4,
                 "assetName": "Savings Bonds",
                 "assetAmount": 0.00,
-                "tags": [ "savings bonds" ]
+                "tags": ["savings bonds"]
             },
-            {"assetId": 5,
+            {
+                "assetId": 5,
                 "assetName": "CD's",
                 "assetAmount": 0.00,
-                "tags": [ "cd" ]
+                "tags": ["cd"]
             },
-            {"assetId": 6,
+            {
+                "assetId": 6,
                 "assetName": "Cash value Life Insurance",
                 "assetAmount": 0.00,
-                "tags": [ "cash value" ]
+                "tags": ["cash value"]
             },
-            {"assetId": 7,
+            {
+                "assetId": 7,
                 "assetName": "Subtotal Cash",
                 "assetAmount": 0.00,
                 "tags": ["subtotal cash"]
             },
-            {"assetId": 8,
+            {
+                "assetId": 8,
                 "assetName": "Brokerage",
-                "tags": [ "brokerage" ]
+                "tags": ["brokerage"]
             },
-            {"assetId": 9,
+            {
+                "assetId": 9,
                 "assetName": "Other Taxable",
-                "tags": [ "otherTaxable" ]
+                "tags": ["otherTaxable"]
             },
-            {"assetId": 10,
+            {
+                "assetId": 10,
                 "assetName": "IRA",
-                "tags": [ "ira" ]
+                "tags": ["ira"]
             },
-            {"assetId": 11,
+            {
+                "assetId": 11,
                 "assetName": "Roth IRA",
-                "tags": [ "roth" ]
+                "tags": ["roth"]
             },
-            {"assetId": 12,
+            {
+                "assetId": 12,
                 "assetName": "401(k) or 403(k)",
-                "tags": [ "401k403k" ]
+                "tags": ["401k403k"]
             },
-            {"assetId": 13,
+            {
+                "assetId": 13,
                 "assetName": "SEP-IRA",
-                "tags": [ "sepira" ]
+                "tags": ["sepira"]
             },
-            {"assetId": 14,
+            {
+                "assetId": 14,
                 "assetName": "Keogh or other qualified plan",
-                "tags": [ "keogh" ]
+                "tags": ["keogh"]
             },
-            {"assetId": 15,
+            {
+                "assetId": 15,
                 "assetName": "Pension",
-                "tags": [ "pension" ]
+                "tags": ["pension"]
             },
-            {"assetId": 16,
+            {
+                "assetId": 16,
                 "assetName": "Annuity (accumulated value)",
-                "tags": [ "cash value" ]
+                "tags": ["cash value"]
             },
-            {"assetId": 17,
+            {
+                "assetId": 17,
                 "assetName": "Real Estate (rental property or land)",
-                "tags": [ "realestate" ]
+                "tags": ["realestate"]
             },
-            {"assetId": 18,
+            {
+                "assetId": 18,
                 "assetName": "Sole proprietorship",
-                "tags": [ "sole" ]
+                "tags": ["sole"]
             },
-            {"assetId": 19,
+            {
+                "assetId": 19,
                 "assetName": "Partnership",
-                "tags": [ "partnership" ]
+                "tags": ["partnership"]
             },
-            {"assetId": 20,
+            {
+                "assetId": 20,
                 "assetName": "C Corporation",
-                "tags": [ "c" ]
+                "tags": ["c"]
             },
-            {"assetId": 21,
+            {
+                "assetId": 21,
                 "assetName": "S Corporation",
-                "tags": [ "s" ]
+                "tags": ["s"]
             },
-            {"assetId": 22,
+            {
+                "assetId": 22,
                 "assetName": "Limited liability company (LLC)",
-                "tags": [ "llc" ]
+                "tags": ["llc"]
             },
-            {"assetId": 23,
+            {
+                "assetId": 23,
                 "assetName": "Other Business ownership",
-                "tags": [ "otherBusiness" ]
+                "tags": ["otherBusiness"]
             },
-            {"assetId": 24,
+            {
+                "assetId": 24,
                 "assetName": "Subtotal Invested",
                 "assetAmount": 0.00,
                 "tags": ["subtotal invested"]
             },
-            {"assetId": 25,
+            {
+                "assetId": 25,
                 "assetName": "Principle home",
-                "tags": [ "principleHome" ]
+                "tags": ["principleHome"]
             },
-            {"assetId": 26,
+            {
+                "assetId": 26,
                 "assetName": "Vacation Home",
-                "tags": [ "vacationHome" ]
+                "tags": ["vacationHome"]
             },
-            {"assetId": 27,
+            {
+                "assetId": 27,
                 "assetName": "Vehicles (Cars, Trucks Boats)",
-                "tags": [ "vehicles" ]
+                "tags": ["vehicles"]
             },
-            {"assetId": 28,
+            {
+                "assetId": 28,
                 "assetName": "Home Furnishings",
-                "tags": [ "homeFurnishings" ]
+                "tags": ["homeFurnishings"]
             },
-            {"assetId": 29,
+            {
+                "assetId": 29,
                 "assetName": "Art, antiques, coins, collectibles",
-                "tags": [ "art" ]
+                "tags": ["art"]
             },
-            {"assetId": 30,
+            {
+                "assetId": 30,
                 "assetName": "Jewelry, furs",
-                "tags": [ "jewelry" ]
+                "tags": ["jewelry"]
             },
-            {"assetId": 31,
+            {
+                "assetId": 31,
                 "assetName": "Other Use assets",
-                "tags": [ "otherUse" ]
+                "tags": ["otherUse"]
             },
-            {"assetId": 32,
+            {
+                "assetId": 32,
                 "assetName": "Subtotal Use Assets",
                 "assetAmount": 0.00,
                 "tags": ["subtotal use"]
             },
-            {"assetId": 33,
+            {
+                "assetId": 33,
                 "assetName": "Total Assets",
                 "assetAmount": 0.00,
                 "tags": ["total assets"]

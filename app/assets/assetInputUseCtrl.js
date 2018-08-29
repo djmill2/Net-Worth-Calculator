@@ -12,6 +12,7 @@
                 "$scope",
                 "assetCalculateService",
                 AssetInputUseCtrl]);
+
     function AssetInputUseCtrl(assetResource, $state, $scope, assetCalculateService) {
         var vm = this;
         vm.useSubtotal = 0;
@@ -26,7 +27,7 @@
         vm.cashTotalData = assetCalculateService.getCashTotal();
 
         //vm.assetResource = assetResource;
-        assetResource.query(function(data) {
+        assetResource.query(function (data) {
             vm.assets = data;
         });
 
@@ -34,12 +35,12 @@
             vm.useSubtotal = userInputVal.principleHome +
                 userInputVal.vacationHome + userInputVal.vehicles + userInputVal.homeFurnish +
                 userInputVal.art + userInputVal.jewelry + userInputVal.uaOther;
-			vm.assetCalculateService.setUse(userInputVal);
+            vm.assetCalculateService.setUse(userInputVal);
             vm.totalAsset = vm.assetCalculateService.getTotal();
         }, true);
 
         // Calculate the USE assets subtotal */
-        vm.calcUseSubtotal = function() {
+        vm.calcUseSubtotal = function () {
             assetCalculateService.setUse({
                 principleHome: vm.useData.principleHome,
                 vacationHome: vm.useData.vacationHome,
@@ -61,24 +62,24 @@
             return assetCalculateService.calculateUseSubtotal(vm.useData.principleHome,
                 vm.useData.vacationHome, vm.useData.vehicles, vm.useData.homeFurnish,
                 vm.useData.art, vm.useData.jewelry, vm.useData.uaOther);
-};
+        };
 
         $scope.$watch("vm.cashTotalData", function handleChange(cashTotalData) {
             vm.totalAsset = cashTotalData.cashSubtotal + cashTotalData.investSubtotal + cashTotalData.useSubtotal;
         }, true);
 
         /* Calculate the Total assets  */
-       vm.calcTotalAssets = function() {
+        vm.calcTotalAssets = function () {
             assetCalculateService.setCashTotal({
                 cashSubtotal: vm.cashData.cashSubtotal,
                 investSubtotal: vm.investData.investSubtotal,
                 useSubtotal: vm.useData.useSubtotal
             });
-           vm.cashTotalData = {
-               cashSubtotal: vm.cashData.cashSubtotal,
-               investSubtotal: vm.investData.investSubtotal,
-               useSubtotal: vm.useData.useSubtotal
-           };
+            vm.cashTotalData = {
+                cashSubtotal: vm.cashData.cashSubtotal,
+                investSubtotal: vm.investData.investSubtotal,
+                useSubtotal: vm.useData.useSubtotal
+            };
             return assetCalculateService.calculatedTotalAssets(vm.cashData.cashSubtotal,
                 vm.investData.investSubtotal, vm.useData.useSubtotal);
         };

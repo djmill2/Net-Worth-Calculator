@@ -36,6 +36,7 @@
                 netWorth: 0.00
             }
         };
+
         function calcSubTotal(obj) {
             var debtsSubTotal = 0.00;
             for (var prop in obj) {
@@ -43,6 +44,7 @@
             }
             return debtsSubTotal;
         }
+
         function calcTotal(obj) {
             var debtsTotal = 0.00;
             for (var prop in obj.totalDebtData) {
@@ -52,10 +54,12 @@
             }
             return debtsTotal;
         }
+
         function getTotal() {
             dataObj.totalDebtData.debtsTotal = calcTotal(dataObj);
             return dataObj.totalDebtData.debtsTotal;
         }
+
         function calcNetW(obj) {
             var netWorth = 0.00;
             for (var prop in obj.netWorthData) {
@@ -65,36 +69,46 @@
             }
             return netWorth;
         }
+
         function getNetTotal() {
             dataObj.netWorthData.netWorth = calcNetW(dataObj);
             return dataObj.netWorthData.netWorth;
         }
+
         function setCurrentDebt(data) {
             dataObj.currentDebtsData = data;
             dataObj.totalDebtData.currentDebtSubtotal = calcSubTotal(data);
         }
+
         function getCurrentDebt() {
             return dataObj.currentDebtsData;
         }
+
         function setLongTermDebt(data) {
             dataObj.longTermDebtData = data;
             dataObj.totalDebtData.longtermDebtSubtotal = calcSubTotal(data);
         }
+
         function getLongTermDebt() {
             return dataObj.longTermDebtData;
         }
+
         function setTotalDebt(data) {
             dataObj.totalDebtData = data;
         }
+
         function getTotalDebt() {
             return dataObj.totalDebtData;
         }
+
         function setNetWorth(data) {
             dataObj.netWorthData = data;
         }
+
         function getNetWorth() {
             return dataObj.netWorthData;
         }
+
         function get() {
             return dataObj;
         }
@@ -137,6 +151,7 @@
 
             return netWorth;
         }
+
         // public API
         return {
             calculateCurrentDebtsSubtotal: subtotalCurrentDebt,
