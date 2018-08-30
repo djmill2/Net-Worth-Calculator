@@ -1,6 +1,8 @@
 <form class="form-horizontal" name="assetCashForm" novalidate>
     <fieldset>
-        <legend class="assetLegend">Cash</legend>
+        <legend class="assetLegend">Cash Equlivalents</legend>
+
+        <!-- Checking Input -->
         <div class="form-group row"
              ng-class="{'has-error':assetCashForm.inputChecking.$invalid &&
                                     assetCashForm.inputChecking.$dirty}">
@@ -21,6 +23,8 @@
                 Checking must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Savings Input -->
         <div class="form-group row"
              ng-class="{'has-error':assetCashForm.inputSavings.$invalid &&
                                     assetCashForm.inputSavings.$dirty}">
@@ -41,6 +45,8 @@
                 Savings must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Money Market Input -->
         <div class="form-group row"
              ng-class="{'has-error':assetCashForm.inputMoneyMarket.$invalid &&
                                     assetCashForm.inputMoneyMarket.$dirty}">
@@ -61,6 +67,8 @@
                 MoneyMarket must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Savings Bond Input -->
         <div class="form-group row"
              ng-class="{'has-error':assetCashForm.inputSavingsBonds.$invalid &&
                                     assetCashForm.inputSavingsBonds.$dirty}">
@@ -81,6 +89,8 @@
                 Savings Bond must be a valid number or empty.
             </span>
         </div>
+
+        <!-- CD's Input -->
         <div class="form-group row"
              ng-class="{'has-error':assetCashForm.inputCDs.$invalid &&
                                     assetCashForm.inputCDs.$dirty}">
@@ -101,6 +111,8 @@
                 CD's must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Cash Value of Life Insurance Input -->
         <div class="form-group row"
              ng-class="{'has-error':assetCashForm.inputCashValLifeIns.$invalid &&
                                     assetCashForm.inputCashValLifeIns.$dirty}">
@@ -121,39 +133,15 @@
                 Cash value of Life insurance must be a valid number or empty.
             </span>
         </div>
-        <!-- <div class="col-md-2">
-             <button type="button"
-                     class="btn btn-default"
-                     title="Calculate Cash Subtotal"
-                     ng-click="vm.calculateCashSubTotal()">
-                 Calculate Cash subtotal
-             </button>
-         </div><br ><br > -->
+
+        <!-- Cash Equivalent Output -->
         <div class="form-group row">
-            <label for="calcSubTotal2" class="col-sm-4 control-label">Sub-Total Cash - ctrl service</label>
-            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcSubTotal2">{{
-                vm.cashSubtotal | currency;}}
+            <label for="calcCashSubTotal" class="col-sm-4 control-label">
+                <span>Subtotal Cash Equlivalents</span></label>
+            <div class="col-sm-4" id="calcCashSubTotal">{{ vm.cashSubtotal | currency;}}
             </div>
         </div>
-        <!-- <div class="form-group">
-             <div class="col-md-4 col-md-offset-2">
-                     <span>
-                         <button class="btn btn-primary"
-                                 style="width:80px;margin-right:10px"
-                                 ng-click="vm.submit()">
-                             Save
-                         </button>
-                     </span>
-                 <span>
-                         <button class="btn btn-default"
-                                 style="width:70px"
-                                 ng-click="vm.cancel()">
-                             Cancel
-                         </button>
-                     </span>
-             </div>
-         </div> -->
+
         <div id="footer">
             <ul>
                 <li><a ui-sref="assetsInvestedData">Invested Assets - Next</a></li>

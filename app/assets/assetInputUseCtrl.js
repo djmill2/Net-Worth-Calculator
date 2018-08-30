@@ -15,22 +15,26 @@
 
     function AssetInputUseCtrl(assetResource, $state, $scope, assetCalculateService) {
         var vm = this;
+        // Declaring and initializing the variables for this controller
         vm.useSubtotal = 0;
         vm.totalAsset = 0;
 
+        // Completing the injection of the common services into the controller
         vm.assetCalculateService = assetCalculateService;
-        // Get our Use data object from the service
+        // Get our Use data objects from the service
         vm.cashData = assetCalculateService.getCash();
         vm.investData = assetCalculateService.getInvest();
         vm.useData = assetCalculateService.getUse();
         // Get our Cash Total data object from the service
         vm.cashTotalData = assetCalculateService.getCashTotal();
 
-        //vm.assetResource = assetResource;
-        assetResource.query(function (data) {
+        vm.assetResource = assetResource;
+        // use this when accessing data from assetResource (aka database)
+        /* assetResource.query(function (data) {
             vm.assets = data;
-        });
+        }); */
 
+        // Populate USE subtotal variable
         $scope.$watch("vm.useData", function handleChange(userInputVal) {
             vm.useSubtotal = userInputVal.principleHome +
                 userInputVal.vacationHome + userInputVal.vehicles + userInputVal.homeFurnish +
@@ -64,6 +68,7 @@
                 vm.useData.art, vm.useData.jewelry, vm.useData.uaOther);
         };
 
+        // Populate asset total variable
         $scope.$watch("vm.cashTotalData", function handleChange(cashTotalData) {
             vm.totalAsset = cashTotalData.cashSubtotal + cashTotalData.investSubtotal + cashTotalData.useSubtotal;
         }, true);

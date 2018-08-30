@@ -1,6 +1,8 @@
 <form class="form-horizontal" name="assetUseForm" novalidate>
     <fieldset>
         <legend class="assetLegend">Use Assets</legend>
+
+        <!-- Use principle home -->
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputPrincipleHome.$invalid &&
                                     assetUseForm.inputPrincipleHome.$dirty}">
@@ -21,6 +23,8 @@
                 Principle Home must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Use vacation home -->
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputVacationHome.$invalid &&
                                     assetUseForm.inputVacationHome.$dirty}">
@@ -41,6 +45,8 @@
                 Vacation Home must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Use vehicles -->
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputVehicles.$invalid &&
                                     assetUseForm.inputVehicles.$dirty}">
@@ -61,6 +67,8 @@
                 Vehicles must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Use home furnishings -->
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputHomeFurnish.$invalid &&
                                     assetUseForm.inputHomeFurnish.$dirty}">
@@ -81,6 +89,8 @@
                 Home Furnishings must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Use Art antiques, coin, collectibles-->
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputArt.$invalid &&
                                     assetUseForm.inputArt.$dirty}">
@@ -101,6 +111,8 @@
                 Art, antiques, coin, collectibles must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Use Jewelry, Furs -->
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputJewelry.$invalid &&
                                     assetUseForm.inputJewelry.$dirty}">
@@ -121,6 +133,8 @@
                 Jewelry, Furs must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Use assets Other -->
         <div class="form-group row"
              ng-class="{'has-error':assetUseForm.inputUAOther.$invalid &&
                                     assetUseForm.inputUAOther.$dirty}">
@@ -141,14 +155,20 @@
                 Use Assets Other must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Use assets subtotal -->
         <div class="form-group row">
-            <label for="calcUseSubTotal" class="col-sm-4 control-label">Use Assets Subtotal</label>
+            <label for="calcUseSubTotal" class="col-sm-4 control-label"><span>Use Assets Subtotal</span></label>
             <div class="col-sm-4" id="calcUseSubTotal">{{ vm.useSubtotal | currency;}}</div>
         </div>
+
+        <!-- Use assets total -->
         <div class="form-group row">
-            <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets</label>
+            <label for="calcTotalAssets" class="col-sm-4 control-label"
+                   style="font-size: x-large; color: #006400;">Total Assets</label>
             <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset | currency;}}</div>
         </div>
+
         <div id="footer">
             <ul>
                 <li><a ui-sref="debtCurrent">Current Debts - Next</a></li>

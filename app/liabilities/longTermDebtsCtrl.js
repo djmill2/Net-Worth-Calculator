@@ -17,31 +17,27 @@
 
     function LongTermDebtsCtrl(assetResource, debtResource, $state, $scope, assetCalculateService, debtCalculateService) {
         var vm = this;
+        // Declaring and initializing the variables for this controller
         vm.longtermDebtSubtotal = 0;
         vm.totalLiability = 0;
         vm.netWorth = 0;
 
+        // Completing the injection of the common services into the controller
         vm.assetCalculateService = assetCalculateService;
-
         vm.debtCalculateService = debtCalculateService;
-        // Get our Current Debts data object from the service
+
+        // Get Assets data object from the service
         vm.cashTotalData = assetCalculateService.getCashTotal();
         vm.totalAsset = vm.assetCalculateService.getTotal();
-
+        // Get Debts data object from the common service
         vm.currentDebtsData = debtCalculateService.getCurrentDebt();
         vm.longTermDebtData = debtCalculateService.getLongTermDebt();
         vm.totalDebtData = debtCalculateService.getTotalDebt();
-        vm.netWorthData = debtCalculateService.getNetTotal();
-
+        // processes to use data service
         vm.assetResource = assetResource;
-        /*assetResource.query(function(data) {
-            vm.assets = data;
-        });*/
         vm.debtResource = debtResource;
-        /*debtResource.query(function(data) {
-            vm.debts = data;
-        });*/
 
+        // Populate long-term debt subtotal variable
         $scope.$watch("vm.longTermDebtData", function handleChange(userInputVal) {
             vm.longtermDebtSubtotal = userInputVal.homeMortgage +
                 userInputVal.homeEquity + userInputVal.mortgagesRental + userInputVal.vehiclesLoans +
@@ -74,9 +70,10 @@
                 vm.longTermDebtData.homeEquity, vm.longTermDebtData.mortgagesRental, vm.longTermDebtData.vehiclesLoans,
                 vm.longTermDebtData.studentLoans, vm.longTermDebtData.lifeInsuranceLoan, vm.longTermDebtData.otherLongtermDebt);
         };
-
+        // populate the total liabilities variable
         $scope.$watch("vm.totalDebtData", function handleChange(totalDebtData) {
             vm.totalLiability = totalDebtData.currentDebtSubtotal + totalDebtData.longtermDebtSubtotal;
+
         }, true);
 
         //Calculate the Total Debts
@@ -93,26 +90,6 @@
                 vm.longTermDebtData.longtermDebtSubtotal)
         };
 
-        $scope.$watch("vm.netWorthData", function handleChange(cashTotalData, netWorthData) {
-            vm.totalAsset = vm.assetCalculateService.getTotal();
-            vm.totalLiability = vm.debtCalculateService.getTotal();
-            vm.netWorth = cashTotalData.totalAsset - netWorthData.totalLiability;
-            vm.netWorth = vm.debtCalculateService.getNetTotal();
-        }, true);
-
-        /* Calculate Net Worth */
-        vm.calcNetWorth = function () {
-            debtCalculateService.setNetWorth({
-                totalAsset: vm.cashTotalData.totalAsset,
-                totalLiability: vm.netWorthData.totalLiability
-            });
-            vm.netWorthData = {
-                totalAsset: vm.cashTotalData.totalAsset,
-                totalLiability: vm.netWorthData.totalLiability
-            };
-            return debtCalculateService.calculatedNetWorth(vm.cashTotalData.totalAsset,
-                vm.netWorthData.totalLiability)
-        };
     }
 
 }());

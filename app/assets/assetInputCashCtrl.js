@@ -15,18 +15,22 @@
 
     function AssetInputCashCtrl(assetResource, $state, $scope, assetCalculateService) {
         var vm = this;
+        // Declaring and initializing the variables for this controller
         vm.cashSubtotal = 0;
 
+        // Completing the injection of the common services into the controller
         vm.assetCalculateService = assetCalculateService;
 
         // Get our Cash data object from the service
         vm.cashData = assetCalculateService.getCash();
 
-        //vm.assetResource = assetResource;
-        assetResource.query(function (data) {
+        vm.assetResource = assetResource;
+        // use this when accessing data from assetResource (aka database)
+        /* assetResource.query(function (data) {
             vm.assets = data;
-        });
+        }); */
 
+        // Populate cash subtotal variable
         $scope.$watch("vm.cashData", function handleChange(userInputVal) {
             vm.cashSubtotal = userInputVal.checking +
                 userInputVal.savings + userInputVal.moneyMarket +

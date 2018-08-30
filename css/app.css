@@ -25,24 +25,29 @@ form legend {
     color: #c7254e;
     text-align: center;
 }
-h3 {
-    text-indent: 100px;
+/*Assets Category names*/
+h1 {
+    font-size: 20px;
+    text-indent: 150px;
+    color: #006400;
+    text-decoration: underline;
 }
-/*.category {
-    color: #c7254e;
-    text-align: right 60px;
-}*/
-.wizard a {
-    background: #efefef;
-    display: inline-block;
-    margin-right: 5px;
-    min-width: 150px;
-    outline: none;
-    padding: 10px 40px 10px;
-    position: relative;
-    text-decoration: none;
+/*Liabilities Category names*/
+h1 span {
+    font-size: 20px;
+    text-indent: 150px;
+    color: #8b0000;
+    text-decoration: underline;
 }
-.wizard .active {
-    background: #007ACC;
-    color: #fff;
+/*Assets Subtotals*/
+label span {
+    font-size: large;
+    color: #006400;
+    font-weight: bold;
+}
+/*Liabilities Subtotals*/
+label span b {
+    font-size: large;
+    color: #8b0000;
+    font-weight: bold;
 }

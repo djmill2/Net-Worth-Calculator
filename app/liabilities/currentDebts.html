@@ -1,6 +1,7 @@
-<form class="form-horizontal" name="allLiabilities" novalidate>
+<form class="form-horizontal" name="currentLiabilities" novalidate>
     <fieldset>
         <legend class="debtLegend">Current Debts</legend>
+        <!-- Current debts credit cards -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputCreditCards.$invalid &&
                                     allLiabilities.inputCreditCards.$dirty}">
@@ -12,8 +13,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.currentDebtsData.creditCards"
-                       name="vm.creditCards"
-                />
+                       name="vm.creditCards"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputCreditCards.$invalid &&
@@ -21,6 +21,7 @@
                 Credit Cards must be a valid number or empty.
             </span>
         </div>
+        <!-- Current debts estimated income tax owed -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputEstIncomeTaxOwed.$invalid &&
                                     allLiabilities.inputEstIncomeTaxOwed.$dirty}">
@@ -32,8 +33,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.currentDebtsData.incomeTaxOwed"
-                       name="vm.incomeTaxOwed"
-                />
+                       name="vm.incomeTaxOwed"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputEstIncomeTaxOwed.$invalid &&
@@ -41,6 +41,7 @@
                 Estimated Income Tax Owed must be a valid number or empty.
             </span>
         </div>
+        <!-- Current debts outstanding bills -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputOutstandingBills.$invalid &&
                                     allLiabilities.inputOutstandingBills.$dirty}">
@@ -52,8 +53,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.currentDebtsData.outstandingBills"
-                       name="vm.outstandingBills"
-                />
+                       name="vm.outstandingBills"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputOutstandingBills.$invalid &&
@@ -61,9 +61,10 @@
                 OutStanding Bills must be a valid number or empty.
             </span>
         </div>
-
+        <!-- Current debts subtotal -->
         <div class="form-group row">
-            <label for="calcCurrentDebts1" class="col-sm-4 control-label">Current Debts Subtotal</label>
+            <label for="calcCurrentDebts1"
+                   class="col-sm-4 control-label"><span><b>Current Debts Subtotal</b></span></label>
             <div class="col-sm-4" id="calcCurrentDebts1">{{
                 vm.currentDebtSubtotal | currency;}}
             </div>

@@ -4,13 +4,13 @@
 (function () {
     "use strict";
 
-    var  app = angular.module("netWorthCalculator",
-                            ["common.services",
-                            "ui.router",
-                            "ui.mask",
-                            "ui.bootstrap",
-                            "assetResourceMock",
-                            "debtResourceMock"]);
+    var app = angular.module("netWorthCalculator",
+        ["common.services",
+            "ui.router",
+            "ui.mask",
+            "ui.bootstrap",
+            "assetResourceMock",
+            "debtResourceMock"]);
 
     app.config(function ($provide) {
         $provide.decorator("$exceptionHandler",
@@ -26,8 +26,8 @@
     });
 
     app.config(["$stateProvider",
-                "$urlRouterProvider",
-        function($stateProvider, $urlRouterProvider) {
+        "$urlRouterProvider",
+        function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise("/");
 
             $stateProvider
@@ -36,29 +36,6 @@
                     templateUrl: "app/welcomeView.html"
                 })
                 // Assets
-                .state("assetsAddData", {
-                    url: "/assets/addData/:assetId",
-                    templateUrl: "app/assets/assetAddDataView.html",
-                    controller: "AssetAddDataCtrl as vm",
-                    resolve: {
-                        assetResource: "assetResource",
-
-                        asset: function (assetResource, $stateParams) {
-                            var assetId = $stateParams.assetId;
-                            return assetResource.get({ assetId: assetId }).$promise;
-                        }
-                    }
-                })
-                .state("allAssets", {
-                    url: "/assets",
-                    templateUrl: "app/assets/allAssets.html",
-                    controller: "AssetNetWorthCtrl as vm"
-                })
-                .state("assetList", {
-                    url: "/backup",
-                    templateUrl: "app/backup/assetListView.html",
-                    controller: "AssetListCtrl as vm"
-                })
                 .state("assetsCashData", {
                     url: "/assets/cash",
                     templateUrl: "app/assets/assetInputCashView.html",
@@ -74,19 +51,6 @@
                     templateUrl: "app/assets/assetInputUseView.html",
                     controller: "AssetInputUseCtrl as vm"
                 })
-                .state("assetDetail", {
-                    url: "/assets/:assetId",
-                    templateUrl: "app/assets/assetDetailView.html",
-                    controller: "AssetDetailCtrl as vm",
-                    resolve: {
-                        assetResource: "assetResource",
-
-                        asset: function (assetResource, $stateParams) {
-                            var assetId = $stateParams.assetId;
-                            return assetResource.get({ assetId: assetId }).$promise;
-                        }
-                    }
-                })
                 .state("debtCurrent", {
                     url: "/liabilities",
                     templateUrl: "app/liabilities/currentDebts.html",
@@ -97,13 +61,7 @@
                     templateUrl: "app/liabilities/longTermDebts.html",
                     controller: "LongTermDebtsCtrl as vm"
                 })
-                .state("allDebts", {
-                    url: "/liabilities",
-                    templateUrl: "app/liabilities/allLiabilities.html",
-                    controller: "LiabilitiesAllCtrl as vm"
-                })
         }]
     );
-
 
 }());

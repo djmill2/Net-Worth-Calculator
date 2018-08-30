@@ -15,17 +15,21 @@
 
     function AssetInputInvestCtrl(assetResource, $state, $scope, assetCalculateService) {
         var vm = this;
+        // Declaring and initializing the variables for this controller
         vm.investSubtotal = 0;
 
+        // Completing the injection of the common services into the controller
         vm.assetCalculateService = assetCalculateService;
         // Get our Invested data object from the service
         vm.investData = assetCalculateService.getInvest();
 
-        //vm.assetResource = assetResource;
-        assetResource.query(function (data) {
+        vm.assetResource = assetResource;
+        // use this when accessing data from assetResource (aka database)
+        /* assetResource.query(function (data) {
             vm.assets = data;
-        });
+        }); */
 
+        // Populate invest subtotal variable
         $scope.$watch("vm.investData", function handleChange(userInputVal) {
             vm.investSubtotal = userInputVal.brokerage + userInputVal.taOther +
                 userInputVal.ira + userInputVal.rothIra + userInputVal.kb +

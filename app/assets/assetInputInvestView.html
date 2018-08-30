@@ -1,7 +1,9 @@
 <form class="form-horizontal" name="assetInvestForm" novalidate>
     <fieldset>
         <legend class="assetLegend">Invested Assets</legend>
-        <h3>Taxable accounts</h3>
+        <h1>Taxable accounts</h1>
+
+        <!-- Invest brokerage -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputBrokerage.$invalid &&
                                     assetInvestForm.inputBrokerage.$dirty}">
@@ -22,6 +24,8 @@
                 Brokerage must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest taxable other -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputTaOther.$invalid &&
                                     assetInvestForm.inputTaOther.$dirty}">
@@ -43,7 +47,9 @@
             </span>
         </div>
 
-        <h3>Retirement accounts</h3>
+        <h1>Retirement accounts</h1>
+
+        <!-- Invest ira -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputIra.$invalid &&
                                     assetInvestForm.inputIra.$dirty}">
@@ -64,6 +70,8 @@
                 IRA must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest roth ira -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputRothIra.$invalid &&
                                     assetInvestForm.inputRothIra.$dirty}">
@@ -84,6 +92,8 @@
                 Roth Ira must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest 401 K - 403 B -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.input401k403b.$invalid &&
                                     assetInvestForm.input401k403b.$dirty}">
@@ -105,10 +115,11 @@
             </span>
         </div>
 
+        <!-- Invest SEPIRA -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputSepIra.$invalid &&
                                     assetInvestForm.inputSepIra.$dirty}">
-            <label for="inputSepIra" class="col-sm-4 control-label">SEPIRA)</label>
+            <label for="inputSepIra" class="col-sm-4 control-label">SEPIRA</label>
             <div class="col-sm-2">
                 <input type="number"
                        class="form-control"
@@ -125,6 +136,8 @@
                 SEPIRA must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest keogh -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputKeogh.$invalid &&
                                     assetInvestForm.inputKeogh.$dirty}">
@@ -145,6 +158,8 @@
                 Keogh must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest pension -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputPension.$invalid &&
                                     assetInvestForm.inputPension.$dirty}">
@@ -165,6 +180,8 @@
                 Pension must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest annuity -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputAnnuity.$invalid &&
                                     assetInvestForm.inputAnnuity.$dirty}">
@@ -186,7 +203,9 @@
             </span>
         </div>
 
-        <h3>Business ownership Interests</h3>
+        <h1>Business ownership Interests</h1>
+
+        <!-- Invest real estate -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputRealEstate.$invalid &&
                                     assetInvestForm.inputRealEstate.$dirty}">
@@ -207,6 +226,8 @@
                 Real Estate must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest sole proprietorship -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputSolePro.$invalid &&
                                     assetInvestForm.inputSolePro.$dirty}">
@@ -227,6 +248,8 @@
                 Sole Proprietorship must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest partnership -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputPartnership.$invalid &&
                                     assetInvestForm.inputPartnership.$dirty}">
@@ -247,6 +270,8 @@
                 Partnership must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest C Corporation -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputCCorporation.$invalid &&
                                     assetInvestForm.inputCCorporation.$dirty}">
@@ -267,6 +292,8 @@
                 C Corporation must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest S Corporation -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputSCorporation.$invalid &&
                                     assetInvestForm.inputSCorporation.$dirty}">
@@ -287,6 +314,8 @@
                 S Corporation must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest LLC -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputLLC.$invalid &&
                                     assetInvestForm.inputLLC.$dirty}">
@@ -307,6 +336,8 @@
                 LLC must be a valid number or empty.
             </span>
         </div>
+
+        <!-- Invest business ownership other -->
         <div class="form-group row"
              ng-class="{'has-error':assetInvestForm.inputBoOther.$invalid &&
                                     assetInvestForm.inputBoOther.$dirty}">
@@ -327,38 +358,12 @@
                 Business Owner Other must be a valid number or empty.
             </span>
         </div>
-        <!-- <div class="col-md-2">
-             <button type="button"
-                     class="btn btn-default"
-                     title="Invested Subtotal"
-                     ng-click="vm.calculateCashSubTotal()">
-                 Calculate Business subtotal
-             </button>
-         </div><br ><br > -->
 
+        <!-- Invest assets subtotal -->
         <div class="form-group row">
-            <label for="calcInvestSubTotal" class="col-sm-4 control-label">Invested Assets Subtotal</label>
-            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
-            <div class="col-sm-4" id="calcInvestSubTotal">{{ vm.investSubtotal | currency;}} </div>
+            <label for="calcInvestSubTotal" class="col-sm-4 control-label"><span>Invested Assets Subtotal</span></label>
+            <div class="col-sm-4" id="calcInvestSubTotal">{{ vm.investSubtotal | currency;}}</div>
         </div>
-        <!-- <div class="form-group">
-             <div class="col-md-4 col-md-offset-2">
-                     <span>
-                         <button class="btn btn-primary"
-                                 style="width:80px;margin-right:10px"
-                                 ng-click="vm.submit()">
-                             Save
-                         </button>
-                     </span>
-                 <span>
-                         <button class="btn btn-default"
-                                 style="width:70px"
-                                 ng-click="vm.cancel()">
-                             Cancel
-                         </button>
-                     </span>
-             </div>
-         </div> -->
 
         <div id="footer">
             <ul>

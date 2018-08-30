@@ -15,17 +15,17 @@
 
     function CurrentDebtsCtrl(debtResource, $state, $scope, debtCalculateService) {
         var vm = this;
+        // Declaring and initializing the variables for this controller
         vm.currentDebtSubtotal = 0;
 
+        // Completing the injection of the common services into the controller
         vm.debtCalculateService = debtCalculateService;
         // Get our Current Debts data object from the service
         vm.currentDebtsData = debtCalculateService.getCurrentDebt();
+        // processes to use data service
+        vm.debtResource = debtResource;
 
-        // vm.debtResource = debtResource;
-        debtResource.query(function (data) {
-            vm.debts = data;
-        });
-
+        // Populate current debt subtotal variable
         $scope.$watch("vm.currentDebtsData", function handleChange(userInputVal) {
             vm.currentDebtSubtotal = userInputVal.creditCards +
                 userInputVal.incomeTaxOwed + userInputVal.outstandingBills;

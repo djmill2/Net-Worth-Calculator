@@ -9,6 +9,7 @@
         .factory("debtCalculateService",
             debtCalculateService);
 
+    // Declare objects with keys and values
     function debtCalculateService() {
         var dataObj = {
             currentDebtsData: {
@@ -30,13 +31,9 @@
                 longtermDebtSubtotal: 0.00,
                 debtsTotal: 0.00
             },
-            netWorthData: {
-                totalAsset: 0.00,
-                totalLiability: 0.00,
-                netWorth: 0.00
-            }
         };
 
+        // Reusable method for subtotal calculations
         function calcSubTotal(obj) {
             var debtsSubTotal = 0.00;
             for (var prop in obj) {
@@ -45,6 +42,7 @@
             return debtsSubTotal;
         }
 
+        // Reusable method for total calculations
         function calcTotal(obj) {
             var debtsTotal = 0.00;
             for (var prop in obj.totalDebtData) {
@@ -55,24 +53,10 @@
             return debtsTotal;
         }
 
+        // Declaring the various GETTER and SETTER Methods
         function getTotal() {
             dataObj.totalDebtData.debtsTotal = calcTotal(dataObj);
             return dataObj.totalDebtData.debtsTotal;
-        }
-
-        function calcNetW(obj) {
-            var netWorth = 0.00;
-            for (var prop in obj.netWorthData) {
-                if (prop.indexOf('netWorth') === -1) {
-                    netWorth += obj.netWorthData[prop];
-                }
-            }
-            return netWorth;
-        }
-
-        function getNetTotal() {
-            dataObj.netWorthData.netWorth = calcNetW(dataObj);
-            return dataObj.netWorthData.netWorth;
         }
 
         function setCurrentDebt(data) {
@@ -101,19 +85,12 @@
             return dataObj.totalDebtData;
         }
 
-        function setNetWorth(data) {
-            dataObj.netWorthData = data;
-        }
-
-        function getNetWorth() {
-            return dataObj.netWorthData;
-        }
 
         function get() {
             return dataObj;
         }
 
-        // Current Debts
+        // Current Debts calculations
         function subtotalCurrentDebt(creditCards, incomeTaxOwed, outstandingBills) {
             subtotalCurrentDebt = creditCards +
                 incomeTaxOwed +
@@ -122,7 +99,7 @@
             return subtotalCurrentDebt;
         }
 
-        // Long-term Debts
+        // Long-term Debts calculations
         function subtotalLongterm(homeMortgage, homeEquity, mortgagesRental, vehiclesLoans,
                                   studentLoans, lifeInsuranceLoan, otherLongtermDebt) {
             subtotalLongterm = homeMortgage +
@@ -136,7 +113,7 @@
             return subtotalLongterm;
         }
 
-        // Total Debts
+        // Total Debts calculation
         function totalDebts(subtotalCurrentDebt, subtotalLongterm) {
 
             totalDebts = subtotalCurrentDebt + subtotalLongterm;
@@ -144,31 +121,19 @@
             return totalDebts;
         }
 
-        // Net Worth
-        function netWorth(totalAssets, totalDebts) {
-
-            netWorth = totalAssets - totalDebts;
-
-            return netWorth;
-        }
-
         // public API
         return {
             calculateCurrentDebtsSubtotal: subtotalCurrentDebt,
             calculateLongtermDebtSubtotal: subtotalLongterm,
             calculatedTotalDebts: totalDebts,
-            calculatedNetWorth: netWorth,
             setCurrentDebt: setCurrentDebt,
             getCurrentDebt: getCurrentDebt,
             setLongTermDebt: setLongTermDebt,
             getLongTermDebt: getLongTermDebt,
             setTotalDebt: setTotalDebt,
             getTotalDebt: getTotalDebt,
-            setNetWorth: setNetWorth,
-            getNetWorth: getNetWorth,
             get: get,
             getTotal: getTotal,
-            getNetTotal: getNetTotal
         }
 
     }

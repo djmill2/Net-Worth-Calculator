@@ -1,7 +1,8 @@
-<form class="form-horizontal" name="allLiabilities" novalidate>
+<form class="form-horizontal" name="longTermLiabilities" novalidate>
     <fieldset>
         <legend class="debtLegend">Long-Term Debts</legend>
-        <h3 class="category"><u>Long-term Debts</u></h3>
+        <h1 class="category"><span>Long-term Debts</span></h1>
+        <!-- Long-term debts home mortgage -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputHomeMortgage.$invalid &&
                                     allLiabilities.inputHomeMortgage.$dirty}">
@@ -13,8 +14,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.longTermDebtData.homeMortgage"
-                       name="vm.homeMortgage"
-                />
+                       name="vm.homeMortgage"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputHomeMortgage.$invalid &&
@@ -22,6 +22,7 @@
                 Brokerage must be a valid number or empty.
             </span>
         </div>
+        <!-- Long-term debts home equity line -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputHomeEquity.$invalid &&
                                     allLiabilities.inputHomeEquity.$dirty}">
@@ -33,8 +34,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.longTermDebtData.homeEquity"
-                       name="vm.homeEquity"
-                />
+                       name="vm.homeEquity"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputHomeEquity.$invalid &&
@@ -43,7 +43,8 @@
             </span>
         </div>
 
-        <h3><u>Retirement accounts</u></h3>
+        <h1><span>Retirement accounts</span></h1>
+        <!-- Long-term debts mortgages on rentals -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputMortgagesRentalProperty.$invalid &&
                                     allLiabilities.inputMortgagesRentalProperty.$dirty}">
@@ -56,8 +57,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.longTermDebtData.mortgagesRental"
-                       name="vm.mortgagesRental"
-                />
+                       name="vm.mortgagesRental"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputMortgagesRentalProperty.$invalid &&
@@ -65,6 +65,7 @@
                 Mortgages on Rental Properties must be a valid number or empty.
             </span>
         </div>
+        <!-- Long-term debts vehicle loans -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputVehicleLoans.$invalid &&
                                     allLiabilities.inputVehicleLoans.$dirty}">
@@ -76,8 +77,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.longTermDebtData.vehiclesLoans"
-                       name="vm.vehiclesLoans"
-                />
+                       name="vm.vehiclesLoans"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputVehicleLoans.$invalid &&
@@ -85,6 +85,7 @@
                 Vehicle Loans must be a valid number or empty.
             </span>
         </div>
+        <!-- Long-term debts student loans -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputStudentLoans.$invalid &&
                                     allLiabilities.inputStudentLoans.$dirty}">
@@ -96,8 +97,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.longTermDebtData.studentLoans"
-                       name="vm.studentLoans"
-                />
+                       name="vm.studentLoans"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputStudentLoans.$invalid &&
@@ -105,7 +105,7 @@
                 Student Loans must be a valid number or empty.
             </span>
         </div>
-
+        <!-- Long-term debts life insurance loans -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputLifeInsuranceLoans.$invalid &&
                                     allLiabilities.inputLifeInsuranceLoans.$dirty}">
@@ -126,6 +126,7 @@
                 Life Insurance Loans must be a valid number or empty.
             </span>
         </div>
+        <!-- Long-term debts other -->
         <div class="form-group row"
              ng-class="{'has-error':allLiabilities.inputOtherLongtermDebt.$invalid &&
                                     allLiabilities.inputOtherLongtermDebt.$dirty}">
@@ -137,8 +138,7 @@
                        min="0"
                        max="9999999999999999999999999999999"
                        ng-model="vm.longTermDebtData.otherLongtermDebt"
-                       name="vm.otherLongtermDebt"
-                />
+                       name="vm.otherLongtermDebt"/>
             </div>
             <span class="help-block "
                   ng-show="allLiabilities.inputOtherLongtermDebt.$invalid &&
@@ -146,30 +146,38 @@
                 Other Long-term Debt must be a valid number or empty.
             </span>
         </div>
-
+        <!-- Long-term debts subtotal -->
         <div class="form-group row">
-            <label for="calcLongTermDebtSubtotal" class="col-sm-4 control-label">Long-term Debts Subtotal</label>
+            <label for="calcLongTermDebtSubtotal"
+                   class="col-sm-4 control-label"><span><b>Long-term Debts Subtotal</b></span></label>
             <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.longtermDebtSubtotal | currency;}}
             </div>
         </div>
-
+        <!--  total liabilities -->
         <div class="form-group row">
-            <label for="calcTotalDebts" class="col-sm-4 control-label">Total Liabilities</label>
+            <label for="calcTotalDebts" class="col-sm-4 control-label"
+                   style="font-size: x-large; color: #8b0000;">Total Liabilities</label>
             <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalLiability | currency;}}</div>
         </div>
-
-        <legend>Net Worth</legend>
+        <br>
+        <legend>Net Worth = Total Assets - Total Liabilities</legend>
+        <!-- Total assets -->
         <div class="form-group row">
-            <label for="calcTotalAssets1" class="col-sm-4 control-label">Total Assets</label>
-            <div class="col-sm-4" id="calcTotalAssets1">{{ vm.totalAsset | currency;}}</div>
+            <label for="calcTotalAssets" class="col-sm-4 control-label"
+                   style="font-size: x-large; color: #006400;">Total Assets</label>
+            <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset | currency;}}</div>
         </div>
+        <!-- Total liabilities -->
         <div class="form-group row">
-            <label for="calcTotalDebts2" class="col-sm-4 control-label">Total Liabilities</label>
+            <label for="calcTotalDebts2" class="col-sm-4 control-label"
+                   style="font-size: x-large; color: #8b0000;">Total Liabilities</label>
             <div class="col-sm-4" id="calcTotalDebts2">{{ vm.totalLiability | currency;}}</div>
         </div>
+        <!-- Net Worth -->
         <div class="form-group row">
-            <label for="calcNetWorth" class="col-sm-4 control-label">Net Worth</label>
-            <div class="col-sm-4" id="calcNetWorth">{{ vm.netWorth | currency;}}
+            <label for="calcNetWorth" class="col-sm-4 control-label"
+                   style="font-size: x-large; color: #006400;"><b>Net Worth</b></label>
+            <div class="col-sm-4" id="calcNetWorth">{{ vm.totalAsset - vm.totalLiability | currency;}}
             </div>
         </div>
 

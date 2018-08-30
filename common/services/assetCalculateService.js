@@ -9,6 +9,7 @@
         .factory("assetCalculateService",
             assetCalculateService);
 
+    // Declare objects with keys and values
     function assetCalculateService() {
         var dataObj = {
             cashData: {
@@ -54,6 +55,7 @@
             }
         };
 
+        // Reusable method for subtotal calculations
         function calcSubTotal(obj) {
             var assetsSubTotal = 0.00;
             for (var prop in obj) {
@@ -62,6 +64,7 @@
             return assetsSubTotal;
         }
 
+        // Reusable method for total calculations
         function calcTotal(obj) {
             var assetsTotal = 0.00;
             for (var prop in obj.cashTotalData) {
@@ -72,6 +75,7 @@
             return assetsTotal;
         }
 
+        // Declaring the various GETTER and SETTER Methods
         function getTotal() {
             dataObj.cashTotalData.assetsTotal = calcTotal(dataObj);
             return dataObj.cashTotalData.assetsTotal;
@@ -116,10 +120,10 @@
             return dataObj;
         }
 
+        // Cash subtotal calculations
         function subtotalCash(checking, savings, moneyMarket, savingsBond, cds, cashValLifeIns) {
             // Cash and Cash Equivalents
             var cashSubtotal = 0;
-
             subtotalCash = checking +
                 savings +
                 moneyMarket +
@@ -130,11 +134,11 @@
             return cashSubtotal;
         }
 
+        // Invested subtotal calculations
         function subtotalInvested(brokerage, taOther, ira, rothIra, kb, sepIra, keogh,
                                   pension, annuity, realEstate, solePro, partnership, cCorporation,
                                   sCorporation, limitedLC, boOther) {
             // Invested Assets
-
             var investSubtotal = 0;
             subtotalInvested = brokerage +
                 taOther +
@@ -156,6 +160,7 @@
             return investSubtotal;
         }
 
+        // Use subtotal calculations
         function subtotalUse(principleHome, vacationHome, vehicles, homeFurnish, art, jewelry, uaOther) {
             // Use Assets
             var useSubTotal = 0;
@@ -170,6 +175,7 @@
             return useSubtotal;
         }
 
+        // Total assets calculation
         function totalAssets(cashSubtotal, investSubtotal, useSubtotal) {
             // Total Assets
             var totalAsset = 0;
