@@ -1,0 +1,654 @@
+<form class="form-horizontal" name="allAssets" novalidate>
+    <fieldset>
+        <legend>Cash</legend>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputChecking.$invalid &&
+                                    allAssets.inputChecking.$dirty}">
+            <label for="inputChecking" class="col-sm-4 control-label">Checking</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputChecking"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.checking"
+                       name="vm.checking"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputChecking.$invalid &&
+                           allAssets.inputChecking.$dirty">
+                Checking must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputSavings.$invalid &&
+                                    allAssets.inputSavings.$dirty}">
+            <label for="inputSavings" class="col-sm-4 control-label">Savings</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSavings"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.savings"
+                       name="vm.savings"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputSavings.$invalid &&
+                           allAssets.inputSavings.$dirty">
+                Savings must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputMoneyMarket.$invalid &&
+                                    allAssets.inputMoneyMarket.$dirty}">
+            <label for="inputMoneyMarket" class="col-sm-4 control-label">Money Market</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputMoneyMarket"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.moneyMarket"
+                       name="vm.moneyMarket"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputMoneyMarket.$invalid &&
+                           allAssets.inputMoneyMarket.$dirty">
+                MoneyMarket must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputSavingsBonds.$invalid &&
+                                    allAssets.inputSavingsBonds.$dirty}">
+            <label for="inputSavingsBonds" class="col-sm-4 control-label">Savings bonds</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSavingsBonds"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.savingsBond"
+                       name="vm.savingsBond"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputSavingsBonds.$invalid &&
+                           allAssets.inputSavingsBonds.$dirty">
+                Savings Bond must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputCDs.$invalid &&
+                                    allAssets.inputCDs.$dirty}">
+            <label for="inputCDs" class="col-sm-4 control-label">Certificate of Deposit (CD's)</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCDs"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.cds"
+                       name="vm.cds"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputCDs.$invalid &&
+                           allAssets.inputCDs.$dirty">
+                CD's must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputCashValLifeIns.$invalid &&
+                                    allAssets.inputCashValLifeIns.$dirty}">
+            <label for="inputCashValLifeIns" class="col-sm-4 control-label">Cash value of life insurance</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCashValLifeIns"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.cashValLifeIns"
+                       name="vm.cashValLifeIns"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputCashValLifeIns.$invalid &&
+                           allAssets.inputCashValLifeIns.$dirty">
+                Cash value of Life insurance must be a valid number or empty.
+            </span>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="calcSubTotal" class="col-sm-4 control-label">Sub-Total Cash</label>
+            <!-- <div class="col-sm-4" id="calcSubTotal">{{ vm.calcCashSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcSubTotal">{{ vm.subtotalCash = vm.checking +
+                vm.savings +
+                vm.moneyMarket +
+                vm.savingsBond +
+                vm.cds +
+                vm.cashValLifeIns | currency;}}</div>
+        </div>
+
+
+        <legend>Invested Assets</legend>
+        <h3>Taxable accounts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputBrokerage.$invalid &&
+                                    allAssets.inputBrokerage.$dirty}">
+            <label for="inputBrokerage" class="col-sm-4 control-label">Brokerage</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputBrokerage"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.brokerage"
+                       name="vm.brokerage"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputBrokerage.$invalid &&
+                           allAssets.inputBrokerage.$dirty">
+                Brokerage must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputTaOther.$invalid &&
+                                    allAssets.inputTaOther.$dirty}">
+            <label for="inputTaOther" class="col-sm-4 control-label">Taxable Other</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputTaOther"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.taOther"
+                       name="vm.taOther"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputTaOther.$invalid &&
+                           allAssets.inputTaOther.$dirty">
+                Taxable Other must be a valid number or empty.
+            </span>
+        </div>
+
+        <h3>Retirement accounts</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputIra.$invalid &&
+                                    allAssets.inputIra.$dirty}">
+            <label for="inputIra" class="col-sm-4 control-label">IRA</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputIra"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.ira"
+                       name="vm.ira"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputIra.$invalid &&
+                           allAssets.inputIra.$dirty">
+                IRA must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputRothIra.$invalid &&
+                                    allAssets.inputRothIra.$dirty}">
+            <label for="inputRothIra" class="col-sm-4 control-label">Roth IRA</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputRothIra"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.rothIra"
+                       name="vm.rothIra"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputRothIra.$invalid &&
+                           allAssets.inputRothIra.$dirty">
+                Roth Ira must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.input401k403b.$invalid &&
+                                    allAssets.input401k403b.$dirty}">
+            <label for="input401k403b" class="col-sm-4 control-label">401(k) or 403(b)</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="input401k403b"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.kb"
+                       name="vm.kb"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.input401k403b.$invalid &&
+                           allAssets.input401k403b.$dirty">
+                Roth Ira must be a valid number or empty.
+            </span>
+        </div>
+
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputSepIra.$invalid &&
+                                    allAssets.inputSepIra.$dirty}">
+            <label for="inputSepIra" class="col-sm-4 control-label">SEPIRA)</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSepIra"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.sepIra"
+                       name="vm.sepIra"
+                       ng-blur="vm.vm.validate_input(this)" />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputSepIra.$invalid &&
+                           allAssets.inputSepIra.$dirty">
+                SEPIRA must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputKeogh.$invalid &&
+                                    allAssets.inputKeogh.$dirty}">
+            <label for="inputKeogh" class="col-sm-4 control-label">Keogh</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputKeogh"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.keogh"
+                       name="vm.keogh"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputKeogh.$invalid &&
+                           allAssets.inputKeogh.$dirty">
+                Keogh must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputPension.$invalid &&
+                                    allAssets.inputPension.$dirty}">
+            <label for="inputPension" class="col-sm-4 control-label">Pension</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputPension"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.pension"
+                       name="vm.pension"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputPension.$invalid &&
+                           allAssets.inputPension.$dirty">
+                Pension must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputAnnuity.$invalid &&
+                                    allAssets.inputAnnuity.$dirty}">
+            <label for="inputAnnuity" class="col-sm-4 control-label">Annuity</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputAnnuity"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.annuity"
+                       name="vm.annuity"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputAnnuity.$invalid &&
+                           allAssets.inputAnnuity.$dirty">
+                Annuity must be a valid number or empty.
+            </span>
+        </div>
+
+        <h3>Business ownership Interests</h3>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputRealEstate.$invalid &&
+                                    allAssets.inputRealEstate.$dirty}">
+            <label for="inputRealEstate" class="col-sm-4 control-label">Real Estate</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputRealEstate"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.realEstate"
+                       name="vm.realEstate"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputRealEstate.$invalid &&
+                           allAssets.inputRealEstate.$dirty">
+                Real Estate must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputSolePro.$invalid &&
+                                    allAssets.inputSolePro.$dirty}">
+            <label for="inputSolePro" class="col-sm-4 control-label">Sole Proprietorship</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSolePro"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.solePro"
+                       name="vm.solePro"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputSolePro.$invalid &&
+                           allAssets.inputSolePro.$dirty">
+                Sole Proprietorship must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputPartnership.$invalid &&
+                                    allAssets.inputPartnership.$dirty}">
+            <label for="inputPartnership" class="col-sm-4 control-label">Partnership</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputPartnership"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.partnership"
+                       name="vm.partnership"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputPartnership.$invalid &&
+                           allAssets.inputPartnership.$dirty">
+                Partnership must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputCCorporation.$invalid &&
+                                    allAssets.inputCCorporation.$dirty}">
+            <label for="inputCCorporation" class="col-sm-4 control-label">C Corporation</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputCCorporation"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.cCorporation"
+                       name="vm.cCorporation"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputCCorporation.$invalid &&
+                           allAssets.inputCCorporation.$dirty">
+                C Corporation must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputSCorporation.$invalid &&
+                                    allAssets.inputSCorporation.$dirty}">
+            <label for="inputSCorporation" class="col-sm-4 control-label">S Corporation</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputSCorporation"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.sCorporation"
+                       name="vm.sCorporation"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputSCorporation.$invalid &&
+                           allAssets.inputSCorporation.$dirty">
+                S Corporation must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputLLC.$invalid &&
+                                    allAssets.inputLLC.$dirty}">
+            <label for="inputLLC" class="col-sm-4 control-label">LLC</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputLLC"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.limitedLC"
+                       name="vm.limitedLC"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputLLC.$invalid &&
+                           allAssets.inputLLC.$dirty">
+                LLC must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputBoOther.$invalid &&
+                                    allAssets.inputBoOther.$dirty}">
+            <label for="inputBoOther" class="col-sm-4 control-label">Business Ownership Other</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputBoOther"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.boOther"
+                       name="vm.boOther"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputBoOther.$invalid &&
+                           allAssets.inputBoOther.$dirty">
+                Business Owner Other must be a valid number or empty.
+            </span>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="calcInvestSubtotal" class="col-sm-4 control-label">Invested Assets Subtotal</label>
+            <!-- <div class="col-sm-4" id="calcInvestSubtotal">{{ vm.calcInvestSubtotal() | currency}}</div> -->
+            <div class="col-sm-4" id="calcInvestSubtotal">{{ vm.subtotalInvested = vm.brokerage +
+                vm.taOther +
+                vm.ira +
+                vm.rothIra +
+                vm.kb +
+                vm.sepIra +
+                vm.keogh +
+                vm.pension +
+                vm.annuity +
+                vm.realEstate +
+                vm.solePro +
+                vm.partnership +
+                vm.cCorporation +
+                vm.sCorporation +
+                vm.limitedLC +
+                vm.boOther | currency;}}
+            </div>
+        </div>
+
+
+        <legend>Use Assets</legend>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputPrincipleHome.$invalid &&
+                                    allAssets.inputPrincipleHome.$dirty}">
+            <label for="inputPrincipleHome" class="col-sm-4 control-label">Principle Home</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputPrincipleHome"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.principleHome"
+                       name="vm.principleHome"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputPrincipleHome.$invalid &&
+                           allAssets.inputPrincipleHome.$dirty">
+                Principle Home must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputVacationHome.$invalid &&
+                                    allAssets.inputVacationHome.$dirty}">
+            <label for="inputVacationHome" class="col-sm-4 control-label">Vacation Home</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputVacationHome"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.vacationHome"
+                       name="vm.vacationHome"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputVacationHome.$invalid &&
+                           allAssets.inputVacationHome.$dirty">
+                Vacation Home must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputVehicles.$invalid &&
+                                    allAssets.inputVehicles.$dirty}">
+            <label for="inputVehicles" class="col-sm-4 control-label">Vehicles - Cars Trucks Boats</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputVehicles"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.vehicles"
+                       name="vm.vehicles"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputVehicles.$invalid &&
+                           allAssets.inputVehicles.$dirty">
+                Vehicles must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputHomeFurnish.$invalid &&
+                                    allAssets.inputHomeFurnish.$dirty}">
+            <label for="inputHomeFurnish" class="col-sm-4 control-label">Home Furnishings</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputHomeFurnish"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.homeFurnish"
+                       name="vm.homeFurnish"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputHomeFurnish.$invalid &&
+                           allAssets.inputHomeFurnish.$dirty">
+                Home Furnishings must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputArt.$invalid &&
+                                    allAssets.inputArt.$dirty}">
+            <label for="inputArt" class="col-sm-4 control-label">Art, antiques, coin, collectibles</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputArt"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.art"
+                       name="vm.art"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputArt.$invalid &&
+                           allAssets.inputArt.$dirty">
+                Art, antiques, coin, collectibles must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputJewelry.$invalid &&
+                                    allAssets.inputJewelry.$dirty}">
+            <label for="inputJewelry" class="col-sm-4 control-label">Jewelry, Furs</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputJewelry"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.jewelry"
+                       name="vm.jewelry"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputJewelry.$invalid &&
+                           allAssets.inputJewelry.$dirty">
+                Jewelry, Furs must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row"
+             ng-class="{'has-error':allAssets.inputUAOther.$invalid &&
+                                    allAssets.inputUAOther.$dirty}">
+            <label for="inputUAOther" class="col-sm-4 control-label">Use Assets Other</label>
+            <div class="col-sm-2">
+                <input type="number"
+                       class="form-control"
+                       id="inputUAOther"
+                       min="0"
+                       max="9999999999999999999999999999999"
+                       ng-model="vm.uaOther"
+                       name="vm.uaOther"
+                        />
+            </div>
+            <span class="help-block "
+                  ng-show="allAssets.inputUAOther.$invalid &&
+                           allAssets.inputUAOther.$dirty">
+                Use Assets Other must be a valid number or empty.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label for="calcUseSubtotal" class="col-sm-4 control-label">Use Assets Subtotal</label>
+           <!-- <div class="col-sm-4" id="calcUseSubtotal">{{ vm.calcUseSubtotal() | currency}}</div> -->
+
+            <div class="col-sm-4" id="calcUseSubtotal">
+                {{vm.subtotalUse = vm.principleHome +
+                vm.vacationHome +
+                vm.vehicles +
+                vm.homeFurnish +
+                vm.art +
+                vm.jewelry +
+                vm.uaOther | currency;}}
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="calcTotalAssets" class="col-sm-4 control-label">Total Assets</label>
+            <!-- <div class="col-sm-4" id="calcTotalAssets">{{ vm.calculatedTotalAssets() | currency}}</div> -->
+            <div class="col-sm-4" id="calcTotalAssets">{{ totalAssets = vm.subtotalCash --
+                vm.subtotalInvested -- vm.subtotalUse | currency;}}</div>
+        </div>
+    </fieldset>
+</form>
