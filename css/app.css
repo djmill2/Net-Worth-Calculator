@@ -1,6 +1,7 @@
 body {
     background-color: #C6D9F1;
 }
+
 form {
     background-color: #A4C8E8;
     border-radius: 2px;
@@ -9,29 +10,34 @@ form {
     font-size: 16px;
     padding: 30px 20px;
 }
+
 form legend {
     color: #404040;
     font-size: 42px;
     font-family: 'Cookie', cursive;
     font-weight: normal;
     line-height: 1;
-    text-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
 }
+
 .assetLegend {
     color: #25aa35;
     text-align: center;
 }
+
 .debtLegend {
     color: #c7254e;
     text-align: center;
 }
+
 /*Assets Category names*/
 h1 {
-    font-size: 20px;
+    font-size: 30px;
     text-indent: 150px;
     color: #006400;
     text-decoration: underline;
 }
+
 /*Liabilities Category names*/
 h1 span {
     font-size: 20px;
@@ -39,15 +45,63 @@ h1 span {
     color: #8b0000;
     text-decoration: underline;
 }
+
 /*Assets Subtotals*/
 label span {
     font-size: large;
     color: #006400;
     font-weight: bold;
 }
+
 /*Liabilities Subtotals*/
 label span b {
     font-size: large;
     color: #8b0000;
     font-weight: bold;
+}
+
+/* Welcome page Instructions and definitions */
+/* Assets */
+h3 {
+    font-weight: bold;
+    text-indent: 50px;
+    color: #006400;
+}
+
+/* Liabilities */
+h3 b {
+    font-weight: bold;
+    text-indent: 50px;
+    color: #8b0000;
+}
+
+/* Assets */
+h4 {
+    font-weight: bold;
+    text-indent: 30px;
+    color: #006400;
+}
+
+/* Liabilities */
+h4 b {
+    font-weight: bold;
+    text-indent: 30px;
+    color: #8b0000;
+}
+
+/* Assets */
+h5 {
+    font-weight: bold;
+    color: #006400;
+    text-decoration: underline;
+}
+
+/* All lines Welcome page */
+dt {
+    font-weight: bold;
+}
+
+dd {
+    display: block;
+    margin-left: 60px;
 }

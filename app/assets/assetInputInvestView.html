@@ -1,6 +1,7 @@
 <form class="form-horizontal" name="assetInvestForm" novalidate>
     <fieldset>
         <legend class="assetLegend">Invested Assets</legend>
+        
         <h1>Taxable accounts</h1>
 
         <!-- Invest brokerage -->
@@ -12,15 +13,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputBrokerage"
+                       name="inputBrokerage"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.brokerage"
-                       name="vm.brokerage"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.brokerage"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputBrokerage.$invalid &&
-                           assetInvestForm.inputBrokerage.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputBrokerage.$invalid">
                 Brokerage must be a valid number or empty.
             </span>
         </div>
@@ -34,15 +33,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputTaOther"
+                       name="inputTaOther"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.taOther"
-                       name="vm.taOther"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.taOther"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputTaOther.$invalid &&
-                           assetInvestForm.inputTaOther.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputTaOther.$invalid">
                 Taxable Other must be a valid number or empty.
             </span>
         </div>
@@ -58,15 +55,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputIra"
+                       name="inputIra"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.ira"
-                       name="vm.ira"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.ira"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputIra.$invalid &&
-                           assetInvestForm.inputIra.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputIra.$invalid">
                 IRA must be a valid number or empty.
             </span>
         </div>
@@ -80,15 +75,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputRothIra"
+                       name="inputRothIra"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.rothIra"
-                       name="vm.rothIra"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.rothIra"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputRothIra.$invalid &&
-                           assetInvestForm.inputRothIra.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputRothIra.$invalid">
                 Roth Ira must be a valid number or empty.
             </span>
         </div>
@@ -102,16 +95,14 @@
                 <input type="number"
                        class="form-control"
                        id="input401k403b"
+                       name="input401k403b"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.kb"
-                       name="vm.kb"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.kb"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.input401k403b.$invalid &&
-                           assetInvestForm.input401k403b.$dirty">
-                Roth Ira must be a valid number or empty.
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.input401k403b.$invalid">
+                401(k) or 403(b must be a valid number or empty.
             </span>
         </div>
 
@@ -124,15 +115,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputSepIra"
+                       name="inputSepIra"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.sepIra"
-                       name="vm.sepIra"
-                       ng-blur="vm.vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.sepIra"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputSepIra.$invalid &&
-                           assetInvestForm.inputSepIra.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputSepIra.$invalid">
                 SEPIRA must be a valid number or empty.
             </span>
         </div>
@@ -146,15 +135,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputKeogh"
+                       name="inputKeogh"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.keogh"
-                       name="vm.keogh"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.keogh"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputKeogh.$invalid &&
-                           assetInvestForm.inputKeogh.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputKeogh.$invalid">
                 Keogh must be a valid number or empty.
             </span>
         </div>
@@ -168,15 +155,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputPension"
+                       name="inputPension"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.pension"
-                       name="vm.pension"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.pension"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputPension.$invalid &&
-                           assetInvestForm.inputPension.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputPension.$invalid">
                 Pension must be a valid number or empty.
             </span>
         </div>
@@ -190,13 +175,12 @@
                 <input type="number"
                        class="form-control"
                        id="inputAnnuity"
+                       name="inputAnnuity"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.annuity"
-                       name="vm.annuity"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.annuity"/>
             </div>
-            <span class="help-block "
+            <span class="help-block has-error"
                   ng-show="assetInvestForm.inputAnnuity.$invalid &&
                            assetInvestForm.inputAnnuity.$dirty">
                 Annuity must be a valid number or empty.
@@ -214,15 +198,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputRealEstate"
+                       name="inputRealEstate"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.realEstate"
-                       name="vm.realEstate"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.realEstate"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputRealEstate.$invalid &&
-                           assetInvestForm.inputRealEstate.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputRealEstate.$invalid">
                 Real Estate must be a valid number or empty.
             </span>
         </div>
@@ -236,15 +218,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputSolePro"
+                       name="inputSolePro"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.solePro"
-                       name="vm.solePro"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.solePro"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputSolePro.$invalid &&
-                           assetInvestForm.inputSolePro.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputSolePro.$invalid">
                 Sole Proprietorship must be a valid number or empty.
             </span>
         </div>
@@ -258,15 +238,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputPartnership"
+                       name="inputPartnership"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.partnership"
-                       name="vm.partnership"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.partnership"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputPartnership.$invalid &&
-                           assetInvestForm.inputPartnership.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputPartnership.$invalid">
                 Partnership must be a valid number or empty.
             </span>
         </div>
@@ -280,15 +258,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputCCorporation"
+                       name="inputCCorporation"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.cCorporation"
-                       name="vm.cCorporation"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.cCorporation"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputCCorporation.$invalid &&
-                           assetInvestForm.inputCCorporation.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputCCorporation.$invalid">
                 C Corporation must be a valid number or empty.
             </span>
         </div>
@@ -302,15 +278,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputSCorporation"
+                       name="inputSCorporation"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.sCorporation"
-                       name="vm.sCorporation"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.sCorporation"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputSCorporation.$invalid &&
-                           assetInvestForm.inputSCorporation.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputSCorporation.$invalid">
                 S Corporation must be a valid number or empty.
             </span>
         </div>
@@ -324,15 +298,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputLLC"
+                       name="inputLLC"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.limitedLC"
-                       name="vm.limitedLC"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.limitedLC"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputLLC.$invalid &&
-                           assetInvestForm.inputLLC.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputLLC.$invalid">
                 LLC must be a valid number or empty.
             </span>
         </div>
@@ -346,15 +318,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputBoOther"
+                       name="inputBoOther"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.investData.boOther"
-                       name="vm.boOther"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.investData.boOther"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetInvestForm.inputBoOther.$invalid &&
-                           assetInvestForm.inputBoOther.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetInvestForm.inputBoOther.$invalid">
                 Business Owner Other must be a valid number or empty.
             </span>
         </div>

@@ -15,6 +15,7 @@
             cashData: {
                 checking: 0.00,
                 savings: 0.00,
+                cash: 0.00,
                 moneyMarket: 0.00,
                 savingsBond: 0.00,
                 cds: 0.00,
@@ -121,11 +122,12 @@
         }
 
         // Cash subtotal calculations
-        function subtotalCash(checking, savings, moneyMarket, savingsBond, cds, cashValLifeIns) {
+        function subtotalCash(checking, savings, cash, moneyMarket, savingsBond, cds, cashValLifeIns) {
             // Cash and Cash Equivalents
             var cashSubtotal = 0;
             subtotalCash = checking +
                 savings +
+                cash +
                 moneyMarket +
                 savingsBond +
                 cds +

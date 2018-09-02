@@ -33,7 +33,7 @@
         // Populate cash subtotal variable
         $scope.$watch("vm.cashData", function handleChange(userInputVal) {
             vm.cashSubtotal = userInputVal.checking +
-                userInputVal.savings + userInputVal.moneyMarket +
+                userInputVal.savings + userInputVal.cash + userInputVal.moneyMarket +
                 userInputVal.savingsBond + userInputVal.cds + userInputVal.cashValLifeIns;
             vm.assetCalculateService.setCash(userInputVal);
         }, true);
@@ -43,6 +43,7 @@
             assetCalculateService.setCash({
                 checking: vm.cashData.checking,
                 savings: vm.cashData.savings,
+                cash: vm.cashData.cash,
                 moneyMarket: vm.cashData.moneyMarket,
                 savingsBond: vm.cashData.savingsBond,
                 cds: vm.cashData.cds,
@@ -51,13 +52,14 @@
             vm.cashData = {
                 checking: vm.cashData.checking,
                 savings: vm.cashData.savings,
+                cash: vm.cashData.cash,
                 moneyMarket: vm.cashData.moneyMarket,
                 savingsBond: vm.cashData.savingsBond,
                 cds: vm.cashData.cds,
                 cashValLifeIns: vm.cashData.cashValLifeIns
             };
             return assetCalculateService.calculateCashSubtotal(vm.cashData.checking,
-                vm.cashData.savings, vm.cashData.moneyMarket, vm.cashData.savingsBond,
+                vm.cashData.savings, vm.cashData.cash, vm.cashData.moneyMarket, vm.cashData.savingsBond,
                 vm.cashData.cds, vm.cashData.cashValLifeIns);
 
         };

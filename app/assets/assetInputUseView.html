@@ -11,15 +11,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputPrincipleHome"
+                       name="inputPrincipleHome"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.useData.principleHome"
-                       name="vm.principleHome"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.useData.principleHome"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetUseForm.inputPrincipleHome.$invalid &&
-                           assetUseForm.inputPrincipleHome.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetUseForm.inputPrincipleHome.$invalid">
                 Principle Home must be a valid number or empty.
             </span>
         </div>
@@ -33,15 +31,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputVacationHome"
+                       name="inputVacationHome"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.useData.vacationHome"
-                       name="vm.vacationHome"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.useData.vacationHome"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetUseForm.inputVacationHome.$invalid &&
-                           assetUseForm.inputVacationHome.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetUseForm.inputVacationHome.$invalid">
                 Vacation Home must be a valid number or empty.
             </span>
         </div>
@@ -55,13 +51,12 @@
                 <input type="number"
                        class="form-control"
                        id="inputVehicles"
+                       name="inputVehicles"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.useData.vehicles"
-                       name="vm.vehicles"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.useData.vehicles"/>
             </div>
-            <span class="help-block "
+            <span class="help-block has-error"
                   ng-show="assetUseForm.inputVehicles.$invalid &&
                            assetUseForm.inputVehicles.$dirty">
                 Vehicles must be a valid number or empty.
@@ -77,15 +72,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputHomeFurnish"
+                       name="inputHomeFurnish"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.useData.homeFurnish"
-                       name="vm.homeFurnish"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.useData.homeFurnish"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetUseForm.inputHomeFurnish.$invalid &&
-                           assetUseForm.inputHomeFurnish.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetUseForm.inputHomeFurnish.$invalid">
                 Home Furnishings must be a valid number or empty.
             </span>
         </div>
@@ -99,15 +92,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputArt"
+                       name="inputArt"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.useData.art"
-                       name="vm.art"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.useData.art"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetUseForm.inputArt.$invalid &&
-                           assetUseForm.inputArt.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetUseForm.inputArt.$invalid">
                 Art, antiques, coin, collectibles must be a valid number or empty.
             </span>
         </div>
@@ -121,15 +112,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputJewelry"
+                       name="inputJewelry"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.useData.jewelry"
-                       name="vm.jewelry"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.useData.jewelry"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetUseForm.inputJewelry.$invalid &&
-                           assetUseForm.inputJewelry.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetUseForm.inputJewelry.$invalid">
                 Jewelry, Furs must be a valid number or empty.
             </span>
         </div>
@@ -143,15 +132,13 @@
                 <input type="number"
                        class="form-control"
                        id="inputUAOther"
+                       name="inputUAOther"
                        min="0"
-                       max="9999999999999999999999999999999"
-                       ng-model="vm.useData.uaOther"
-                       name="vm.uaOther"
-                       ng-blur="vm.validate_input(this)"/>
+                       max="999999999999999"
+                       ng-model="vm.useData.uaOther"/>
             </div>
-            <span class="help-block "
-                  ng-show="assetUseForm.inputUAOther.$invalid &&
-                           assetUseForm.inputUAOther.$dirty">
+            <span class="help-block has-error"
+                  ng-show="assetUseForm.inputUAOther.$invalid">
                 Use Assets Other must be a valid number or empty.
             </span>
         </div>
