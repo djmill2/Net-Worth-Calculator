@@ -10,17 +10,18 @@
                                     assetInvestForm.inputBrokerage.$dirty}">
             <label for="inputBrokerage" class="col-sm-4 control-label">Brokerage</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputBrokerage"
                        name="inputBrokerage"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.brokerage"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputBrokerage.$invalid">
-                Brokerage must be a valid number or empty.
+                Brokerage must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -30,17 +31,18 @@
                                     assetInvestForm.inputTaOther.$dirty}">
             <label for="inputTaOther" class="col-sm-4 control-label">Taxable Other</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputTaOther"
                        name="inputTaOther"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.taOther"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputTaOther.$invalid">
-                Taxable Other must be a valid number or empty.
+                Taxable Other must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -52,17 +54,18 @@
                                     assetInvestForm.inputIra.$dirty}">
             <label for="inputIra" class="col-sm-4 control-label">IRA</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputIra"
                        name="inputIra"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.ira"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputIra.$invalid">
-                IRA must be a valid number or empty.
+                IRA must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -72,17 +75,18 @@
                                     assetInvestForm.inputRothIra.$dirty}">
             <label for="inputRothIra" class="col-sm-4 control-label">Roth IRA</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputRothIra"
                        name="inputRothIra"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.rothIra"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputRothIra.$invalid">
-                Roth Ira must be a valid number or empty.
+                Roth Ira must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -92,17 +96,18 @@
                                     assetInvestForm.input401k403b.$dirty}">
             <label for="input401k403b" class="col-sm-4 control-label">401(k) or 403(b)</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="input401k403b"
                        name="input401k403b"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.kb"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.input401k403b.$invalid">
-                401(k) or 403(b must be a valid number or empty.
+                401(k) or 403(b must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -112,17 +117,18 @@
                                     assetInvestForm.inputSepIra.$dirty}">
             <label for="inputSepIra" class="col-sm-4 control-label">SEPIRA</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputSepIra"
                        name="inputSepIra"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.sepIra"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputSepIra.$invalid">
-                SEPIRA must be a valid number or empty.
+                SEPIRA must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -132,17 +138,18 @@
                                     assetInvestForm.inputKeogh.$dirty}">
             <label for="inputKeogh" class="col-sm-4 control-label">Keogh</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputKeogh"
                        name="inputKeogh"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.keogh"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputKeogh.$invalid">
-                Keogh must be a valid number or empty.
+                Keogh must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -152,17 +159,18 @@
                                     assetInvestForm.inputPension.$dirty}">
             <label for="inputPension" class="col-sm-4 control-label">Pension</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputPension"
                        name="inputPension"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.pension"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputPension.$invalid">
-                Pension must be a valid number or empty.
+                Pension must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -172,18 +180,19 @@
                                     assetInvestForm.inputAnnuity.$dirty}">
             <label for="inputAnnuity" class="col-sm-4 control-label">Annuity</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputAnnuity"
                        name="inputAnnuity"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.annuity"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputAnnuity.$invalid &&
                            assetInvestForm.inputAnnuity.$dirty">
-                Annuity must be a valid number or empty.
+                Annuity must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -195,17 +204,18 @@
                                     assetInvestForm.inputRealEstate.$dirty}">
             <label for="inputRealEstate" class="col-sm-4 control-label">Real Estate</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputRealEstate"
                        name="inputRealEstate"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.realEstate"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputRealEstate.$invalid">
-                Real Estate must be a valid number or empty.
+                Real Estate must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -215,17 +225,18 @@
                                     assetInvestForm.inputSolePro.$dirty}">
             <label for="inputSolePro" class="col-sm-4 control-label">Sole Proprietorship</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputSolePro"
                        name="inputSolePro"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.solePro"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputSolePro.$invalid">
-                Sole Proprietorship must be a valid number or empty.
+                Sole Proprietorship must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -235,17 +246,18 @@
                                     assetInvestForm.inputPartnership.$dirty}">
             <label for="inputPartnership" class="col-sm-4 control-label">Partnership</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputPartnership"
                        name="inputPartnership"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.partnership"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputPartnership.$invalid">
-                Partnership must be a valid number or empty.
+                Partnership must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -255,17 +267,18 @@
                                     assetInvestForm.inputCCorporation.$dirty}">
             <label for="inputCCorporation" class="col-sm-4 control-label">C Corporation</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputCCorporation"
                        name="inputCCorporation"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.cCorporation"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputCCorporation.$invalid">
-                C Corporation must be a valid number or empty.
+                C Corporation must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -275,17 +288,18 @@
                                     assetInvestForm.inputSCorporation.$dirty}">
             <label for="inputSCorporation" class="col-sm-4 control-label">S Corporation</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputSCorporation"
                        name="inputSCorporation"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.sCorporation"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputSCorporation.$invalid">
-                S Corporation must be a valid number or empty.
+                S Corporation must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -295,17 +309,18 @@
                                     assetInvestForm.inputLLC.$dirty}">
             <label for="inputLLC" class="col-sm-4 control-label">LLC</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputLLC"
                        name="inputLLC"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.limitedLC"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputLLC.$invalid">
-                LLC must be a valid number or empty.
+                LLC must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -315,17 +330,18 @@
                                     assetInvestForm.inputBoOther.$dirty}">
             <label for="inputBoOther" class="col-sm-4 control-label">Business Ownership Other</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputBoOther"
                        name="inputBoOther"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.investData.boOther"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetInvestForm.inputBoOther.$invalid">
-                Business Owner Other must be a valid number or empty.
+                Business Owner Other must be a valid number, zero '0' or greater.
             </span>
         </div>
 

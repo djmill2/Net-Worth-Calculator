@@ -8,17 +8,18 @@
                                     assetCashForm.inputChecking.$dirty}">
             <label for="inputChecking" class="col-sm-4 control-label">Checking</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputChecking"
                        name="inputChecking"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.checking"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputChecking.$invalid">
-                Checking must be a valid number or empty.
+                Checking must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -28,17 +29,18 @@
                                     assetCashForm.inputSavings.$dirty}">
             <label for="inputSavings" class="col-sm-4 control-label">Savings</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputSavings"
                        name="inputSavings"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.savings"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputSavings.$invalid">
-                Savings must be a valid number or empty.
+                Savings must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -48,17 +50,18 @@
                                     assetCashForm.inputCash.$dirty}">
             <label for="inputCash" class="col-sm-4 control-label">Currency and Coin</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputCash"
                        name="inputCash"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.cash"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputCash.$invalid">
-                Cash must be a valid number or empty.
+                Cash must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -68,17 +71,18 @@
                                     assetCashForm.inputMoneyMarket.$dirty}">
             <label for="inputMoneyMarket" class="col-sm-4 control-label">Money Market</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputMoneyMarket"
                        name="inputMoneyMarket"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.moneyMarket"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputMoneyMarket.$invalid">
-                MoneyMarket must be a valid number or empty.
+                MoneyMarket must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -88,17 +92,18 @@
                                     assetCashForm.inputSavingsBonds.$dirty}">
             <label for="inputSavingsBonds" class="col-sm-4 control-label">Savings bonds</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputSavingsBonds"
                        name="inputSavingsBonds"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.savingsBond"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputSavingsBonds.$invalid">
-                Savings Bond must be a valid number or empty.
+                Savings Bond must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -108,17 +113,18 @@
                                     assetCashForm.inputCDs.$dirty}">
             <label for="inputCDs" class="col-sm-4 control-label">Certificate of Deposit (CD's)</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputCDs"
                        name="inputCDs"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.cds"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputCDs.$invalid">
-                CD's must be a valid number or empty.
+                CD's must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -128,17 +134,18 @@
                                     assetCashForm.inputCashValLifeIns.$dirty}">
             <label for="inputCashValLifeIns" class="col-sm-4 control-label">Cash value of life insurance</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputCashValLifeIns"
                        name="inputCashValLifeIns"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.cashValLifeIns"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputCashValLifeIns.$invalid">
-                Cash value of Life insurance must be a valid number or empty.
+                Cash value of Life insurance must be a valid number, zero '0' or greater.
             </span>
         </div>
 

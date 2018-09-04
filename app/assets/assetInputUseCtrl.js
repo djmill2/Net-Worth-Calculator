@@ -36,9 +36,9 @@
 
         // Populate USE subtotal variable
         $scope.$watch("vm.useData", function handleChange(userInputVal) {
-            vm.useSubtotal = userInputVal.principleHome +
-                userInputVal.vacationHome + userInputVal.vehicles + userInputVal.homeFurnish +
-                userInputVal.art + userInputVal.jewelry + userInputVal.uaOther;
+            vm.useSubtotal = parseFloat(userInputVal.principleHome) +
+                parseFloat(userInputVal.vacationHome) + parseFloat(userInputVal.vehicles) + parseFloat(userInputVal.homeFurnish) +
+                parseFloat(userInputVal.art) + parseFloat(userInputVal.jewelry) + parseFloat(userInputVal.uaOther);
             vm.assetCalculateService.setUse(userInputVal);
             vm.totalAsset = vm.assetCalculateService.getTotal();
         }, true);

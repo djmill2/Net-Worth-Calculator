@@ -39,9 +39,9 @@
 
         // Populate long-term debt subtotal variable
         $scope.$watch("vm.longTermDebtData", function handleChange(userInputVal) {
-            vm.longtermDebtSubtotal = userInputVal.homeMortgage +
-                userInputVal.homeEquity + userInputVal.mortgagesRental + userInputVal.vehiclesLoans +
-                userInputVal.studentLoans + userInputVal.lifeInsuranceLoan + userInputVal.otherLongtermDebt;
+            vm.longtermDebtSubtotal = parseFloat(userInputVal.homeMortgage) +
+                parseFloat(userInputVal.homeEquity) + parseFloat(userInputVal.mortgagesRental) + parseFloat(userInputVal.vehiclesLoans) +
+                parseFloat(userInputVal.studentLoans) + parseFloat(userInputVal.lifeInsuranceLoan) + parseFloat(userInputVal.otherLongtermDebt);
             vm.debtCalculateService.setLongTermDebt(userInputVal);
             vm.totalLiability = vm.debtCalculateService.getTotal();
         }, true);

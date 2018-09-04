@@ -60,7 +60,7 @@
         function calcSubTotal(obj) {
             var assetsSubTotal = 0.00;
             for (var prop in obj) {
-                assetsSubTotal += obj[prop];
+                assetsSubTotal += parseFloat( obj[prop] );
             }
             return assetsSubTotal;
         }
@@ -70,7 +70,7 @@
             var assetsTotal = 0.00;
             for (var prop in obj.cashTotalData) {
                 if (prop.indexOf('assetsTotal') === -1) {
-                    assetsTotal += obj.cashTotalData[prop];
+                    assetsTotal += parseFloat( obj.cashTotalData[prop] );
                 }
             }
             return assetsTotal;

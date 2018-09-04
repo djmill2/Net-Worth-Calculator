@@ -8,17 +8,18 @@
                                     currentLiabilitiesForm.inputCreditCards.$dirty}">
             <label for="inputCreditCards" class="col-sm-4 control-label">Credit Cards</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputCreditCards"
                        name="inputCreditCards"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.currentDebtsData.creditCards"/>
             </div>
             <span class="help-block has-error"
                   ng-show="currentLiabilitiesForm.inputCreditCards.$invalid">
-                Credit Cards must be a valid number or empty.
+                Credit Cards must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -28,18 +29,19 @@
                                     currentLiabilitiesForm.inputEstIncomeTaxOwed.$dirty}">
             <label for="inputEstIncomeTaxOwed" class="col-sm-4 control-label">Estimated Income Tax Owed</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputEstIncomeTaxOwed"
                        name="inputEstIncomeTaxOwed"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.currentDebtsData.incomeTaxOwed"/>
             </div>
             <span class="help-block has-error"
                   ng-show="currentLiabilitiesForm.inputEstIncomeTaxOwed.$invalid &&
                            currentLiabilitiesForm.inputEstIncomeTaxOwed.$dirty">
-                Estimated Income Tax Owed must be a valid number or empty.
+                Estimated Income Tax Owed must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -49,17 +51,18 @@
                                     currentLiabilitiesForm.inputOutstandingBills.$dirty}">
             <label for="inputOutstandingBills" class="col-sm-4 control-label">Outstanding Bills</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputOutstandingBills"
                        name="inputOutstandingBills"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.currentDebtsData.outstandingBills"/>
             </div>
             <span class="help-block has-error"
                   ng-show="currentLiabilitiesForm.inputOutstandingBills.$invalid">
-                OutStanding Bills must be a valid number or empty.
+                OutStanding Bills must be a valid number, zero '0' or greater.
             </span>
         </div>
 

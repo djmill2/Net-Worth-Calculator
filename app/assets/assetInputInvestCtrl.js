@@ -31,12 +31,12 @@
 
         // Populate invest subtotal variable
         $scope.$watch("vm.investData", function handleChange(userInputVal) {
-            vm.investSubtotal = userInputVal.brokerage + userInputVal.taOther +
-                userInputVal.ira + userInputVal.rothIra + userInputVal.kb +
-                userInputVal.sepIra + userInputVal.keogh + userInputVal.pension +
-                userInputVal.annuity + userInputVal.realEstate + userInputVal.solePro +
-                userInputVal.partnership + userInputVal.cCorporation + userInputVal.sCorporation +
-                userInputVal.limitedLC + userInputVal.boOther;
+            vm.investSubtotal = parseFloat(userInputVal.brokerage) + parseFloat(userInputVal.taOther) +
+                parseFloat(userInputVal.ira) + parseFloat(userInputVal.rothIra) + parseFloat(userInputVal.kb) +
+                parseFloat(userInputVal.sepIra) + parseFloat(userInputVal.keogh) + parseFloat(userInputVal.pension) +
+                parseFloat(userInputVal.annuity) + parseFloat(userInputVal.realEstate) + parseFloat(userInputVal.solePro) +
+                parseFloat(userInputVal.partnership) + parseFloat(userInputVal.cCorporation) + parseFloat(userInputVal.sCorporation) +
+                parseFloat(userInputVal.limitedLC) + parseFloat(userInputVal.boOther);
             vm.assetCalculateService.setInvest(userInputVal);
         }, true);
 

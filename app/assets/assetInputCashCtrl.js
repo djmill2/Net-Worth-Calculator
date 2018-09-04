@@ -32,9 +32,9 @@
 
         // Populate cash subtotal variable
         $scope.$watch("vm.cashData", function handleChange(userInputVal) {
-            vm.cashSubtotal = userInputVal.checking +
-                userInputVal.savings + userInputVal.cash + userInputVal.moneyMarket +
-                userInputVal.savingsBond + userInputVal.cds + userInputVal.cashValLifeIns;
+            vm.cashSubtotal = parseFloat(userInputVal.checking) +
+                parseFloat(userInputVal.savings) + parseFloat(userInputVal.cash) + parseFloat(userInputVal.moneyMarket) +
+                parseFloat(userInputVal.savingsBond) + parseFloat(userInputVal.cds) + parseFloat(userInputVal.cashValLifeIns);
             vm.assetCalculateService.setCash(userInputVal);
         }, true);
 

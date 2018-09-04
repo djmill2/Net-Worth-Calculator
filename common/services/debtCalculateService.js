@@ -35,19 +35,19 @@
 
         // Reusable method for subtotal calculations
         function calcSubTotal(obj) {
-            var debtsSubTotal = 0.00;
+            var debtsSubTotal = 0;
             for (var prop in obj) {
-                debtsSubTotal += obj[prop];
+                debtsSubTotal += parseFloat( obj[prop] );
             }
             return debtsSubTotal;
         }
 
         // Reusable method for total calculations
         function calcTotal(obj) {
-            var debtsTotal = 0.00;
+            var debtsTotal = 0;
             for (var prop in obj.totalDebtData) {
                 if (prop.indexOf('debtsTotal') === -1) {
-                    debtsTotal += obj.totalDebtData[prop];
+                    debtsTotal += parseFloat( obj.totalDebtData[prop] );
                 }
             }
             return debtsTotal;
@@ -90,15 +90,6 @@
             return dataObj;
         }
 
-        // Current Debts calculations
-        function subtotalCurrentDebt(creditCards, incomeTaxOwed, outstandingBills) {
-            subtotalCurrentDebt = creditCards +
-                incomeTaxOwed +
-                outstandingBills;
-
-            return subtotalCurrentDebt;
-        }
-
         // Long-term Debts calculations
         function subtotalLongterm(homeMortgage, homeEquity, mortgagesRental, vehiclesLoans,
                                   studentLoans, lifeInsuranceLoan, otherLongtermDebt) {
@@ -123,7 +114,6 @@
 
         // public API
         return {
-            calculateCurrentDebtsSubtotal: subtotalCurrentDebt,
             calculateLongtermDebtSubtotal: subtotalLongterm,
             calculatedTotalDebts: totalDebts,
             setCurrentDebt: setCurrentDebt,

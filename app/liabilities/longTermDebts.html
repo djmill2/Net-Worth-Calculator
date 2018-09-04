@@ -8,17 +8,18 @@
                                     longTermLiabilitiesForm.inputHomeMortgage.$dirty}">
             <label for="inputHomeMortgage" class="col-sm-4 control-label">Home Mortgage</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputHomeMortgage"
                        name="inputHomeMortgage"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.longTermDebtData.homeMortgage"/>
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputHomeMortgage.$invalid">
-                Home Mortgage must be a valid number or empty.
+                Home Mortgage must be a valid number, zero '0' or greater.
             </span>
         </div>
         <!-- Long-term debts home equity line -->
@@ -27,17 +28,18 @@
                                     longTermLiabilitiesForm.inputHomeEquity.$dirty}">
             <label for="inputHomeEquity" class="col-sm-4 control-label">Home Equity Line</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputHomeEquity"
                        name="inputHomeEquity"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.longTermDebtData.homeEquity"/>
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputHomeEquity.$invalid ">
-                Home Equity Line must be a valid number or empty.
+                Home Equity Line must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -48,17 +50,18 @@
             <label for="inputMortgagesRentalProperty" class="col-sm-4 control-label">Mortgages on Rental
                 Properties</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputMortgagesRentalProperty"
                        name="inputMortgagesRentalProperty"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.longTermDebtData.mortgagesRental"/>
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputMortgagesRentalProperty.$invalid ">
-                Mortgages on Rental Properties must be a valid number or empty.
+                Mortgages on Rental Properties must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -68,17 +71,18 @@
                                     longTermLiabilitiesForm.inputVehicleLoans.$dirty}">
             <label for="inputVehicleLoans" class="col-sm-4 control-label">Vehicle Loans</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputVehicleLoans"
                        name="inputVehicleLoans"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.longTermDebtData.vehiclesLoans"/>
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputVehicleLoans.$invalid ">
-                Vehicle Loans must be a valid number or empty.
+                Vehicle Loans must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -88,17 +92,18 @@
                                     longTermLiabilitiesForm.inputStudentLoans.$dirty}">
             <label for="inputStudentLoans" class="col-sm-4 control-label">Student Loans</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputStudentLoans"
                        name="inputStudentLoans"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.longTermDebtData.studentLoans"/>
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputStudentLoans.$invalid ">
-                    Student Loans must be a valid number or empty.
+                    Student Loans must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -108,18 +113,19 @@
                                     longTermLiabilitiesForm.inputLifeInsuranceLoans.$dirty}">
             <label for="inputLifeInsuranceLoans" class="col-sm-4 control-label">Life Insurance Loans</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputLifeInsuranceLoans"
                        name="inputLifeInsuranceLoans"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.longTermDebtData.lifeInsuranceLoan"/>
 
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputLifeInsuranceLoans.$invalid">
-                    Life Insurance Loans must be a valid number or empty.
+                    Life Insurance Loans must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -129,18 +135,19 @@
                                     longTermLiabilitiesForm.inputOtherLongtermDebt.$dirty}">
             <label for="inputOtherLongtermDebt" class="col-sm-4 control-label">Other Long-term Debt</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputOtherLongtermDebt"
                        name="inputOtherLongtermDebt"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.longTermDebtData.otherLongtermDebt"
                 />
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputOtherLongtermDebt.$invalid">
-                    Other Long-term Debt must be a valid number or empty.
+                    Other Long-term Debt must be a valid number, zero '0' or greater.
             </span>
         </div>
 

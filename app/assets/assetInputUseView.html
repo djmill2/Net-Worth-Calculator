@@ -8,17 +8,18 @@
                                     assetUseForm.inputPrincipleHome.$dirty}">
             <label for="inputPrincipleHome" class="col-sm-4 control-label">Principle Home</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputPrincipleHome"
                        name="inputPrincipleHome"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.useData.principleHome"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputPrincipleHome.$invalid">
-                Principle Home must be a valid number or empty.
+                Principle Home must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -28,17 +29,18 @@
                                     assetUseForm.inputVacationHome.$dirty}">
             <label for="inputVacationHome" class="col-sm-4 control-label">Vacation Home</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputVacationHome"
                        name="inputVacationHome"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.useData.vacationHome"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputVacationHome.$invalid">
-                Vacation Home must be a valid number or empty.
+                Vacation Home must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -48,18 +50,19 @@
                                     assetUseForm.inputVehicles.$dirty}">
             <label for="inputVehicles" class="col-sm-4 control-label">Vehicles - Cars Trucks Boats</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputVehicles"
                        name="inputVehicles"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.useData.vehicles"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputVehicles.$invalid &&
                            assetUseForm.inputVehicles.$dirty">
-                Vehicles must be a valid number or empty.
+                Vehicles must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -69,17 +72,18 @@
                                     assetUseForm.inputHomeFurnish.$dirty}">
             <label for="inputHomeFurnish" class="col-sm-4 control-label">Home Furnishings</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputHomeFurnish"
                        name="inputHomeFurnish"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.useData.homeFurnish"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputHomeFurnish.$invalid">
-                Home Furnishings must be a valid number or empty.
+                Home Furnishings must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -89,17 +93,18 @@
                                     assetUseForm.inputArt.$dirty}">
             <label for="inputArt" class="col-sm-4 control-label">Art, antiques, coin, collectibles</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputArt"
                        name="inputArt"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.useData.art"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputArt.$invalid">
-                Art, antiques, coin, collectibles must be a valid number or empty.
+                Art, antiques, coin, collectibles must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -109,17 +114,18 @@
                                     assetUseForm.inputJewelry.$dirty}">
             <label for="inputJewelry" class="col-sm-4 control-label">Jewelry, Furs</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputJewelry"
                        name="inputJewelry"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.useData.jewelry"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputJewelry.$invalid">
-                Jewelry, Furs must be a valid number or empty.
+                Jewelry, Furs must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -129,17 +135,18 @@
                                     assetUseForm.inputUAOther.$dirty}">
             <label for="inputUAOther" class="col-sm-4 control-label">Use Assets Other</label>
             <div class="col-sm-2">
-                <input type="number"
+                <input type="text"
                        class="form-control"
                        id="inputUAOther"
                        name="inputUAOther"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.useData.uaOther"/>
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputUAOther.$invalid">
-                Use Assets Other must be a valid number or empty.
+                Use Assets Other must be a valid number, zero '0' or greater.
             </span>
         </div>
 
