@@ -52,7 +52,7 @@
             if (amount === '') {
                 return 0;
             } else {
-                return $filter('currency')(amount);
+                return $filter('number')(amount);
             }
         }
 
