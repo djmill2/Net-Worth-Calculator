@@ -11,9 +11,10 @@
                 "$state",
                 "$scope",
                 "assetCalculateService",
+                "$filter",
                 AssetInputCashCtrl]);
 
-    function AssetInputCashCtrl(assetResource, $state, $scope, assetCalculateService) {
+    function AssetInputCashCtrl(assetResource, $state, $scope, assetCalculateService, $filter) {
         var vm = this;
         // Declaring and initializing the variables for this controller
         vm.cashSubtotal = 0;
@@ -51,7 +52,7 @@
             if (amount === '') {
                 return 0;
             } else {
-                return amount;
+                return $filter('currency')(amount);
             }
         }
 
