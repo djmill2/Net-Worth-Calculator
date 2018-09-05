@@ -38,6 +38,23 @@
             vm.assetCalculateService.setCash(userInputVal);
         }, true);
 
+        // Check on Focus if checking has a value and set to empty if not
+        vm.handleZeroOnFocus = function( amount ) {
+            if (amount === 0 || amount === '0') {
+                return '';
+            } else {
+                return amount;
+            }
+        }
+
+        vm.returnOnBlur = function( amount ) {
+            if (amount === '') {
+                return 0;
+            } else {
+                return amount;
+            }
+        }
+
         /* Calculate the CASH assets subtotal */
         vm.calcCashSubtotal = function () {
             assetCalculateService.setCash({
