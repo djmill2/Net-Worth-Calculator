@@ -13,7 +13,7 @@
     function assetCalculateService() {
         var dataObj = {
             cashData: {
-                checking: 0.00,
+                checking: "0.00",
                 savings: 0.00,
                 cash: 0.00,
                 moneyMarket: 0.00,
