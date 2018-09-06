@@ -16,7 +16,6 @@
                        ng-blur="vm.currentDebtsData.creditCards = vm.returnOnBlur(vm.currentDebtsData.creditCards)"
                        min="0"
                        max="999999999999999"
-                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.currentDebtsData.creditCards"/>
             </div>
             <span class="help-block has-error"
@@ -39,7 +38,6 @@
                        ng-blur="vm.currentDebtsData.incomeTaxOwed = vm.returnOnBlur(vm.currentDebtsData.incomeTaxOwed)"
                        min="0"
                        max="999999999999999"
-                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.currentDebtsData.incomeTaxOwed"/>
             </div>
             <span class="help-block has-error"
@@ -63,7 +61,6 @@
                        ng-blur="vm.currentDebtsData.outstandingBills = vm.returnOnBlur(vm.currentDebtsData.outstandingBills)"
                        min="0"
                        max="999999999999999"
-                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.currentDebtsData.outstandingBills"/>
             </div>
             <span class="help-block has-error"

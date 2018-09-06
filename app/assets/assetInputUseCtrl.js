@@ -93,7 +93,8 @@
 
         // Populate asset total variable
         $scope.$watch("vm.cashTotalData", function handleChange(cashTotalData) {
-            vm.totalAsset = cashTotalData.cashSubtotal + cashTotalData.investSubtotal + cashTotalData.useSubtotal;
+            vm.totalAsset = parseFloat(cashTotalData.cashSubtotal) +
+                parseFloat(cashTotalData.investSubtotal) + parseFloat(cashTotalData.useSubtotal);
         }, true);
 
         /* Calculate the Total assets  */

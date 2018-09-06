@@ -94,7 +94,7 @@
         };
         // populate the total liabilities variable
         $scope.$watch("vm.totalDebtData", function handleChange(totalDebtData) {
-            vm.totalLiability = totalDebtData.currentDebtSubtotal + totalDebtData.longtermDebtSubtotal;
+            vm.totalLiability = parseFloat(totalDebtData.currentDebtSubtotal) + parseFloat(totalDebtData.longtermDebtSubtotal);
 
         }, true);
 
