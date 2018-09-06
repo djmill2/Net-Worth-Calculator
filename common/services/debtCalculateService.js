@@ -13,23 +13,23 @@
     function debtCalculateService() {
         var dataObj = {
             currentDebtsData: {
-                creditCards: 0.00,
-                incomeTaxOwed: 0.00,
-                outstandingBills: 0.00
+                creditCards: '0',
+                incomeTaxOwed: '0',
+                outstandingBills: '0'
             },
             longTermDebtData: {
-                homeMortgage: 0.00,
-                homeEquity: 0.00,
-                mortgagesRental: 0.00,
-                vehiclesLoans: 0.00,
-                studentLoans: 0.00,
-                lifeInsuranceLoan: 0.00,
-                otherLongtermDebt: 0.00
+                homeMortgage: '0',
+                homeEquity: '0',
+                mortgagesRental: '0',
+                vehiclesLoans: '0',
+                studentLoans: '0',
+                lifeInsuranceLoan: '0',
+                otherLongtermDebt: '0'
             },
             totalDebtData: {
-                currentDebtSubtotal: 0.00,
-                longtermDebtSubtotal: 0.00,
-                debtsTotal: 0.00
+                currentDebtSubtotal: 0,
+                longtermDebtSubtotal: 0,
+                debtsTotal: 0
             },
         };
 

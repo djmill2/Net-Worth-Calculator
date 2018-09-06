@@ -13,6 +13,7 @@
     <script src="js/jquery-3.0.0.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/angular-resource.js"></script>
+    <script src="js/angular-messages.js"></script>
     <script src="js/angular-mocks.js"></script>
     <script src="js/angular-ui-router.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -42,7 +43,7 @@
 
 </head>
 <body ng-app="netWorthCalculator">
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container">
         <a class="navbar-brand"
            ui-sref="home">Net Worth Calculation</a>
@@ -59,11 +60,11 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a ui-sref="assetsCashData">Cash Assets</a></li>
-                <li><a ui-sref="assetsInvestedData">Invested Assets</a></li>
-                <li><a ui-sref="assetsUseData">Use Assets</a></li>
-                <li><a ui-sref="debtCurrent">Current Debts</a></li>
-                <li><a ui-sref="debtLongTerm">Long-term Debts</a></li>
+                <li ui-sref-active="active"><a ui-sref="assetsCashData">Cash Assets</a></li>
+                <li ui-sref-active="active"><a ui-sref="assetsInvestedData">Invested Assets</a></li>
+                <li ui-sref-active="active"><a ui-sref="assetsUseData">Use Assets</a></li>
+                <li ui-sref-active="active"><a ui-sref="debtCurrent">Current Debts</a></li>
+                <li ui-sref-active="active"><a ui-sref="debtLongTerm">Long-term Debts</a></li>
             </ul>
         </div>
     </div>

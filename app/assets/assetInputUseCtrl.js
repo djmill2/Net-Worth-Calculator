@@ -11,9 +11,10 @@
                 "$state",
                 "$scope",
                 "assetCalculateService",
+                "$filter",
                 AssetInputUseCtrl]);
 
-    function AssetInputUseCtrl(assetResource, $state, $scope, assetCalculateService) {
+    function AssetInputUseCtrl(assetResource, $state, $scope, assetCalculateService, $filter) {
         var vm = this;
         // Declaring and initializing the variables for this controller
         vm.useSubtotal = 0;
@@ -36,12 +37,34 @@
 
         // Populate USE subtotal variable
         $scope.$watch("vm.useData", function handleChange(userInputVal) {
-            vm.useSubtotal = parseFloat(userInputVal.principleHome) +
-                parseFloat(userInputVal.vacationHome) + parseFloat(userInputVal.vehicles) + parseFloat(userInputVal.homeFurnish) +
-                parseFloat(userInputVal.art) + parseFloat(userInputVal.jewelry) + parseFloat(userInputVal.uaOther);
+            vm.useSubtotal = parseFloat(userInputVal.principleHome.replace(/,/g,'')) +
+                parseFloat(userInputVal.vacationHome.replace(/,/g,'')) + parseFloat(userInputVal.vehicles.replace(/,/g,'')) +
+                parseFloat(userInputVal.homeFurnish.replace(/,/g,'')) + parseFloat(userInputVal.art.replace(/,/g,'')) +
+                parseFloat(userInputVal.jewelry.replace(/,/g,'')) + parseFloat(userInputVal.uaOther.replace(/,/g,''));
             vm.assetCalculateService.setUse(userInputVal);
             vm.totalAsset = vm.assetCalculateService.getTotal();
         }, true);
+
+        // Check on Focus if user inputs have a value and set to empty if not
+        vm.handleZeroOnFocus = function (amount) {
+            if (amount === 0 || amount === '0' || amount === '0.00') {
+                return '';
+            } else {
+                return amount.replace(/,/g,'');
+            }
+        };
+
+        vm.returnOnBlur = function (amount) {
+            if (amount === '') {
+                return 0;
+            } else if (amount.indexOf(',') !== -1) {
+                var newAmount = amount.replace(/,/g,'');
+                return $filter('number')(newAmount)
+            } else {
+                //return amount;
+                return $filter('number')(amount);
+            }
+        };
 
         // Calculate the USE assets subtotal */
         vm.calcUseSubtotal = function () {

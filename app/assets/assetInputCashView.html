@@ -12,6 +12,8 @@
                        class="form-control"
                        id="inputChecking"
                        name="inputChecking"
+                       ng-focus="vm.cashData.checking = vm.handleZeroOnFocus(vm.cashData.checking)"
+                       ng-blur="vm.cashData.checking = vm.returnOnBlur(vm.cashData.checking)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -19,7 +21,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputChecking.$invalid">
-                Checking must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -33,6 +35,8 @@
                        class="form-control"
                        id="inputSavings"
                        name="inputSavings"
+                       ng-focus="vm.cashData.savings = vm.handleZeroOnFocus(vm.cashData.savings)"
+                       ng-blur="vm.cashData.savings = vm.returnOnBlur(vm.cashData.savings)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -40,7 +44,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputSavings.$invalid">
-                Savings must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -54,6 +58,8 @@
                        class="form-control"
                        id="inputCash"
                        name="inputCash"
+                       ng-focus="vm.cashData.cash = vm.handleZeroOnFocus(vm.cashData.cash)"
+                       ng-blur="vm.cashData.cash = vm.returnOnBlur(vm.cashData.cash)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -61,7 +67,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputCash.$invalid">
-                Cash must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -75,6 +81,8 @@
                        class="form-control"
                        id="inputMoneyMarket"
                        name="inputMoneyMarket"
+                       ng-focus="vm.cashData.moneyMarket = vm.handleZeroOnFocus(vm.cashData.moneyMarket)"
+                       ng-blur="vm.cashData.moneyMarket = vm.returnOnBlur(vm.cashData.moneyMarket)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -82,7 +90,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputMoneyMarket.$invalid">
-                MoneyMarket must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -96,6 +104,8 @@
                        class="form-control"
                        id="inputSavingsBonds"
                        name="inputSavingsBonds"
+                       ng-focus="vm.cashData.savingsBond = vm.handleZeroOnFocus(vm.cashData.savingsBond)"
+                       ng-blur="vm.cashData.savingsBond = vm.returnOnBlur(vm.cashData.savingsBond)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -103,7 +113,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputSavingsBonds.$invalid">
-                Savings Bond must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -117,6 +127,8 @@
                        class="form-control"
                        id="inputCDs"
                        name="inputCDs"
+                       ng-focus="vm.cashData.cds = vm.handleZeroOnFocus(vm.cashData.cds)"
+                       ng-blur="vm.cashData.cds = vm.returnOnBlur(vm.cashData.cds)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -124,7 +136,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputCDs.$invalid">
-                CD's must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -138,6 +150,8 @@
                        class="form-control"
                        id="inputCashValLifeIns"
                        name="inputCashValLifeIns"
+                       ng-focus="vm.cashData.cashValLifeIns = vm.handleZeroOnFocus(vm.cashData.cashValLifeIns)"
+                       ng-blur="vm.cashData.cashValLifeIns = vm.returnOnBlur(vm.cashData.cashValLifeIns)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -145,7 +159,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetCashForm.inputCashValLifeIns.$invalid">
-                Cash value of Life insurance must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -156,11 +170,15 @@
             <div class="col-sm-4" id="calcCashSubTotal">{{ vm.cashSubtotal | currency;}}
             </div>
         </div>
+        <!--<div class="col-md-6">
+            <pre>{{assetCashForm | json}}</pre>
+        </div> -->
 
         <div id="footer">
             <ul>
                 <li><a ui-sref="assetsInvestedData">Invested Assets - Next</a></li>
             </ul>
         </div>
+
     </fieldset>
 </form>

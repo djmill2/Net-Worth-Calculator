@@ -12,6 +12,8 @@
                        class="form-control"
                        id="inputHomeMortgage"
                        name="inputHomeMortgage"
+                       ng-focus="vm.longTermDebtData.homeMortgage = vm.handleZeroOnFocus(vm.longTermDebtData.homeMortgage)"
+                       ng-blur="vm.longTermDebtData.homeMortgage = vm.returnOnBlur(vm.longTermDebtData.homeMortgage)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -19,7 +21,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputHomeMortgage.$invalid">
-                Home Mortgage must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
         <!-- Long-term debts home equity line -->
@@ -32,6 +34,8 @@
                        class="form-control"
                        id="inputHomeEquity"
                        name="inputHomeEquity"
+                       ng-focus="vm.longTermDebtData.homeEquity = vm.handleZeroOnFocus(vm.longTermDebtData.homeEquity)"
+                       ng-blur="vm.longTermDebtData.homeEquity = vm.returnOnBlur(vm.longTermDebtData.homeEquity)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -39,7 +43,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputHomeEquity.$invalid ">
-                Home Equity Line must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -54,6 +58,8 @@
                        class="form-control"
                        id="inputMortgagesRentalProperty"
                        name="inputMortgagesRentalProperty"
+                       ng-focus="vm.longTermDebtData.mortgagesRental = vm.handleZeroOnFocus(vm.longTermDebtData.mortgagesRental)"
+                       ng-blur="vm.longTermDebtData.mortgagesRental = vm.returnOnBlur(vm.longTermDebtData.mortgagesRental)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -61,7 +67,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputMortgagesRentalProperty.$invalid ">
-                Mortgages on Rental Properties must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -75,6 +81,8 @@
                        class="form-control"
                        id="inputVehicleLoans"
                        name="inputVehicleLoans"
+                       ng-focus="vm.longTermDebtData.vehiclesLoans = vm.handleZeroOnFocus(vm.longTermDebtData.vehiclesLoans)"
+                       ng-blur="vm.longTermDebtData.vehiclesLoans = vm.returnOnBlur(vm.longTermDebtData.vehiclesLoans)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -82,7 +90,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputVehicleLoans.$invalid ">
-                Vehicle Loans must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -96,6 +104,8 @@
                        class="form-control"
                        id="inputStudentLoans"
                        name="inputStudentLoans"
+                       ng-focus="vm.longTermDebtData.studentLoans = vm.handleZeroOnFocus(vm.longTermDebtData.studentLoans)"
+                       ng-blur="vm.longTermDebtData.studentLoans = vm.returnOnBlur(vm.longTermDebtData.studentLoans)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -103,7 +113,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputStudentLoans.$invalid ">
-                    Student Loans must be a valid number, zero '0' or greater.
+                    Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -117,6 +127,8 @@
                        class="form-control"
                        id="inputLifeInsuranceLoans"
                        name="inputLifeInsuranceLoans"
+                       ng-focus="vm.longTermDebtData.lifeInsuranceLoan = vm.handleZeroOnFocus(vm.longTermDebtData.lifeInsuranceLoan)"
+                       ng-blur="vm.longTermDebtData.lifeInsuranceLoan = vm.returnOnBlur(vm.longTermDebtData.lifeInsuranceLoan)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -125,7 +137,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputLifeInsuranceLoans.$invalid">
-                    Life Insurance Loans must be a valid number, zero '0' or greater.
+                    Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -139,15 +151,16 @@
                        class="form-control"
                        id="inputOtherLongtermDebt"
                        name="inputOtherLongtermDebt"
+                       ng-focus="vm.longTermDebtData.otherLongtermDebt = vm.handleZeroOnFocus(vm.longTermDebtData.otherLongtermDebt)"
+                       ng-blur="vm.longTermDebtData.otherLongtermDebt = vm.returnOnBlur(vm.longTermDebtData.otherLongtermDebt)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
-                       ng-model="vm.longTermDebtData.otherLongtermDebt"
-                />
+                       ng-model="vm.longTermDebtData.otherLongtermDebt"/>
             </div>
             <span class="help-block has-error"
                   ng-show="longTermLiabilitiesForm.inputOtherLongtermDebt.$invalid">
-                    Other Long-term Debt must be a valid number, zero '0' or greater.
+                    Must be a valid number, zero '0' or greater.
             </span>
         </div>
 

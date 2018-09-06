@@ -12,6 +12,8 @@
                        class="form-control"
                        id="inputPrincipleHome"
                        name="inputPrincipleHome"
+                       ng-focus="vm.useData.principleHome = vm.handleZeroOnFocus(vm.useData.principleHome)"
+                       ng-blur="vm.useData.principleHome = vm.returnOnBlur(vm.useData.principleHome)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -19,7 +21,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputPrincipleHome.$invalid">
-                Principle Home must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -33,6 +35,8 @@
                        class="form-control"
                        id="inputVacationHome"
                        name="inputVacationHome"
+                       ng-focus="vm.useData.vacationHome = vm.handleZeroOnFocus(vm.useData.vacationHome)"
+                       ng-blur="vm.useData.vacationHome = vm.returnOnBlur(vm.useData.vacationHome)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -40,7 +44,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputVacationHome.$invalid">
-                Vacation Home must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -54,6 +58,8 @@
                        class="form-control"
                        id="inputVehicles"
                        name="inputVehicles"
+                       ng-focus="vm.useData.vehicles = vm.handleZeroOnFocus(vm.useData.vehicles)"
+                       ng-blur="vm.useData.vehicles = vm.returnOnBlur(vm.useData.vehicles)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -62,7 +68,7 @@
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputVehicles.$invalid &&
                            assetUseForm.inputVehicles.$dirty">
-                Vehicles must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -76,6 +82,8 @@
                        class="form-control"
                        id="inputHomeFurnish"
                        name="inputHomeFurnish"
+                       ng-focus="vm.useData.homeFurnish = vm.handleZeroOnFocus(vm.useData.homeFurnish)"
+                       ng-blur="vm.useData.homeFurnish = vm.returnOnBlur(vm.useData.homeFurnish)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -83,7 +91,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputHomeFurnish.$invalid">
-                Home Furnishings must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -97,6 +105,8 @@
                        class="form-control"
                        id="inputArt"
                        name="inputArt"
+                       ng-focus="vm.useData.art = vm.handleZeroOnFocus(vm.useData.art)"
+                       ng-blur="vm.useData.art = vm.returnOnBlur(vm.useData.art)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -104,7 +114,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputArt.$invalid">
-                Art, antiques, coin, collectibles must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -118,6 +128,8 @@
                        class="form-control"
                        id="inputJewelry"
                        name="inputJewelry"
+                       ng-focus="vm.useData.jewelry = vm.handleZeroOnFocus(vm.useData.jewelry)"
+                       ng-blur="vm.useData.jewelry = vm.returnOnBlur(vm.useData.jewelry)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -125,7 +137,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputJewelry.$invalid">
-                Jewelry, Furs must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 
@@ -139,6 +151,8 @@
                        class="form-control"
                        id="inputUAOther"
                        name="inputUAOther"
+                       ng-focus="vm.useData.uaOther = vm.handleZeroOnFocus(vm.useData.uaOther)"
+                       ng-blur="vm.useData.uaOther = vm.returnOnBlur(vm.useData.uaOther)"
                        min="0"
                        max="999999999999999"
                        pattern="[0-9]+([\.,][0-9]+)*"
@@ -146,7 +160,7 @@
             </div>
             <span class="help-block has-error"
                   ng-show="assetUseForm.inputUAOther.$invalid">
-                Use Assets Other must be a valid number, zero '0' or greater.
+                Must be a valid number, zero '0' or greater.
             </span>
         </div>
 

@@ -13,52 +13,52 @@
     function assetCalculateService() {
         var dataObj = {
             cashData: {
-                checking: 0.00,
-                savings: 0.00,
-                cash: 0.00,
-                moneyMarket: 0.00,
-                savingsBond: 0.00,
-                cds: 0.00,
-                cashValLifeIns: 0.00
+                checking: '0',
+                savings: '0',
+                cash: '0',
+                moneyMarket: '0',
+                savingsBond: '0',
+                cds: '0',
+                cashValLifeIns: '0'
             },
             investData: {
-                brokerage: 0.00,
-                taOther: 0.00,
-                ira: 0.00,
-                rothIra: 0.00,
-                kb: 0.00,
-                sepIra: 0.00,
-                keogh: 0.00,
-                pension: 0.00,
-                annuity: 0.00,
-                realEstate: 0.00,
-                solePro: 0.00,
-                partnership: 0.00,
-                cCorporation: 0.00,
-                sCorporation: 0.00,
-                limitedLC: 0.00,
-                boOther: 0.00
+                brokerage: '0',
+                taOther: '0',
+                ira: '0',
+                rothIra: '0',
+                kb: '0',
+                sepIra: '0',
+                keogh: '0',
+                pension: '0',
+                annuity: '0',
+                realEstate: '0',
+                solePro: '0',
+                partnership: '0',
+                cCorporation: '0',
+                sCorporation: '0',
+                limitedLC: '0',
+                boOther: '0'
             },
             useData: {
-                principleHome: 0.00,
-                vacationHome: 0.00,
-                vehicles: 0.00,
-                homeFurnish: 0.00,
-                art: 0.00,
-                jewelry: 0.00,
-                uaOther: 0.00
+                principleHome: '0',
+                vacationHome: '0',
+                vehicles: '0',
+                homeFurnish: '0',
+                art: '0',
+                jewelry: '0',
+                uaOther: '0'
             },
             cashTotalData: {
-                cashSubtotal: 0.00,
-                investSubtotal: 0.00,
-                useSubtotal: 0.00,
-                assetsTotal: 0.00
+                cashSubtotal: 0,
+                investSubtotal: 0,
+                useSubtotal: 0,
+                assetsTotal: 0
             }
         };
 
         // Reusable method for subtotal calculations
         function calcSubTotal(obj) {
-            var assetsSubTotal = 0.00;
+            var assetsSubTotal = 0;
             for (var prop in obj) {
                 assetsSubTotal += parseFloat( obj[prop] );
             }
@@ -67,7 +67,7 @@
 
         // Reusable method for total calculations
         function calcTotal(obj) {
-            var assetsTotal = 0.00;
+            var assetsTotal = 0;
             for (var prop in obj.cashTotalData) {
                 if (prop.indexOf('assetsTotal') === -1) {
                     assetsTotal += parseFloat( obj.cashTotalData[prop] );

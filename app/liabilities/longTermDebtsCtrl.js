@@ -13,9 +13,10 @@
                 "$scope",
                 "assetCalculateService",
                 "debtCalculateService",
+                "$filter",
                 LongTermDebtsCtrl]);
 
-    function LongTermDebtsCtrl(assetResource, debtResource, $state, $scope, assetCalculateService, debtCalculateService) {
+    function LongTermDebtsCtrl(assetResource, debtResource, $state, $scope, assetCalculateService, debtCalculateService, $filter) {
         var vm = this;
         // Declaring and initializing the variables for this controller
         vm.longtermDebtSubtotal = 0;
@@ -39,12 +40,33 @@
 
         // Populate long-term debt subtotal variable
         $scope.$watch("vm.longTermDebtData", function handleChange(userInputVal) {
-            vm.longtermDebtSubtotal = parseFloat(userInputVal.homeMortgage) +
-                parseFloat(userInputVal.homeEquity) + parseFloat(userInputVal.mortgagesRental) + parseFloat(userInputVal.vehiclesLoans) +
-                parseFloat(userInputVal.studentLoans) + parseFloat(userInputVal.lifeInsuranceLoan) + parseFloat(userInputVal.otherLongtermDebt);
+            vm.longtermDebtSubtotal = parseFloat(userInputVal.homeMortgage.replace(/,/g,'')) +
+                parseFloat(userInputVal.homeEquity.replace(/,/g,'')) + parseFloat(userInputVal.mortgagesRental.replace(/,/g,'')) +
+                parseFloat(userInputVal.vehiclesLoans.replace(/,/g,'')) + parseFloat(userInputVal.studentLoans.replace(/,/g,'')) +
+                parseFloat(userInputVal.lifeInsuranceLoan.replace(/,/g,'')) + parseFloat(userInputVal.otherLongtermDebt.replace(/,/g,''));
             vm.debtCalculateService.setLongTermDebt(userInputVal);
             vm.totalLiability = vm.debtCalculateService.getTotal();
         }, true);
+
+        // Check on Focus if user inputs have a value and set to empty if not
+        vm.handleZeroOnFocus = function (amount) {
+            if (amount === 0 || amount === '0' || amount === '0.00') {
+                return '';
+            } else {
+                return amount.replace(/,/g,'');
+            }
+        };
+
+        vm.returnOnBlur = function (amount) {
+            if (amount === '') {
+                return 0;
+            } else if (amount.indexOf(',') !== -1) {
+                var newAmount = amount.replace(/,/g,'');
+                return $filter('number')(newAmount)
+            } else {
+                return $filter('number')(amount);
+            }
+        };
 
         /* Calculate the Long-term Debt subtotal */
         vm.calcLongtermDebtSubtotal = function () {

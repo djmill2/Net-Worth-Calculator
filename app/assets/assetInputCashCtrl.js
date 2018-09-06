@@ -11,9 +11,10 @@
                 "$state",
                 "$scope",
                 "assetCalculateService",
+                "$filter",
                 AssetInputCashCtrl]);
 
-    function AssetInputCashCtrl(assetResource, $state, $scope, assetCalculateService) {
+    function AssetInputCashCtrl(assetResource, $state, $scope, assetCalculateService, $filter) {
         var vm = this;
         // Declaring and initializing the variables for this controller
         vm.cashSubtotal = 0;
@@ -32,11 +33,32 @@
 
         // Populate cash subtotal variable
         $scope.$watch("vm.cashData", function handleChange(userInputVal) {
-            vm.cashSubtotal = parseFloat(userInputVal.checking) +
-                parseFloat(userInputVal.savings) + parseFloat(userInputVal.cash) + parseFloat(userInputVal.moneyMarket) +
-                parseFloat(userInputVal.savingsBond) + parseFloat(userInputVal.cds) + parseFloat(userInputVal.cashValLifeIns);
-            vm.assetCalculateService.setCash(userInputVal);
+                vm.cashSubtotal = parseFloat(userInputVal.checking.replace(/,/g,'')) +
+                    parseFloat(userInputVal.savings.replace(/,/g,'')) + parseFloat(userInputVal.cash.replace(/,/g,'')) +
+                    parseFloat(userInputVal.moneyMarket.replace(/,/g,'')) + parseFloat(userInputVal.savingsBond.replace(/,/g,'')) +
+                    parseFloat(userInputVal.cds.replace(/,/g,'')) + parseFloat(userInputVal.cashValLifeIns.replace(/,/g,''));
+                vm.assetCalculateService.setCash(userInputVal);
         }, true);
+
+        // Check on Focus if checking has a value and set to empty if not
+        vm.handleZeroOnFocus = function (amount) {
+            if (amount === 0 || amount === '0' || amount === '0.00') {
+                return '';
+            } else {
+                return amount.replace(/,/g, '');
+            }
+        };
+
+        vm.returnOnBlur = function (amount) {
+            if (amount === '' || amount === undefined) {
+                return 0;
+            } else if (amount.indexOf(',') !== -1) {
+                var newAmount = amount.replace(/,/g, '');
+                return $filter('number')(newAmount);
+            } else {
+                return $filter('number')(amount);
+            }
+        };
 
         /* Calculate the CASH assets subtotal */
         vm.calcCashSubtotal = function () {
