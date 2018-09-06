@@ -33,12 +33,12 @@
 
         // Populate cash subtotal variable
         $scope.$watch("vm.cashData", function handleChange(userInputVal) {
-            if (userInputVal.checking) {
-                vm.cashSubtotal = parseFloat(userInputVal.checking.replace(',', '')) +
+            // if (userInputVal.checking) {
+                vm.cashSubtotal = parseFloat(userInputVal.checking.replace(/,/g,'')) +
                     parseFloat(userInputVal.savings) + parseFloat(userInputVal.cash) + parseFloat(userInputVal.moneyMarket) +
                     parseFloat(userInputVal.savingsBond) + parseFloat(userInputVal.cds) + parseFloat(userInputVal.cashValLifeIns);
                 vm.assetCalculateService.setCash(userInputVal);
-            }
+            // }
         }, true);
 
         // Check on Focus if checking has a value and set to empty if not
@@ -46,7 +46,7 @@
             if (amount === 0 || amount === '0' || amount === '0.00') {
                 return '';
             } else {
-                return amount;
+                return amount.replace(/,/g,'');
             }
         }
 
@@ -54,7 +54,7 @@
             if (amount === '' || amount === undefined) {
                 return 0;
             } else if (amount.indexOf(',') !== -1) {
-                var newAmount = amount.replace(',', '');
+                var newAmount = amount.replace(/,/g, '');
                 return $filter('number')(newAmount);
             } else {
                 return $filter('number')(amount);
