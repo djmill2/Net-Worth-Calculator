@@ -105,3 +105,20 @@ dd {
     display: block;
     margin-left: 60px;
 }
+
+/* Add $ symbol inside input type=text boxes */
+.dollar {
+    display: inline-block;
+    position: relative;
+}
+
+.dollar input {
+    padding-left: 15px;
+}
+
+.dollar:before {
+    position: absolute;
+    content: "$";
+    left: 5px;
+    top: 2px;
+}

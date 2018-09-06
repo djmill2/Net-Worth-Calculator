@@ -8,15 +8,17 @@
                                     currentLiabilitiesForm.inputCreditCards.$dirty}">
             <label for="inputCreditCards" class="col-sm-4 control-label">Credit Cards</label>
             <div class="col-sm-2">
-                <input type="text"
-                       class="form-control"
-                       id="inputCreditCards"
-                       name="inputCreditCards"
-                       ng-focus="vm.currentDebtsData.creditCards = vm.handleZeroOnFocus(vm.currentDebtsData.creditCards)"
-                       ng-blur="vm.currentDebtsData.creditCards = vm.returnOnBlur(vm.currentDebtsData.creditCards)"
-                       min="0"
-                       max="999999999999999"
-                       ng-model="vm.currentDebtsData.creditCards"/>
+                <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
+                    <input type="text"
+                           class="form-control"
+                           id="inputCreditCards"
+                           name="inputCreditCards"
+                           ng-focus="vm.currentDebtsData.creditCards = vm.handleZeroOnFocus(vm.currentDebtsData.creditCards)"
+                           ng-blur="vm.currentDebtsData.creditCards = vm.returnOnBlur(vm.currentDebtsData.creditCards)"
+                           min="0"
+                           max="999999999999999"
+                           ng-model="vm.currentDebtsData.creditCards"/>
+                </div>
             </div>
             <span class="help-block has-error"
                   ng-show="currentLiabilitiesForm.inputCreditCards.$invalid">
@@ -30,15 +32,17 @@
                                     currentLiabilitiesForm.inputEstIncomeTaxOwed.$dirty}">
             <label for="inputEstIncomeTaxOwed" class="col-sm-4 control-label">Estimated Income Tax Owed</label>
             <div class="col-sm-2">
-                <input type="text"
-                       class="form-control"
-                       id="inputEstIncomeTaxOwed"
-                       name="inputEstIncomeTaxOwed"
-                       ng-focus="vm.currentDebtsData.incomeTaxOwed = vm.handleZeroOnFocus(vm.currentDebtsData.incomeTaxOwed)"
-                       ng-blur="vm.currentDebtsData.incomeTaxOwed = vm.returnOnBlur(vm.currentDebtsData.incomeTaxOwed)"
-                       min="0"
-                       max="999999999999999"
-                       ng-model="vm.currentDebtsData.incomeTaxOwed"/>
+                <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
+                    <input type="text"
+                           class="form-control"
+                           id="inputEstIncomeTaxOwed"
+                           name="inputEstIncomeTaxOwed"
+                           ng-focus="vm.currentDebtsData.incomeTaxOwed = vm.handleZeroOnFocus(vm.currentDebtsData.incomeTaxOwed)"
+                           ng-blur="vm.currentDebtsData.incomeTaxOwed = vm.returnOnBlur(vm.currentDebtsData.incomeTaxOwed)"
+                           min="0"
+                           max="999999999999999"
+                           ng-model="vm.currentDebtsData.incomeTaxOwed"/>
+                </div>
             </div>
             <span class="help-block has-error"
                   ng-show="currentLiabilitiesForm.inputEstIncomeTaxOwed.$invalid &&
@@ -53,15 +57,17 @@
                                     currentLiabilitiesForm.inputOutstandingBills.$dirty}">
             <label for="inputOutstandingBills" class="col-sm-4 control-label">Outstanding Bills</label>
             <div class="col-sm-2">
-                <input type="text"
-                       class="form-control"
-                       id="inputOutstandingBills"
-                       name="inputOutstandingBills"
-                       ng-focus="vm.currentDebtsData.outstandingBills = vm.handleZeroOnFocus(vm.currentDebtsData.outstandingBills)"
-                       ng-blur="vm.currentDebtsData.outstandingBills = vm.returnOnBlur(vm.currentDebtsData.outstandingBills)"
-                       min="0"
-                       max="999999999999999"
-                       ng-model="vm.currentDebtsData.outstandingBills"/>
+                <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
+                    <input type="text"
+                           class="form-control"
+                           id="inputOutstandingBills"
+                           name="inputOutstandingBills"
+                           ng-focus="vm.currentDebtsData.outstandingBills = vm.handleZeroOnFocus(vm.currentDebtsData.outstandingBills)"
+                           ng-blur="vm.currentDebtsData.outstandingBills = vm.returnOnBlur(vm.currentDebtsData.outstandingBills)"
+                           min="0"
+                           max="999999999999999"
+                           ng-model="vm.currentDebtsData.outstandingBills"/>
+                </div>
             </div>
             <span class="help-block has-error"
                   ng-show="currentLiabilitiesForm.inputOutstandingBills.$invalid">
