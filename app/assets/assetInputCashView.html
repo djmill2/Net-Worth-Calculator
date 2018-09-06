@@ -16,6 +16,7 @@
                        ng-blur="vm.cashData.checking = vm.returnOnBlur(vm.cashData.checking)"
                        min="0"
                        max="999999999999999"
+                       pattern="[0-9]+([\.,][0-9]+)*"
                        ng-model="vm.cashData.checking"/>
             </div>
             <span class="help-block has-error"
