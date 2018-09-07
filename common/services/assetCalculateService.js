@@ -60,7 +60,7 @@
         function calcSubTotal(obj) {
             var assetsSubTotal = 0;
             for (var prop in obj) {
-                assetsSubTotal += parseFloat( obj[prop] );
+                assetsSubTotal += parseFloat( obj[prop].replace(/,/g,'') );
             }
             return assetsSubTotal;
         }
