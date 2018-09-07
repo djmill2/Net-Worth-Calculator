@@ -59,7 +59,7 @@
 
         vm.returnOnBlur = function (amount) {
             if (amount === '') {
-                return 0;
+                return '0';
             } else if (amount.indexOf(',') !== -1) {
                 var newAmount = amount.replace(/,/g,'');
                 return $filter('number')(newAmount)
@@ -92,6 +92,7 @@
                 vm.longTermDebtData.homeEquity, vm.longTermDebtData.mortgagesRental, vm.longTermDebtData.vehiclesLoans,
                 vm.longTermDebtData.studentLoans, vm.longTermDebtData.lifeInsuranceLoan, vm.longTermDebtData.otherLongtermDebt);
         };
+
         // populate the total liabilities variable
         $scope.$watch("vm.totalDebtData", function handleChange(totalDebtData) {
             vm.totalLiability = parseFloat(totalDebtData.currentDebtSubtotal) + parseFloat(totalDebtData.longtermDebtSubtotal);

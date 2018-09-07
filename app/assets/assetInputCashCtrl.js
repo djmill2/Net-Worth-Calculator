@@ -51,7 +51,7 @@
 
         vm.returnOnBlur = function (amount) {
             if (amount === '' || amount === undefined) {
-                return 0;
+                return '0';
             } else if (amount.indexOf(',') !== -1) {
                 var newAmount = amount.replace(/,/g, '');
                 return $filter('number')(newAmount);

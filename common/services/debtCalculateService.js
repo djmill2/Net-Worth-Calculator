@@ -37,7 +37,7 @@
         function calcSubTotal(obj) {
             var debtsSubTotal = 0;
             for (var prop in obj) {
-                debtsSubTotal += parseFloat( obj[prop] );
+                debtsSubTotal += parseFloat( obj[prop].replace(/,/g,'') );
             }
             return debtsSubTotal;
         }
