@@ -5,7 +5,7 @@
                 Net Worth Calculator
             </div>
 
-            <h1 style="text-indent: 250PX;">Asset and Liabilities Definitions</h1>
+            <h1 style="text-indent: 250PX; color: #000;">Asset and Liability Definitions</h1>
 
             <h3>Assets</h3>
             <br>
@@ -29,7 +29,10 @@
                     <dt>Cash Value Life Insurance</dt>
                     <dd>Contact the institution that you purchased them from, and request a current total</dd>
                 </dl>
-            </div>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="assetsCashData">Go to - Cash Assets</a></li>
+                </ul>
+            </div><br >
 
             <h4>Investment Assets</h4>
             <h5>Taxable accounts</h5>
@@ -44,7 +47,10 @@
                         certain fringe benefits, interest gained from bank accounts.
                     </dd>
                 </dl>
-            </div>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="assetsInvestedData">Go to - Invested Assets</a></li>
+                </ul>
+            </div><br >
 
             <h5>Retirement accounts</h5>
             <div>
@@ -64,7 +70,10 @@
                     <dt>Annuity</dt>
                     <dd>Contact your investment adviser to determine account balance.</dd>
                 </dl>
-            </div>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="assetsInvestedData">Go to - Invested Assets</a></li>
+                </ul>
+            </div><br >
 
             <h5>Business Ownership Interests</h5>
             <div>
@@ -95,7 +104,10 @@
                     <dt>Business Ownership Other</dt>
                     <dd>Other business ownership opportunities</dd>
                 </dl>
-            </div>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="assetsInvestedData">Go to - Invested Assets</a></li>
+                </ul>
+            </div><br >
 
 
             <h4>Use Assets</h4>
@@ -116,7 +128,10 @@
                     <dt>Other Use Assets</dt>
                     <dd>Land, or other assets not mentioned above.</dd>
                 </dl>
-            </div>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="assetsUseData">Go to - Use Assets</a></li>
+                </ul>
+            </div><br >
 
             <h3><b>Liabilities</b></h3>
             <br>
@@ -124,7 +139,7 @@
             <div>
                 <dl>
                     <dt>Credit Cards</dt>
-                    <dd>Gather statements for all credit cards sum them and add the total.</dd>
+                    <dd>Gather statements for all credit cards, sum outstanding balances, enter the total amount.</dd>
                     <dt>Estimated Income Tax Owed</dt>
                     <dd>You are required to pay your income taxes as you go. If you work for a corporation they
                         withhold your taxes and pay them for you. If self employed, you are required pay
@@ -135,7 +150,10 @@
                         debts and sum them up and enter the total here.
                     </dd>
                 </dl>
-            </div>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="debtCurrent">Go to - Current Debts</a></li>
+                </ul>
+            </div><br >
 
             <h4><b>Long-term Debts</b></h4>
             <div>
@@ -154,9 +172,11 @@
                     <dd>Current amount owed on the loan.</dd>
                     <dt>Other Long-term Debt</dt>
                     <dd>Sum of all other long-term debts.</dd>
-
                 </dl>
-            </div>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="debtLongTerm">Go to - Long-term Debts</a></li>
+                </ul>
+            </div><br >
 
         </div>
     </fieldset>

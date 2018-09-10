@@ -7,7 +7,6 @@
     var app = angular.module("netWorthCalculator",
         ["common.services",
             "ui.router",
-            "ui.mask",
             "ui.bootstrap",
             "assetResourceMock",
             "debtResourceMock"]);
