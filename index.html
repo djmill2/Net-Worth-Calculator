@@ -42,8 +42,6 @@
 <body ng-app="netWorthCalculator">
 <nav class="navbar navbar-default">
     <div class="container">
-        <a class="navbar-brand"
-           ui-sref="home">Net Worth Asset & Liability Definitions</a>
         <div class="navbar-header">
             <button type="button"
                     class="navbar-toggle"
@@ -57,6 +55,8 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a ui-sref="home" style="font-size: 18px;">Asset & Liability Term
+                    Definitions</a></li>
                 <li ui-sref-active="active"><a ui-sref="assetsCashData">Cash Assets</a></li>
                 <li ui-sref-active="active"><a ui-sref="assetsInvestedData">Invested Assets</a></li>
                 <li ui-sref-active="active"><a ui-sref="assetsUseData">Use Assets</a></li>
