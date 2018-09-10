@@ -3,12 +3,24 @@
         <legend class="debtLegend">Current Debts</legend>
 
         <!-- Current debts credit cards -->
-        <div class="form-group row"
+        <!-- Each label and control combination have a 'class=form-group' which provides for optimal
+        spacing of the controls in the group -->
+        <div class="form-group"
              ng-class="{'has-error':currentLiabilitiesForm.inputCreditCards.$invalid &&
                                     currentLiabilitiesForm.inputCreditCards.$dirty}">
+            <!-- Each label has a 'class of control-label' and each control has a 'class of form-control'
+             these ensures that the control takes the full width available to it. -->
             <label for="inputCreditCards" class="col-sm-4 control-label">Credit Cards</label>
+            <!-- The 'for=' attribute relates the label to the data entry control 'input id=' property -->
             <div class="col-sm-2">
                 <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
+                    <!--  ng-focus and ng-blur - in this case allows for the removal of the zero '0' displayed
+                        in each input box when the cursor enters the box, gains focus, and if nothing is changed,
+                        replaces the zero on exiting , loses focus, if a value is added, the value typed in is retained.
+                        min= and max= control the numbers that can be entered.
+                        The min=0 prevents any negative numbers from being used
+                        The max="999999999999999" limits the available numbers to 999 trillion.
+                        ng-model provides two way binding to the input attribute  -->
                     <input type="text"
                            class="form-control"
                            id="inputCreditCards"
@@ -27,7 +39,7 @@
         </div>
 
         <!-- Current debts estimated income tax owed -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':currentLiabilitiesForm.inputEstIncomeTaxOwed.$invalid &&
                                     currentLiabilitiesForm.inputEstIncomeTaxOwed.$dirty}">
             <label for="inputEstIncomeTaxOwed" class="col-sm-4 control-label">Estimated Income Tax Owed</label>
@@ -52,7 +64,7 @@
         </div>
 
         <!-- Current debts outstanding bills -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':currentLiabilitiesForm.inputOutstandingBills.$invalid &&
                                     currentLiabilitiesForm.inputOutstandingBills.$dirty}">
             <label for="inputOutstandingBills" class="col-sm-4 control-label">Outstanding Bills</label>
@@ -76,7 +88,7 @@
         </div>
 
         <!-- Current debts subtotal -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcCurrentDebts"
                    class="col-sm-4 control-label liabilitySubtotalCss">Current Debts Subtotal</label>
             <div class="col-sm-4" id="calcCurrentDebts">{{

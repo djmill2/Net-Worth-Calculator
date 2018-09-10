@@ -3,12 +3,24 @@
         <legend class="assetLegend">Use Assets</legend>
 
         <!-- Use principle home -->
-        <div class="form-group row"
+        <!-- Each label and control combination have a 'class=form-group' which provides for optimal
+        spacing of the controls in the group -->
+        <div class="form-group"
              ng-class="{'has-error':assetUseForm.inputPrincipleHome.$invalid &&
                                     assetUseForm.inputPrincipleHome.$dirty}">
+            <!-- Each label has a 'class of control-label' and each control has a 'class of form-control'
+             these ensures that the control takes the full width available to it. -->
             <label for="inputPrincipleHome" class="col-sm-4 control-label">Principle Home</label>
+            <!-- The 'for=' attribute relates the label to the data entry control 'input id=' property -->
             <div class="col-sm-2">
                 <div class="dollar"> <!-- Add $ symbol inside input type=text boxes -->
+                    <!--  ng-focus and ng-blur - in this case allows for the removal of the zero '0' displayed
+                        in each input box when the cursor enters the box, gains focus, and if nothing is changed,
+                        replaces the zero on exiting , loses focus, if a value is added, the value typed in is retained.
+                        min= and max= control the numbers that can be entered.
+                        The min=0 prevents any negative numbers from being used
+                        The max="999999999999999" limits the available numbers to 999 trillion.
+                        ng-model provides two way binding to the input attribute  -->
                     <input type="text"
                            class="form-control"
                            id="inputPrincipleHome"
@@ -27,7 +39,7 @@
         </div>
 
         <!-- Use vacation home -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetUseForm.inputVacationHome.$invalid &&
                                     assetUseForm.inputVacationHome.$dirty}">
             <label for="inputVacationHome" class="col-sm-4 control-label">Vacation Home</label>
@@ -51,7 +63,7 @@
         </div>
 
         <!-- Use vehicles -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetUseForm.inputVehicles.$invalid &&
                                     assetUseForm.inputVehicles.$dirty}">
             <label for="inputVehicles" class="col-sm-4 control-label">Vehicles - Cars Trucks Boats</label>
@@ -76,7 +88,7 @@
         </div>
 
         <!-- Use home furnishings -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetUseForm.inputHomeFurnish.$invalid &&
                                     assetUseForm.inputHomeFurnish.$dirty}">
             <label for="inputHomeFurnish" class="col-sm-4 control-label">Home Furnishings</label>
@@ -100,7 +112,7 @@
         </div>
 
         <!-- Use Art antiques, coin, collectibles-->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetUseForm.inputArt.$invalid &&
                                     assetUseForm.inputArt.$dirty}">
             <label for="inputArt" class="col-sm-4 control-label">Art, antiques, coin, collectibles</label>
@@ -124,7 +136,7 @@
         </div>
 
         <!-- Use Jewelry, Furs -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetUseForm.inputJewelry.$invalid &&
                                     assetUseForm.inputJewelry.$dirty}">
             <label for="inputJewelry" class="col-sm-4 control-label">Jewelry, Furs</label>
@@ -148,7 +160,7 @@
         </div>
 
         <!-- Use assets Other -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetUseForm.inputUAOther.$invalid &&
                                     assetUseForm.inputUAOther.$dirty}">
             <label for="inputUAOther" class="col-sm-4 control-label">Use Assets Other</label>
@@ -172,13 +184,13 @@
         </div>
 
         <!-- Use assets subtotal -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcUseSubTotal" class="col-sm-4 control-label assetSubtotalCss">Use Assets Subtotal</label>
             <div class="col-sm-4" id="calcUseSubTotal">{{ vm.useSubtotal | currency;}}</div>
         </div>
 
         <!-- Use assets total -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcTotalAssets" class="col-sm-4 control-label calcTotalAssetsCss">Total Assets</label>
             <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset | currency;}}</div>
         </div>

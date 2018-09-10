@@ -3,12 +3,24 @@
         <legend class="debtLegend">Long-Term Debts</legend>
 
         <!-- Long-term debts home mortgage -->
-        <div class="form-group row"
+        <!-- Each label and control combination have a 'class=form-group' which provides for optimal
+        spacing of the controls in the group -->
+        <div class="form-group"
              ng-class="{'has-error':longTermLiabilitiesForm.inputHomeMortgage.$invalid &&
                                     longTermLiabilitiesForm.inputHomeMortgage.$dirty}">
+            <!-- Each label has a 'class of control-label' and each control has a 'class of form-control'
+             these ensures that the control takes the full width available to it. -->
             <label for="inputHomeMortgage" class="col-sm-4 control-label">Home Mortgage</label>
+            <!-- The 'for=' attribute relates the label to the data entry control 'input id=' property -->
             <div class="col-sm-2">
                 <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
+                    <!--  ng-focus and ng-blur - in this case allows for the removal of the zero '0' displayed
+                        in each input box when the cursor enters the box, gains focus, and if nothing is changed,
+                        replaces the zero on exiting , loses focus, if a value is added, the value typed in is retained.
+                        min= and max= control the numbers that can be entered.
+                        The min=0 prevents any negative numbers from being used
+                        The max="999999999999999" limits the available numbers to 999 trillion.
+                        ng-model provides two way binding to the input attribute  -->
                     <input type="text"
                            class="form-control"
                            id="inputHomeMortgage"
@@ -26,7 +38,7 @@
             </span>
         </div>
         <!-- Long-term debts home equity line -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':longTermLiabilitiesForm.inputHomeEquity.$invalid &&
                                     longTermLiabilitiesForm.inputHomeEquity.$dirty}">
             <label for="inputHomeEquity" class="col-sm-4 control-label">Home Equity Line</label>
@@ -50,7 +62,7 @@
         </div>
 
         <!-- Long-term debts mortgages on rentals -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':longTermLiabilitiesForm.inputMortgagesRentalProperty.$invalid &&
                                     longTermLiabilitiesForm.inputMortgagesRentalProperty.$dirty}">
             <label for="inputMortgagesRentalProperty" class="col-sm-4 control-label">Mortgages on Rental
@@ -75,7 +87,7 @@
         </div>
 
         <!-- Long-term debts vehicle loans -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':longTermLiabilitiesForm.inputVehicleLoans.$invalid &&
                                     longTermLiabilitiesForm.inputVehicleLoans.$dirty}">
             <label for="inputVehicleLoans" class="col-sm-4 control-label">Vehicle Loans</label>
@@ -99,7 +111,7 @@
         </div>
 
         <!-- Long-term debts student loans -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':longTermLiabilitiesForm.inputStudentLoans.$invalid &&
                                     longTermLiabilitiesForm.inputStudentLoans.$dirty}">
             <label for="inputStudentLoans" class="col-sm-4 control-label">Student Loans</label>
@@ -123,7 +135,7 @@
         </div>
 
         <!-- Long-term debts life insurance loans -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':longTermLiabilitiesForm.inputLifeInsuranceLoans.$invalid &&
                                     longTermLiabilitiesForm.inputLifeInsuranceLoans.$dirty}">
             <label for="inputLifeInsuranceLoans" class="col-sm-4 control-label">Life Insurance Loans</label>
@@ -148,7 +160,7 @@
         </div>
 
         <!-- Long-term debts other -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':longTermLiabilitiesForm.inputOtherLongtermDebt.$invalid &&
                                     longTermLiabilitiesForm.inputOtherLongtermDebt.$dirty}">
             <label for="inputOtherLongtermDebt" class="col-sm-4 control-label">Other Long-term Debt</label>
@@ -172,7 +184,7 @@
         </div>
 
         <!-- Long-term debts subtotal -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcLongTermDebtSubtotal"
                    class="col-sm-4 control-label liabilitySubtotalCss">Long-term Debts Subtotal</label>
             <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.longtermDebtSubtotal | currency;}}
@@ -180,7 +192,7 @@
         </div>
 
         <!--  total liabilities -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcTotalDebts" class="col-sm-4 control-label calcTotalDebtsCss">Total Liabilities</label>
             <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalLiability | currency;}}</div>
         </div>
@@ -188,21 +200,21 @@
 
         <legend>Net Worth = Total Assets - Total Liabilities</legend>
         <!-- Total assets -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcTotalAssets" class="col-sm-4 control-label calcTotalAssetsCss">
                 Total Assets</label>
             <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset | currency;}}</div>
         </div>
 
         <!-- Total liabilities -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcTotalDebts2" class="col-sm-4 control-label calcTotalDebtsCss">
                 Total Liabilities</label>
             <div class="col-sm-4" id="calcTotalDebts2">{{ vm.totalLiability | currency;}}</div>
         </div>
 
         <!-- Net Worth -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcNetWorth" class="col-sm-4 control-label calcTotalAssetsCss">
                 <b>Net Worth</b></label>
             <div class="col-sm-4" id="calcNetWorth">{{ vm.totalAsset - vm.totalLiability | currency;}}

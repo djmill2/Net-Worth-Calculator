@@ -1,14 +1,27 @@
+<!-- 'form-horizontal' - displays the label to the left of the input box -->
 <form class="form-horizontal" name="assetCashForm" novalidate>
-    <fieldset>
+    <fieldset>  <!-- groups related controls -->
         <legend class="assetLegend">Cash and Cash Equlivalents</legend>
 
         <!-- Checking Input -->
-        <div class="form-group row"
+        <!-- Each label and control combination have a 'class=form-group' which provides for optimal
+         spacing of the controls in the group -->
+        <div class="form-group"
              ng-class="{'has-error':assetCashForm.inputChecking.$invalid &&
                                     assetCashForm.inputChecking.$dirty}">
+            <!-- Each label has a 'class of control-label' and each control has a 'class of form-control'
+             these ensures that the control takes the full width available to it. -->
             <label for="inputChecking" class="col-sm-4 control-label">Checking</label>
+            <!-- The 'for=' attribute relates the label to the data entry control 'input id=' property -->
             <div class="col-sm-2">
                 <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
+                    <!--  ng-focus and ng-blur - in this case allows for the removal of the zero '0' displayed
+                        in each input box when the cursor enters the box, gains focus, and if nothing is changed,
+                        replaces the zero on exiting , loses focus, if a value is added, the value typed in is retained.
+                        min= and max= control the numbers that can be entered.
+                        The min=0 prevents any negative numbers from being used
+                        The max="999999999999999" limits the available numbers to 999 trillion.
+                        ng-model provides two way binding to the input attribute  -->
                     <input type="text"
                            class="form-control"
                            id="inputChecking"
@@ -27,7 +40,7 @@
         </div>
 
         <!-- Savings Input -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetCashForm.inputSavings.$invalid &&
                                     assetCashForm.inputSavings.$dirty}">
             <label for="inputSavings" class="col-sm-4 control-label">Savings</label>
@@ -51,7 +64,7 @@
         </div>
 
         <!-- Currency and Coin Input -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetCashForm.inputCash.$invalid &&
                                     assetCashForm.inputCash.$dirty}">
             <label for="inputCash" class="col-sm-4 control-label">Currency and Coin</label>
@@ -75,7 +88,7 @@
         </div>
 
         <!-- Money Market Input -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetCashForm.inputMoneyMarket.$invalid &&
                                     assetCashForm.inputMoneyMarket.$dirty}">
             <label for="inputMoneyMarket" class="col-sm-4 control-label">Money Market</label>
@@ -99,7 +112,7 @@
         </div>
 
         <!-- Savings Bond Input -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetCashForm.inputSavingsBonds.$invalid &&
                                     assetCashForm.inputSavingsBonds.$dirty}">
             <label for="inputSavingsBonds" class="col-sm-4 control-label">Savings bonds</label>
@@ -123,7 +136,7 @@
         </div>
 
         <!-- CD's Input -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetCashForm.inputCDs.$invalid &&
                                     assetCashForm.inputCDs.$dirty}">
             <label for="inputCDs" class="col-sm-4 control-label">Certificate of Deposit (CD's)</label>
@@ -147,7 +160,7 @@
         </div>
 
         <!-- Cash Value of Life Insurance Input -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetCashForm.inputCashValLifeIns.$invalid &&
                                     assetCashForm.inputCashValLifeIns.$dirty}">
             <label for="inputCashValLifeIns" class="col-sm-4 control-label">Cash value of life insurance</label>
@@ -171,7 +184,7 @@
         </div>
 
         <!-- Cash Equivalent Output -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcCashSubTotal" class="col-sm-4 control-label assetSubtotalCss">
                 Subtotal Cash Equlivalents</label>
             <div class="col-sm-4" id="calcCashSubTotal">{{ vm.cashSubtotal | currency;}}

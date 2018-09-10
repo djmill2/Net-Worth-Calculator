@@ -5,12 +5,24 @@
         <h1 class="asset1">Taxable accounts</h1>
 
         <!-- Invest brokerage -->
-        <div class="form-group row"
+        <!-- Each label and control combination have a 'class=form-group' which provides for optimal
+        spacing of the controls in the group -->
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputBrokerage.$invalid &&
                                     assetInvestForm.inputBrokerage.$dirty}">
+            <!-- Each label has a 'class of control-label' and each control has a 'class of form-control'
+             these ensures that the control takes the full width available to it. -->
             <label for="inputBrokerage" class="col-sm-4 control-label">Brokerage</label>
+            <!-- The 'for=' attribute relates the label to the data entry control 'input id=' property -->
             <div class="col-sm-2">
                 <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
+                    <!--  ng-focus and ng-blur - in this case allows for the removal of the zero '0' displayed
+                        in each input box when the cursor enters the box, gains focus, and if nothing is changed,
+                        replaces the zero on exiting , loses focus, if a value is added, the value typed in is retained.
+                        min= and max= control the numbers that can be entered.
+                        The min=0 prevents any negative numbers from being used
+                        The max="999999999999999" limits the available numbers to 999 trillion.
+                        ng-model provides two way binding to the input attribute  -->
                     <input type="text"
                            class="form-control"
                            id="inputBrokerage"
@@ -29,7 +41,7 @@
         </div>
 
         <!-- Invest taxable other -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputTaOther.$invalid &&
                                     assetInvestForm.inputTaOther.$dirty}">
             <label for="inputTaOther" class="col-sm-4 control-label">Taxable Other</label>
@@ -55,7 +67,7 @@
         <h1 class="asset1">Retirement accounts</h1>
 
         <!-- Invest ira -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputIra.$invalid &&
                                     assetInvestForm.inputIra.$dirty}">
             <label for="inputIra" class="col-sm-4 control-label">IRA</label>
@@ -79,7 +91,7 @@
         </div>
 
         <!-- Invest roth ira -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputRothIra.$invalid &&
                                     assetInvestForm.inputRothIra.$dirty}">
             <label for="inputRothIra" class="col-sm-4 control-label">Roth IRA</label>
@@ -103,7 +115,7 @@
         </div>
 
         <!-- Invest 401 K - 403 B -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.input401k403b.$invalid &&
                                     assetInvestForm.input401k403b.$dirty}">
             <label for="input401k403b" class="col-sm-4 control-label">401(k) or 403(b)</label>
@@ -127,7 +139,7 @@
         </div>
 
         <!-- Invest SEPIRA -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputSepIra.$invalid &&
                                     assetInvestForm.inputSepIra.$dirty}">
             <label for="inputSepIra" class="col-sm-4 control-label">SEPIRA</label>
@@ -151,7 +163,7 @@
         </div>
 
         <!-- Invest keogh -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputKeogh.$invalid &&
                                     assetInvestForm.inputKeogh.$dirty}">
             <label for="inputKeogh" class="col-sm-4 control-label">Keogh</label>
@@ -175,7 +187,7 @@
         </div>
 
         <!-- Invest pension -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputPension.$invalid &&
                                     assetInvestForm.inputPension.$dirty}">
             <label for="inputPension" class="col-sm-4 control-label">Pension</label>
@@ -199,7 +211,7 @@
         </div>
 
         <!-- Invest annuity -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputAnnuity.$invalid &&
                                     assetInvestForm.inputAnnuity.$dirty}">
             <label for="inputAnnuity" class="col-sm-4 control-label">Annuity</label>
@@ -226,7 +238,7 @@
         <h1 class="asset1">Business ownership Interests</h1>
 
         <!-- Invest real estate -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputRealEstate.$invalid &&
                                     assetInvestForm.inputRealEstate.$dirty}">
             <label for="inputRealEstate" class="col-sm-4 control-label">Real Estate</label>
@@ -250,7 +262,7 @@
         </div>
 
         <!-- Invest sole proprietorship -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputSolePro.$invalid &&
                                     assetInvestForm.inputSolePro.$dirty}">
             <label for="inputSolePro" class="col-sm-4 control-label">Sole Proprietorship</label>
@@ -274,7 +286,7 @@
         </div>
 
         <!-- Invest partnership -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputPartnership.$invalid &&
                                     assetInvestForm.inputPartnership.$dirty}">
             <label for="inputPartnership" class="col-sm-4 control-label">Partnership</label>
@@ -298,7 +310,7 @@
         </div>
 
         <!-- Invest C Corporation -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputCCorporation.$invalid &&
                                     assetInvestForm.inputCCorporation.$dirty}">
             <label for="inputCCorporation" class="col-sm-4 control-label">C Corporation</label>
@@ -322,7 +334,7 @@
         </div>
 
         <!-- Invest S Corporation -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputSCorporation.$invalid &&
                                     assetInvestForm.inputSCorporation.$dirty}">
             <label for="inputSCorporation" class="col-sm-4 control-label">S Corporation</label>
@@ -346,7 +358,7 @@
         </div>
 
         <!-- Invest LLC -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputLLC.$invalid &&
                                     assetInvestForm.inputLLC.$dirty}">
             <label for="inputLLC" class="col-sm-4 control-label">LLC</label>
@@ -370,7 +382,7 @@
         </div>
 
         <!-- Invest business ownership other -->
-        <div class="form-group row"
+        <div class="form-group"
              ng-class="{'has-error':assetInvestForm.inputBoOther.$invalid &&
                                     assetInvestForm.inputBoOther.$dirty}">
             <label for="inputBoOther" class="col-sm-4 control-label">Business Ownership Other</label>
@@ -394,7 +406,7 @@
         </div>
 
         <!-- Invest assets subtotal -->
-        <div class="form-group row">
+        <div class="form-group">
             <label for="calcInvestSubTotal" class="col-sm-4 control-label assetSubtotalCss">Invested Assets
                 Subtotal</label>
             <div class="col-sm-4" id="calcInvestSubTotal">{{ vm.investSubtotal | currency;}}</div>
