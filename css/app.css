@@ -21,6 +21,7 @@ form legend {
     font-family: 'Cookie', cursive;
     font-weight: normal;
     line-height: 1;
+    text-align: center;
     text-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -98,6 +99,10 @@ h5 {
     font-weight: bold;
     color: #006400;
     text-decoration: underline;
+}
+
+li {
+    font-size: 18px;
 }
 
 /* All lines Welcome page */
