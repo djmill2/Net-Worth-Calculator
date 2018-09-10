@@ -33,11 +33,11 @@
 
         // Populate cash subtotal variable
         $scope.$watch("vm.cashData", function handleChange(userInputVal) {
-                vm.cashSubtotal = parseFloat(userInputVal.checking.replace(/,/g,'')) +
-                    parseFloat(userInputVal.savings.replace(/,/g,'')) + parseFloat(userInputVal.cash.replace(/,/g,'')) +
-                    parseFloat(userInputVal.moneyMarket.replace(/,/g,'')) + parseFloat(userInputVal.savingsBond.replace(/,/g,'')) +
-                    parseFloat(userInputVal.cds.replace(/,/g,'')) + parseFloat(userInputVal.cashValLifeIns.replace(/,/g,''));
-                vm.assetCalculateService.setCash(userInputVal);
+            vm.cashSubtotal = parseFloat(userInputVal.checking.replace(/,/g, '')) +
+                parseFloat(userInputVal.savings.replace(/,/g, '')) + parseFloat(userInputVal.cash.replace(/,/g, '')) +
+                parseFloat(userInputVal.moneyMarket.replace(/,/g, '')) + parseFloat(userInputVal.savingsBond.replace(/,/g, '')) +
+                parseFloat(userInputVal.cds.replace(/,/g, '')) + parseFloat(userInputVal.cashValLifeIns.replace(/,/g, ''));
+            vm.assetCalculateService.setCash(userInputVal);
         }, true);
 
         // Check on Focus if checking has a value and set to empty if not
@@ -83,9 +83,6 @@
             return assetCalculateService.calculateCashSubtotal(vm.cashData.checking,
                 vm.cashData.savings, vm.cashData.cash, vm.cashData.moneyMarket, vm.cashData.savingsBond,
                 vm.cashData.cds, vm.cashData.cashValLifeIns);
-
         };
-
     }
-
 }());

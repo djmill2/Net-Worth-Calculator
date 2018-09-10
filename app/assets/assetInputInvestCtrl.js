@@ -32,14 +32,14 @@
 
         // Populate invest subtotal variable
         $scope.$watch("vm.investData", function handleChange(userInputVal) {
-            vm.investSubtotal = parseFloat(userInputVal.brokerage.replace(/,/g,'')) + parseFloat(userInputVal.taOther.replace(/,/g,'')) +
-                parseFloat(userInputVal.ira.replace(/,/g,'')) + parseFloat(userInputVal.rothIra.replace(/,/g,'')) +
-                parseFloat(userInputVal.kb.replace(/,/g,'')) + parseFloat(userInputVal.sepIra.replace(/,/g,'')) +
-                parseFloat(userInputVal.keogh.replace(/,/g,'')) + parseFloat(userInputVal.pension.replace(/,/g,'')) +
-                parseFloat(userInputVal.annuity.replace(/,/g,'')) + parseFloat(userInputVal.realEstate.replace(/,/g,'')) +
-                parseFloat(userInputVal.solePro.replace(/,/g,'')) + parseFloat(userInputVal.partnership.replace(/,/g,'')) +
-                parseFloat(userInputVal.cCorporation.replace(/,/g,'')) + parseFloat(userInputVal.sCorporation.replace(/,/g,'')) +
-                parseFloat(userInputVal.limitedLC.replace(/,/g,'')) + parseFloat(userInputVal.boOther.replace(/,/g,''));
+            vm.investSubtotal = parseFloat(userInputVal.brokerage.replace(/,/g, '')) + parseFloat(userInputVal.taOther.replace(/,/g, '')) +
+                parseFloat(userInputVal.ira.replace(/,/g, '')) + parseFloat(userInputVal.rothIra.replace(/,/g, '')) +
+                parseFloat(userInputVal.kb.replace(/,/g, '')) + parseFloat(userInputVal.sepIra.replace(/,/g, '')) +
+                parseFloat(userInputVal.keogh.replace(/,/g, '')) + parseFloat(userInputVal.pension.replace(/,/g, '')) +
+                parseFloat(userInputVal.annuity.replace(/,/g, '')) + parseFloat(userInputVal.realEstate.replace(/,/g, '')) +
+                parseFloat(userInputVal.solePro.replace(/,/g, '')) + parseFloat(userInputVal.partnership.replace(/,/g, '')) +
+                parseFloat(userInputVal.cCorporation.replace(/,/g, '')) + parseFloat(userInputVal.sCorporation.replace(/,/g, '')) +
+                parseFloat(userInputVal.limitedLC.replace(/,/g, '')) + parseFloat(userInputVal.boOther.replace(/,/g, ''));
             vm.assetCalculateService.setInvest(userInputVal);
         }, true);
 
@@ -48,7 +48,7 @@
             if (amount === 0 || amount === '0' || amount === '0.00') {
                 return '';
             } else {
-                return amount.replace(/,/g,'');
+                return amount.replace(/,/g, '');
             }
         };
 
@@ -56,7 +56,7 @@
             if (amount === '') {
                 return '0';
             } else if (amount.indexOf(',') !== -1) {
-                var newAmount = amount.replace(/,/g,'');
+                var newAmount = amount.replace(/,/g, '');
                 return $filter('number')(newAmount)
             } else {
                 return $filter('number')(amount);
@@ -108,8 +108,6 @@
                 vm.investData.cCorporation, vm.investData.sCorporation, vm.investData.limitedLC,
                 vm.investData.boOther);
         };
-
     }
-
 }());
 

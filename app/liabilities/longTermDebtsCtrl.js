@@ -40,10 +40,10 @@
 
         // Populate long-term debt subtotal variable
         $scope.$watch("vm.longTermDebtData", function handleChange(userInputVal) {
-            vm.longtermDebtSubtotal = parseFloat(userInputVal.homeMortgage.replace(/,/g,'')) +
-                parseFloat(userInputVal.homeEquity.replace(/,/g,'')) + parseFloat(userInputVal.mortgagesRental.replace(/,/g,'')) +
-                parseFloat(userInputVal.vehiclesLoans.replace(/,/g,'')) + parseFloat(userInputVal.studentLoans.replace(/,/g,'')) +
-                parseFloat(userInputVal.lifeInsuranceLoan.replace(/,/g,'')) + parseFloat(userInputVal.otherLongtermDebt.replace(/,/g,''));
+            vm.longtermDebtSubtotal = parseFloat(userInputVal.homeMortgage.replace(/,/g, '')) +
+                parseFloat(userInputVal.homeEquity.replace(/,/g, '')) + parseFloat(userInputVal.mortgagesRental.replace(/,/g, '')) +
+                parseFloat(userInputVal.vehiclesLoans.replace(/,/g, '')) + parseFloat(userInputVal.studentLoans.replace(/,/g, '')) +
+                parseFloat(userInputVal.lifeInsuranceLoan.replace(/,/g, '')) + parseFloat(userInputVal.otherLongtermDebt.replace(/,/g, ''));
             vm.debtCalculateService.setLongTermDebt(userInputVal);
             vm.totalLiability = vm.debtCalculateService.getTotal();
         }, true);
@@ -53,7 +53,7 @@
             if (amount === 0 || amount === '0' || amount === '0.00') {
                 return '';
             } else {
-                return amount.replace(/,/g,'');
+                return amount.replace(/,/g, '');
             }
         };
 
@@ -61,7 +61,7 @@
             if (amount === '') {
                 return '0';
             } else if (amount.indexOf(',') !== -1) {
-                var newAmount = amount.replace(/,/g,'');
+                var newAmount = amount.replace(/,/g, '');
                 return $filter('number')(newAmount)
             } else {
                 return $filter('number')(amount);

@@ -174,15 +174,14 @@
         <!-- Long-term debts subtotal -->
         <div class="form-group row">
             <label for="calcLongTermDebtSubtotal"
-                   class="col-sm-4 control-label"><span><b>Long-term Debts Subtotal</b></span></label>
+                   class="col-sm-4 control-label liabilitySubtotalCss">Long-term Debts Subtotal</label>
             <div class="col-sm-4" id="calcLongTermDebtSubtotal">{{ vm.longtermDebtSubtotal | currency;}}
             </div>
         </div>
 
         <!--  total liabilities -->
         <div class="form-group row">
-            <label for="calcTotalDebts" class="col-sm-4 control-label"
-                   style="font-size: x-large; color: #8b0000;">Total Liabilities</label>
+            <label for="calcTotalDebts" class="col-sm-4 control-label calcTotalDebtsCss">Total Liabilities</label>
             <div class="col-sm-4" id="calcTotalDebts">{{ vm.totalLiability | currency;}}</div>
         </div>
         <br>
@@ -190,22 +189,22 @@
         <legend>Net Worth = Total Assets - Total Liabilities</legend>
         <!-- Total assets -->
         <div class="form-group row">
-            <label for="calcTotalAssets" class="col-sm-4 control-label"
-                   style="font-size: x-large; color: #006400;">Total Assets</label>
+            <label for="calcTotalAssets" class="col-sm-4 control-label calcTotalAssetsCss">
+                Total Assets</label>
             <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset | currency;}}</div>
         </div>
 
         <!-- Total liabilities -->
         <div class="form-group row">
-            <label for="calcTotalDebts2" class="col-sm-4 control-label"
-                   style="font-size: x-large; color: #8b0000;">Total Liabilities</label>
+            <label for="calcTotalDebts2" class="col-sm-4 control-label calcTotalDebtsCss">
+                Total Liabilities</label>
             <div class="col-sm-4" id="calcTotalDebts2">{{ vm.totalLiability | currency;}}</div>
         </div>
 
         <!-- Net Worth -->
         <div class="form-group row">
-            <label for="calcNetWorth" class="col-sm-4 control-label"
-                   style="font-size: x-large; color: #006400;"><b>Net Worth</b></label>
+            <label for="calcNetWorth" class="col-sm-4 control-label calcTotalAssetsCss">
+                <b>Net Worth</b></label>
             <div class="col-sm-4" id="calcNetWorth">{{ vm.totalAsset - vm.totalLiability | currency;}}
             </div>
         </div>

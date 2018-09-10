@@ -173,14 +173,13 @@
 
         <!-- Use assets subtotal -->
         <div class="form-group row">
-            <label for="calcUseSubTotal" class="col-sm-4 control-label"><span>Use Assets Subtotal</span></label>
+            <label for="calcUseSubTotal" class="col-sm-4 control-label assetSubtotalCss">Use Assets Subtotal</label>
             <div class="col-sm-4" id="calcUseSubTotal">{{ vm.useSubtotal | currency;}}</div>
         </div>
 
         <!-- Use assets total -->
         <div class="form-group row">
-            <label for="calcTotalAssets" class="col-sm-4 control-label"
-                   style="font-size: x-large; color: #006400;">Total Assets</label>
+            <label for="calcTotalAssets" class="col-sm-4 control-label calcTotalAssetsCss">Total Assets</label>
             <div class="col-sm-4" id="calcTotalAssets">{{ vm.totalAsset | currency;}}</div>
         </div>
 

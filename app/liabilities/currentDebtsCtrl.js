@@ -28,8 +28,8 @@
 
         // Populate current debt subtotal variable
         $scope.$watch("vm.currentDebtsData", function handleChange(userInputVal) {
-            vm.currentDebtSubtotal = parseFloat(userInputVal.creditCards.replace(/,/g,'')) +
-                parseFloat(userInputVal.incomeTaxOwed.replace(/,/g,'')) + parseFloat(userInputVal.outstandingBills.replace(/,/g,''));
+            vm.currentDebtSubtotal = parseFloat(userInputVal.creditCards.replace(/,/g, '')) +
+                parseFloat(userInputVal.incomeTaxOwed.replace(/,/g, '')) + parseFloat(userInputVal.outstandingBills.replace(/,/g, ''));
             vm.debtCalculateService.setCurrentDebt(userInputVal);
         }, true);
 
@@ -38,7 +38,7 @@
             if (amount === 0 || amount === '0' || amount === '0.00') {
                 return '';
             } else {
-                return amount.replace(/,/g,'');
+                return amount.replace(/,/g, '');
             }
         };
 
@@ -46,7 +46,7 @@
             if (amount === '') {
                 return 0;
             } else if (amount.indexOf(',') !== -1) {
-                var newAmount = amount.replace(/,/g,'');
+                var newAmount = amount.replace(/,/g, '');
                 return $filter('number')(newAmount)
             } else {
                 return $filter('number')(amount);

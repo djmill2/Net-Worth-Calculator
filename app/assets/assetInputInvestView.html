@@ -2,7 +2,7 @@
     <fieldset>
         <legend class="assetLegend">Invested Assets</legend>
 
-        <h1>Taxable accounts</h1>
+        <h1 class="asset1">Taxable accounts</h1>
 
         <!-- Invest brokerage -->
         <div class="form-group row"
@@ -52,7 +52,7 @@
             </span>
         </div>
 
-        <h1>Retirement accounts</h1>
+        <h1 class="asset1">Retirement accounts</h1>
 
         <!-- Invest ira -->
         <div class="form-group row"
@@ -223,7 +223,7 @@
             </span>
         </div>
 
-        <h1>Business ownership Interests</h1>
+        <h1 class="asset1">Business ownership Interests</h1>
 
         <!-- Invest real estate -->
         <div class="form-group row"
@@ -395,7 +395,8 @@
 
         <!-- Invest assets subtotal -->
         <div class="form-group row">
-            <label for="calcInvestSubTotal" class="col-sm-4 control-label"><span>Invested Assets Subtotal</span></label>
+            <label for="calcInvestSubTotal" class="col-sm-4 control-label assetSubtotalCss">Invested Assets
+                Subtotal</label>
             <div class="col-sm-4" id="calcInvestSubTotal">{{ vm.investSubtotal | currency;}}</div>
         </div>
 
