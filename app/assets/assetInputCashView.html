@@ -1,6 +1,7 @@
 <!-- 'form-horizontal' - displays the label to the left of the input box -->
 <form class="form-horizontal" name="assetCashForm" novalidate>
     <fieldset>  <!-- groups related controls -->
+
         <legend class="assetLegend">Cash and Cash Equlivalents</legend>
 
         <!-- Checking Input -->
@@ -11,6 +12,8 @@
                                     assetCashForm.inputChecking.$dirty}">
             <!-- Each label has a 'class of control-label' and each control has a 'class of form-control'
              these ensures that the control takes the full width available to it. -->
+            <!-- Each label uses the Bootstrap grid 'col-sm-4' to put the label in the first four columns
+            and the input control uses the next two columns 'col-sm-2' -->
             <label for="inputChecking" class="col-sm-4 control-label">Checking</label>
             <!-- The 'for=' attribute relates the label to the data entry control 'input id=' property -->
             <div class="col-sm-2">

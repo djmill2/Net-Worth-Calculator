@@ -11,6 +11,7 @@
             "assetResourceMock",
             "debtResourceMock"]);
 
+    // provides alert for Exception handling
     app.config(function ($provide) {
         $provide.decorator("$exceptionHandler",
             ["$delegate",
@@ -24,6 +25,7 @@
                 }]);
     });
 
+    // adding the various states to be used
     app.config(["$stateProvider",
         "$urlRouterProvider",
         function ($stateProvider, $urlRouterProvider) {

@@ -1,3 +1,4 @@
+<!-- 'form-horizontal' - displays the label to the left of the input box -->
 <form class="form-horizontal" name="currentLiabilitiesForm" novalidate>
     <fieldset>
         <legend class="debtLegend">Current Debts</legend>
@@ -10,6 +11,8 @@
                                     currentLiabilitiesForm.inputCreditCards.$dirty}">
             <!-- Each label has a 'class of control-label' and each control has a 'class of form-control'
              these ensures that the control takes the full width available to it. -->
+            <!-- Each label uses the Bootstrap grid 'col-sm-4' to put the label in the first four columns
+            and the input control uses the next two columns 'col-sm-2' -->
             <label for="inputCreditCards" class="col-sm-4 control-label">Credit Cards</label>
             <!-- The 'for=' attribute relates the label to the data entry control 'input id=' property -->
             <div class="col-sm-2">
