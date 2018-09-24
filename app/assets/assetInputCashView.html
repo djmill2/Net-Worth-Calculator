@@ -20,7 +20,8 @@
                 <div class="dollar"> <!-- Add $ symbol inside input text boxes -->
                     <!--  ng-focus and ng-blur - in this case allows for the removal of the zero '0' displayed
                         in each input box when the cursor enters the box, gains focus, and if nothing is changed,
-                        replaces the zero on exiting , loses focus, if a value is added, the value typed in is retained.
+                        replaces the zero on exiting , loses focus, if a numeric value is added, the value typed in is retained.
+						if anything else is typed in alpha character or symbol it is lost. 
                         min= and max= control the numbers that can be entered.
                         The min=0 prevents any negative numbers from being used
                         The max="999999999999999" limits the available numbers to 999 trillion.
